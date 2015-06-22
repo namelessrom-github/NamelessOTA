@@ -25,7 +25,7 @@
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:background="?attr/colorPrimary"
-        android:theme="@style/Theme.RagnarDark"
+        android:theme="@style/Theme.Dark"
         android:title="@string/app_name" />
 
     <View
@@ -118,7 +118,7 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
         android:background="?attr/colorPrimary"
-        android:theme="@style/Theme.RagnarDark" >
+        android:theme="@style/Theme.Dark" >
 
         <include layout="@layout/ota_available_menu" />
     </Toolbar>
