@@ -39,8 +39,7 @@ import com.ota.updates.utils.Preferences;
 import com.ota.updates.utils.Utils;
 
 public class AboutActivity extends Activity {
-	
-	private AdView mAdView;
+
 	private Context mContext;
 	
 	@SuppressLint("NewApi") @Override
@@ -57,100 +56,46 @@ public class AboutActivity extends Activity {
 			toolbar.setTitle(getResources().getString(R.string.app_name));
 		}
 
-		Typeface typeFace = Typeface.createFromAsset(getAssets(),"fonts/Roboto-Light.ttf");
-
-		TextView donateTitle = (TextView) findViewById(R.id.about_tv_donate_title);
-		TextView creditsTitle = (TextView) findViewById(R.id.about_tv_credits_title);
-		TextView changelogTitle = (TextView) findViewById(R.id.about_tv_changelog_title);
 		TextView creditsSummary = (TextView) findViewById(R.id.about_tv_credits_summary);
 
-		donateTitle.setTypeface(typeFace);
-		changelogTitle.setTypeface(typeFace);
-		creditsTitle.setTypeface(typeFace);
 
 		String openHTML = "";
 		if (Utils.isLollipop()) {
 			if (Preferences.getCurrentTheme(this) == 0) { // Light
-				openHTML = "<font color='#009688'>";
+				openHTML = "<font color='#000000'>";
 			} else {
-				openHTML = "<font color='#80cbc4'>";
+				openHTML = "<font color='#ffffff'>";
 			}
 		} else {
-			openHTML = "<font color='#33b5e5'>";
+			openHTML = "<font color='#777777'>";
 		}
 		String closeHTML = "</font>";
 		String newLine = "<br />";
 		String creditsText =
-				openHTML + "Matt Booth" + closeHTML + " - Anything not mentioned below" + newLine +
-				openHTML + "Roman Nurik" + closeHTML + " - Android Asset Studio Framework" + newLine +
-				openHTML + "Jeff Gilfelt"+ closeHTML + " - Android Action Bar Style Generator" + newLine + 
-				openHTML + "Ficeto (AllianceROM)" + closeHTML + " - Shell tools" + newLine +
-				openHTML + "StackOverflow" + closeHTML + " - Many, many people";
+				openHTML + "Nicholas Chum (nicholaschum)" + closeHTML + " - BlissOTA Implementer/Source Rewrites" + newLine +
+                openHTML + "Jezebel Ng (BellaxMiu)" + closeHTML + " - Icon and graphics designer" + newLine +
+                openHTML + "Matt Booth (Kryten2k35)" + closeHTML + " - OTAUpdates Original Source Creator" + newLine + newLine +
+
+				openHTML + "Erwan Leboucher (genesixxbf3)" + closeHTML + " - Source Contributor" + newLine +
+				openHTML + "Tobias Teschner (tobitege)" + closeHTML + " - OTA server automation" + newLine + newLine +
+
+				openHTML + "Bunyamin Ozdemir (KeTuRr74)" + closeHTML + " - BlissOTA French Translations";
 		creditsSummary.setText(Html.fromHtml(creditsText));
-		
-		TextView versionTitle = (TextView) findViewById(R.id.about_tv_version_title);
-		versionTitle.setTypeface(typeFace);
-		
-		TextView versionSummary = (TextView) findViewById(R.id.about_tv_version_summary);
-		String appVer = getResources().getString(R.string.about_app_version);
-		String appVerActual = getResources().getString(R.string.app_version);
-		versionSummary.setText(appVer + " v" + appVerActual);
 
-	}
-
-	private void setupDonateDialog() {
-		String[] items = { "PayPal", "BitCoin" };
-		Builder dialog = new AlertDialog.Builder(this);
-		dialog.setTitle("")
-		.setSingleChoiceItems(items, 0, null)
-		.setPositiveButton(getResources().getString(R.string.ok), new DialogInterface.OnClickListener() {
-
-			@Override
-			public void onClick(DialogInterface dialog, int which) {
-				String url = "";
-				if (which == 0) {
-					url = "http://goo.gl/ZKSY4";
-				} else {
-					url = "http://goo.gl/o4c6ES";
-				}
-				Intent intent = new Intent(Intent.ACTION_VIEW);
-				intent.setData(Uri.parse(url));
-				startActivity(intent);
-			}
-		})
-		.setNegativeButton(getResources().getString(R.string.cancel), new DialogInterface.OnClickListener() {
-
-			@Override
-			public void onClick(DialogInterface dialog, int which) {
-				dialog.cancel();
-			}
-		})
-		.show();
 	}
 
 	public void openAppDonate(View v) {
-		setupDonateDialog();
+        String url = "http://goo.gl/ZKSY4";
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        intent.setData(Uri.parse(url));
+        startActivity(intent);
+    }
+
+	public void openAppDonateCDT(View v) {
+        String url = "https://goo.gl/upDndJ";
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        intent.setData(Uri.parse(url));
+        startActivity(intent);
 	}
-	
-	public void openChangelog(View v) {
-		String title = getResources().getString(R.string.changelog);
-		String changelog = getResources().getString(R.string.changelog_url);
-		new Changelog(this, mContext, title, changelog, true).execute();
-	}
-	
-	@Override
-	public void onResume() {
-		super.onResume();
-		if (mAdView != null) {
-			mAdView.resume();
-		}
-	}
-	
-	@Override
-	public void onPause() {
-		super.onPause();
-		if (mAdView != null) {
-			mAdView.pause();
-		}
-	}
+
 }

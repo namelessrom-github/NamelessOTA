@@ -40,15 +40,13 @@
 	        android:layout_width="fill_parent"
 	        android:layout_height="wrap_content"
 	        android:orientation="vertical" >
-
-	        <include layout="@layout/card_version" />
-
-	        <include layout="@layout/card_changelog" />
 	
 	        <include layout="@layout/card_credits" />
 	
-	        <include layout="@layout/card_app_donate" />
-	    
+	        <include layout="@layout/card_app_donate_cdt" />
+
+	        <include layout="@layout/card_app_donate_matt" />
+
 		</LinearLayout>
 	</ScrollView>
 </LinearLayout>

@@ -16,19 +16,19 @@
 
 -->
 <resources>
-
-    <string name="about_about_title">About</string>
-    <string name="about_preferences_summary">OTAUpdates information, donation and credits</string>
+    <string name="about_about_title">About BlissOTA 5.0.0</string>
+    <string name="about_preferences_summary">More information about the app, credits and donations.</string>
     <string name="about_about_summary">This app was born out of my frustration of using other apps that didn\'t work how I wanted them to. I developed it for my ROM, but quickly realised other developers might find this useful as well. As a result, I generalised it and wrote up some implementation guides for other developers to use.</string>
     <string name="about_credits_title">Credits</string>
     <string name="about_credits_summary">Credits Summary</string>
-    <string name="about_donate_title">Donate</string>
-    <string name="about_donate_summary">If this app has made your life easier, please consider a donation to the app developer (Kryten2k35)</string>
+    <string name="about_donate_title_cdt">Donate to Nicholas Chum (nicholaschum)</string>
+    <string name="about_donate_title_matt">Donate to Matt Booth (Kryten2k35)</string>
+    <string name="about_donate_summary_cdt">If you like our modified version of OTAUpdates and would like to donate to us, we would ever be so grateful!</string>
+    <string name="about_donate_summary_matt">We would like to thank Matt Booth for this amazing base. To show appreciation, please decide to donate to him!</string>
     <string name="about_donate_button_summary">Grab me a beer</string>
     <string name="about_version_title">Version</string>
     <string name="about_app_version">App version:</string>
     <string name="changelog">Changelog</string>
     <string name="changelog_summary">View the app\'s changelog</string>
     <string name="changelog_error">Error reading changelog</string>
-
 </resources>
