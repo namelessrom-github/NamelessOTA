@@ -25,7 +25,7 @@
 
     <style name="MainListElement">
         <item name="android:clickable">true</item>
-        <item name="android:background">?attr/backgroundSelector</item>
+        <item name="android:background">?attr/backgroundRippleSelector</item>
         <item name="android:paddingTop">8dp</item>
         <item name="android:paddingBottom">8dp</item>
         <item name="android:paddingLeft">16dp</item>

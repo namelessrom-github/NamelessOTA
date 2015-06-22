@@ -17,7 +17,12 @@
 -->
 <resources>
 
-    <declare-styleable name="Theme.Ragnar">
+    <declare-styleable name="Theme">
+        <attr name="colorPrimary" format="color" />
+        <attr name="colorPrimaryDark" format="color" />
+        <attr name="menuTheme" format="reference" />
+        <attr name="backgroundRippleSelector" format="reference" />
+        <attr name="materialAccent" format="color" />
         <attr name="helpIcon" format="reference" />
         <attr name="moreIconWidget" format="reference" />
         <attr name="settingsIcon" format="reference" />
