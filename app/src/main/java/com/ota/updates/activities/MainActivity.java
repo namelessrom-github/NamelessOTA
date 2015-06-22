@@ -73,9 +73,6 @@ public class MainActivity extends Activity implements Constants{
 
 	private boolean isLollipop;
 	
-	private AdView mAdView;
-	private AdRequest mAdRequest;
-	
 	public static ProgressBar mProgressBar;
 
 	private BroadcastReceiver mReceiver = new BroadcastReceiver() {
@@ -183,22 +180,6 @@ public class MainActivity extends Activity implements Constants{
 	public void onStop() {
 		super.onStop();
 		this.unregisterReceiver(mReceiver);
-	}
-	
-	@Override
-	public void onResume() {
-		super.onResume();
-		if (mAdView != null) {
-			mAdView.resume();
-		}
-	}
-	
-	@Override
-	public void onPause() {
-		super.onPause();
-		if (mAdView != null) {
-			mAdView.pause();
-		}
 	}
 
 	@Override
@@ -323,12 +304,12 @@ public class MainActivity extends Activity implements Constants{
 				String htmlColorOpen = "";
 				if (isLollipop) {
 					if (Preferences.getCurrentTheme(mContext) == 0) { // Light
-						htmlColorOpen = "<font color='#009688'>";
+						htmlColorOpen = "<font color='#000000'>";
 					} else {
-						htmlColorOpen = "<font color='#80cbc4'>";
+						htmlColorOpen = "<font color='#ffffff'>";
 					}
 				} else {
-					htmlColorOpen = "<font color='#33b5e5'>";
+					htmlColorOpen = "<font color='#777777'>";
 				}
 				String htmlColorClose = "</font>";
 				String updateSummary = RomUpdate.getFilename(mContext)
@@ -343,12 +324,12 @@ public class MainActivity extends Activity implements Constants{
 				String htmlColorOpen = "";
 				if (isLollipop) {
 					if (Preferences.getCurrentTheme(mContext) == 0) { // Light
-						htmlColorOpen = "<font color='#009688'>";
+						htmlColorOpen = "<font color='#000000'>";
 					} else {
-						htmlColorOpen = "<font color='#80cbc4'>";
+						htmlColorOpen = "<font color='#ffffff'>";
 					}
 				} else {
-					htmlColorOpen = "<font color='#33b5e5'>";
+					htmlColorOpen = "<font color='#777777'>";
 				}
 				String htmlColorClose = "</font>";
 				String updateSummary = htmlColorOpen
@@ -360,12 +341,12 @@ public class MainActivity extends Activity implements Constants{
 				String htmlColorOpen = "";
 				if (isLollipop) {
 					if (Preferences.getCurrentTheme(mContext) == 0) { // Light
-						htmlColorOpen = "<font color='#009688'>";
+						htmlColorOpen = "<font color='#000000'>";
 					} else {
-						htmlColorOpen = "<font color='#80cbc4'>";
+						htmlColorOpen = "<font color='#ffffff'>";
 					}
 				} else {
-					htmlColorOpen = "<font color='#33b5e5'>";
+					htmlColorOpen = "<font color='#777777'>";
 				}
 				String htmlColorClose = "</font>";
 				String updateSummary = RomUpdate.getFilename(mContext)
@@ -457,7 +438,7 @@ public class MainActivity extends Activity implements Constants{
 
 		//ROM android version
 		TextView romAndroid = (TextView) findViewById(R.id.tv_main_android_version);
-		String romAndroidTitle = getApplicationContext().getResources().getString(R.string.main_android_verison) + " ";
+		String romAndroidTitle = getApplicationContext().getResources().getString(R.string.main_android_version) + " ";
 		String romAndroidActual = Utils.getProp("ro.build.version.release");
 		romAndroid.setText(Html.fromHtml(romAndroidTitle + htmlColorOpen + romAndroidActual + htmlColorClose));
 

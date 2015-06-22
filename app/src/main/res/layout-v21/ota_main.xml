@@ -37,17 +37,19 @@
             android:layout_height="wrap_content"
             android:orientation="vertical" >
 
+            <include layout="@layout/card_app_header" />
+
+            <include layout="@layout/card_rom_info" />
+
             <include layout="@layout/card_update" />
 
             <include layout="@layout/card_no_update" />
-            
+
             <include layout="@layout/card_addons" />
 
             <include layout="@layout/card_website" />
 
             <include layout="@layout/card_donate" />
-
-            <include layout="@layout/card_rom_info" />
         </LinearLayout>
     </ScrollView>
 

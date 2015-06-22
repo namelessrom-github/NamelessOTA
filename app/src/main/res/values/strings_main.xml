@@ -12,7 +12,8 @@
  	distributed under the License is distributed on an "AS IS" BASIS,
 	WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 	See the License for the specific language governing permissions and
-	limitations under the License.
+	limitations under the License.
+
 -->
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
 
@@ -33,13 +34,13 @@
     <string name="main_addon_summary">Browse and download additional files for this ROM</string>
 
     <!-- ROM Information -->
-    <string name="main_rom_information">ROM information</string>
-    <string name="main_rom_name">ROM name:</string>
-    <string name="main_rom_version">ROM version:</string>
+    <string name="main_rom_information">About your device</string>
+    <string name="main_rom_name">System name:</string>
+    <string name="main_rom_version">Release version:</string>
     <string name="main_rom_codename">ROM codename:</string>
-    <string name="main_rom_build_date">ROM date:</string>
-    <string name="main_android_verison">Android version:</string>
-    <string name="main_rom_developer">Developer(s):</string>
+    <string name="main_rom_build_date">Build date:</string>
+    <string name="main_android_version">Android version:</string>
+    <string name="main_rom_developer">Maintainer(s):</string>
 
     <!-- Dialogs -->
     <string name="main_not_compatible_title">Not compatible</string>
