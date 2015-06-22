@@ -409,37 +409,37 @@ public class MainActivity extends Activity implements Constants{
 		String htmlColorOpen = "";
 		if (isLollipop) {
 			if (Preferences.getCurrentTheme(mContext) == 0) { // Light
-				htmlColorOpen = "<font color='#009688'>";
+				htmlColorOpen = "<font color='#000000'>";
 			} else {
-				htmlColorOpen = "<font color='#80cbc4'>";
+				htmlColorOpen = "<font color='#ffffff'>";
 			}
 		} else {
-			htmlColorOpen = "<font color='#33b5e5'>";
+			htmlColorOpen = "<font color='#777777'>";
 		}
 		String htmlColorClose = "</font>";
 
 		//ROM name
 		TextView romName = (TextView) findViewById(R.id.tv_main_rom_name);
 		String romNameTitle = getApplicationContext().getResources().getString(R.string.main_rom_name) + " ";
-		String romNameActual = Utils.getProp("ro.ota.romname");
+		String romNameActual = Utils.getProp(getResources().getString(R.string.prop_name));
 		romName.setText(Html.fromHtml(romNameTitle + htmlColorOpen + romNameActual + htmlColorClose));
 
 		//ROM version
 		TextView romVersion = (TextView) findViewById(R.id.tv_main_rom_version);
 		String romVersionTitle = getApplicationContext().getResources().getString(R.string.main_rom_version) + " ";
-		String romVersionActual = Utils.getProp("ro.ota.version");
+		String romVersionActual = Utils.getProp(getResources().getString(R.string.prop_version));
 		romVersion.setText(Html.fromHtml(romVersionTitle + htmlColorOpen + romVersionActual + htmlColorClose));
 
 		//ROM date
 		TextView romDate = (TextView) findViewById(R.id.tv_main_rom_date);
 		String romDateTitle = getApplicationContext().getResources().getString(R.string.main_rom_build_date) + " ";
-		String romDateActual = Utils.getProp("ro.build.date");
+		String romDateActual = Utils.getProp(getResources().getString(R.string.prop_date));
 		romDate.setText(Html.fromHtml(romDateTitle + htmlColorOpen + romDateActual + htmlColorClose));
 
 		//ROM android version
 		TextView romAndroid = (TextView) findViewById(R.id.tv_main_android_version);
 		String romAndroidTitle = getApplicationContext().getResources().getString(R.string.main_android_version) + " ";
-		String romAndroidActual = Utils.getProp("ro.build.version.release");
+		String romAndroidActual = Utils.getProp(getResources().getString(R.string.prop_release));
 		romAndroid.setText(Html.fromHtml(romAndroidTitle + htmlColorOpen + romAndroidActual + htmlColorClose));
 
 		//ROM developer
