@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
  	Copyright (C) 2015 Nicholas Chum (nicholaschum) and Matt Booth (Kryten2k35).
  
  	Licensed under the Attribution-NonCommercial-ShareAlike 4.0 International 
@@ -18,10 +17,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.chummy.blissroms.updates"
     android:versionCode="5"
-    android:versionName="@string/app_version" >
-    
-    <uses-sdk
-        android:maxSdkVersion="22" />
+    android:versionName="@string/app_version">
+
+    <uses-sdk android:maxSdkVersion="22" />
 
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -47,13 +45,13 @@
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/Theme.Light"
-        android:uiOptions="splitActionBarWhenNarrow" >
+        android:uiOptions="splitActionBarWhenNarrow">
 
         <activity
             android:name="com.chummy.blissroms.updates.activities.MainActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
             android:label="@string/app_name"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -83,7 +81,7 @@
 
         <receiver
             android:name="com.chummy.blissroms.updates.receivers.AppReceiver"
-            android:enabled="true" >
+            android:enabled="true">
             <intent-filter>
                 <action android:name="android.intent.action.DOWNLOAD_COMPLETE" />
                 <action android:name="android.intent.action.DOWNLOAD_NOTIFICATION_CLICKED" />

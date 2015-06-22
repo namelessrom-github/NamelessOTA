@@ -1,5 +1,15 @@
 package com.chummy.blissroms.updates.tasks;
 
+import android.content.Context;
+import android.util.Log;
+
+import com.chummy.blissroms.updates.Addon;
+import com.chummy.blissroms.updates.utils.Constants;
+
+import org.xml.sax.Attributes;
+import org.xml.sax.SAXException;
+import org.xml.sax.helpers.DefaultHandler;
+
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -8,163 +18,150 @@ import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 
-import org.xml.sax.Attributes;
-import org.xml.sax.SAXException;
-import org.xml.sax.helpers.DefaultHandler;
-
-import com.chummy.blissroms.updates.Addon;
-import com.chummy.blissroms.updates.utils.Constants;
-
-import android.content.Context;
-import android.util.Log;
-
 public class AddonXmlParser extends DefaultHandler implements Constants {
 
-	private ArrayList<Addon> mAddons = new ArrayList<Addon>();
-	private Addon mAddon;
+    private final String TAG = this.getClass().getSimpleName();
+    boolean tagAddon = false;
+    boolean tagId = false;
+    boolean tagTitle = false;
+    boolean tagDesc = false;
+    boolean tagUpdatedAt = false;
+    boolean tagSize = false;
+    boolean tagDownloadLink = false;
+    private ArrayList<Addon> mAddons = new ArrayList<Addon>();
+    private Addon mAddon;
+    private StringBuffer value = new StringBuffer();
+    private int id;
 
-	private final String TAG = this.getClass().getSimpleName();
+    public ArrayList<Addon> parse(File xmlFile, Context context) throws IOException {
 
-	private StringBuffer value = new StringBuffer();
-	private int id;
+        try {
+            id = 1;
+            SAXParserFactory factory = SAXParserFactory.newInstance();
+            SAXParser saxParser = factory.newSAXParser();
+            saxParser.parse(xmlFile, this);
 
-	boolean tagAddon = false;
-	boolean tagId = false;
-	boolean tagTitle = false;
-	boolean tagDesc = false;
-	boolean tagUpdatedAt = false;
-	boolean tagSize = false;
-	boolean tagDownloadLink = false;
+            return mAddons;
 
-	public ArrayList<Addon> parse(File xmlFile, Context context) throws IOException {
+        } catch (ParserConfigurationException ex) {
+            Log.e(TAG, "", ex);
+        } catch (SAXException ex) {
+            Log.e(TAG, "", ex);
+        }
 
-		try {
-			id = 1;
-			SAXParserFactory factory = SAXParserFactory.newInstance();
-			SAXParser saxParser = factory.newSAXParser();
-			saxParser.parse(xmlFile, this);
+        return null;
+    }
 
-			return mAddons;
+    @Override
+    public void startElement(String uri, String localName, String qName,
+                             Attributes attributes) throws SAXException {
 
-		} catch (ParserConfigurationException ex) {
-			Log.e(TAG, "", ex);
-		} catch (SAXException ex) {
-			Log.e(TAG, "", ex);
-		}
+        value.setLength(0);
 
-		return null;
-	}
+        if (attributes.getLength() > 0) {
 
-	@Override
-	public void startElement(String uri, String localName, String qName,
-			Attributes attributes) throws SAXException {
+            @SuppressWarnings("unused")
+            String tag = "<" + qName;
+            for (int i = 0; i < attributes.getLength(); i++) {
 
-		value.setLength(0);
+                tag += " " + attributes.getLocalName(i) + "="
+                        + attributes.getValue(i);
+            }
+            tag += ">";
+        }
 
-		if (attributes.getLength() > 0) {
+        if (qName.equalsIgnoreCase("addon")) {
+            mAddon = new Addon();
+            tagAddon = true;
+        }
 
-			@SuppressWarnings("unused")
-			String tag = "<" + qName;
-			for (int i = 0; i < attributes.getLength(); i++) {
+        if (qName.equalsIgnoreCase("id")) {
+            tagId = true;
+        }
 
-				tag += " " + attributes.getLocalName(i) + "="
-						+ attributes.getValue(i);
-			}
-			tag += ">";
-		}
+        if (qName.equalsIgnoreCase("name")) {
+            tagTitle = true;
+        }
 
-		if (qName.equalsIgnoreCase("addon")) {
-			mAddon = new Addon();
-			tagAddon = true;
-		}
-		
-		if (qName.equalsIgnoreCase("id")) {
-			tagId = true;
-		}
+        if (qName.equalsIgnoreCase("description")) {
+            tagDesc = true;
+        }
 
-		if (qName.equalsIgnoreCase("name")){
-			tagTitle = true;
-		}
+        if (qName.equalsIgnoreCase("updated-at")) {
+            tagUpdatedAt = true;
+        }
 
-		if (qName.equalsIgnoreCase("description")) {
-			tagDesc = true;
-		}
+        if (qName.equalsIgnoreCase("size")) {
+            tagSize = true;
+        }
 
-		if (qName.equalsIgnoreCase("updated-at")) {
-			tagUpdatedAt = true;
-		}
-		
-		if (qName.equalsIgnoreCase("size")) {
-			tagSize = true;
-		}
-		
-		if (qName.equalsIgnoreCase("download-link")) {
-			tagDownloadLink = true;
-		}
-	}
+        if (qName.equalsIgnoreCase("download-link")) {
+            tagDownloadLink = true;
+        }
+    }
 
-	@Override
-	public void characters(char[] buffer, int start, int length) 
-			throws SAXException{
-		value.append(buffer, start, length);
+    @Override
+    public void characters(char[] buffer, int start, int length)
+            throws SAXException {
+        value.append(buffer, start, length);
 
-	}    
+    }
 
-	public void endElement(String uri, String localName, String qName)
-			throws SAXException {
+    public void endElement(String uri, String localName, String qName)
+            throws SAXException {
 
-		String input = value.toString().trim();
+        String input = value.toString().trim();
 
-		if (tagAddon) {
-			mAddons.add(mAddon);
-			tagAddon = false;
-		} else {
-			
-			if (tagId) {
-				mAddon.setId(id);
-				tagId = false;
-				if (DEBUGGING) {
-					Log.d(TAG, "Id = " + id);
-				}
-				id++;
-			}
+        if (tagAddon) {
+            mAddons.add(mAddon);
+            tagAddon = false;
+        } else {
 
-			if (tagTitle){
-				mAddon.setTitle(input);
-				tagTitle = false;
-				if (DEBUGGING)
-					Log.d(TAG, "Title = " + input);
-			}
+            if (tagId) {
+                mAddon.setId(id);
+                tagId = false;
+                if (DEBUGGING) {
+                    Log.d(TAG, "Id = " + id);
+                }
+                id++;
+            }
 
-			if (tagDesc) {
-				mAddon.setDesc(input);
-				tagDesc = false;
-				if (DEBUGGING)
-					Log.d(TAG, "Description = " + input);
-			}
+            if (tagTitle) {
+                mAddon.setTitle(input);
+                tagTitle = false;
+                if (DEBUGGING)
+                    Log.d(TAG, "Title = " + input);
+            }
 
-			if (tagUpdatedAt) {
-				String[] splitInput = input.split("T");
-				mAddon.setUpdatedOn(splitInput[0]);
-				tagUpdatedAt = false;
-				if (DEBUGGING) {
-					Log.d(TAG, "Updated Date = " + splitInput[0]);
-				}    		
-			}
-			
-			if (tagSize) {
-				mAddon.setFilesize(Integer.parseInt(input));
-				tagSize = false;
-				if (DEBUGGING)
-					Log.d(TAG, "Filesize " + Integer.parseInt(input));
-			}
-			
-			if (tagDownloadLink) {
-				mAddon.setDownloadLink(input);
-				tagDownloadLink = false;
-				if (DEBUGGING)
-					Log.d(TAG, "Download Link = " + input);
-			}
-		}
-	}
+            if (tagDesc) {
+                mAddon.setDesc(input);
+                tagDesc = false;
+                if (DEBUGGING)
+                    Log.d(TAG, "Description = " + input);
+            }
+
+            if (tagUpdatedAt) {
+                String[] splitInput = input.split("T");
+                mAddon.setUpdatedOn(splitInput[0]);
+                tagUpdatedAt = false;
+                if (DEBUGGING) {
+                    Log.d(TAG, "Updated Date = " + splitInput[0]);
+                }
+            }
+
+            if (tagSize) {
+                mAddon.setFilesize(Integer.parseInt(input));
+                tagSize = false;
+                if (DEBUGGING)
+                    Log.d(TAG, "Filesize " + Integer.parseInt(input));
+            }
+
+            if (tagDownloadLink) {
+                mAddon.setDownloadLink(input);
+                tagDownloadLink = false;
+                if (DEBUGGING)
+                    Log.d(TAG, "Download Link = " + input);
+            }
+        }
+    }
 }

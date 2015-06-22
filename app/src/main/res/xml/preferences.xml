@@ -1,6 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
- 	Copyright (C) 2015 Matt Booth (Kryten2k35).
+<?xml version="1.0" encoding="utf-8"?><!--
+ 	Copyright (C) 2015 Nicholas Chum (nicholaschum) and Matt Booth (Kryten2k35).
  
  	Licensed under the Attribution-NonCommercial-ShareAlike 4.0 International 
  	(the "License") you may not use this file except in compliance with the License.
@@ -14,7 +13,7 @@
 	See the License for the specific language governing permissions and
 	limitations under the License.
 -->
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
     <!-- Open Recovery Script -->
     <PreferenceCategory
@@ -38,7 +37,7 @@
         android:key="updater_twrp_ors_information"
         android:selectable="false"
         android:summary="@string/twrp_ors_information" />
-    
+
     <!-- Background update service -->
     <PreferenceCategory
         android:key="updater_ors_screen_title"
@@ -102,16 +101,16 @@
         android:key="current_theme"
         android:summary="@string/list_summary"
         android:title="@string/theme" />
-    
-     <!-- About -->
+
+    <!-- About -->
     <PreferenceCategory
         android:key="settings_about"
         android:title="@string/app_name" />
-    
-    <Preference 
+
+    <Preference
         android:key="about_activity_pref"
-        android:title="@string/about_about_title"
-        android:summary="@string/about_preferences_summary" />
+        android:summary="@string/about_preferences_summary"
+        android:title="@string/about_about_title" />
 
 
 </PreferenceScreen>

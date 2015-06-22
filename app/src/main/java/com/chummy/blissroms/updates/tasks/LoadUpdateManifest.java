@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2015 Matt Booth (Kryten2k35).
+ * Copyright (C) 2015 Nicholas Chum (nicholaschum) and Matt Booth (Kryten2k35).
  *
  * Licensed under the Attribution-NonCommercial-ShareAlike 4.0 International 
  * (the "License") you may not use this file except in compliance with the License.
@@ -16,13 +16,6 @@
 
 package com.chummy.blissroms.updates.tasks;
 
-import java.io.BufferedInputStream;
-import java.io.File;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.net.URL;
-import java.net.URLConnection;
-
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
@@ -33,44 +26,47 @@ import com.chummy.blissroms.updates.R;
 import com.chummy.blissroms.updates.utils.Constants;
 import com.chummy.blissroms.updates.utils.Utils;
 
-public  class LoadUpdateManifest extends AsyncTask<Void, Void, Void> implements Constants {
-    
-    public final String TAG = this.getClass().getSimpleName();
-    
-    private Context mContext;
+import java.io.BufferedInputStream;
+import java.io.File;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.net.URL;
+import java.net.URLConnection;
+
+public class LoadUpdateManifest extends AsyncTask<Void, Void, Void> implements Constants {
 
     private static final String MANIFEST = "update_manifest.xml";
-    
-    private ProgressDialog mLoadingDialog;
-    
+    public final String TAG = this.getClass().getSimpleName();
     // Did this come from the BackgroundReceiver class?
     boolean shouldUpdateForegroundApp;
-    
+    private Context mContext;
+    private ProgressDialog mLoadingDialog;
+
     public LoadUpdateManifest(Context context, boolean input) {
         mContext = context;
         shouldUpdateForegroundApp = input;
     }
-    
+
     @Override
     protected void onPreExecute() {
-    	if (shouldUpdateForegroundApp) {
-	    	mLoadingDialog = new ProgressDialog(mContext);
-	    	mLoadingDialog.setIndeterminate(true);
-	    	mLoadingDialog.setCancelable(false);
-	    	mLoadingDialog.setMessage(mContext.getResources().getString(R.string.loading));
-	    	mLoadingDialog.show();
-    	}
-    	
-    	File manifest = new File(mContext.getFilesDir().getPath(), MANIFEST);
-    	if (manifest.exists()) {
-    		manifest.delete();
-    	}
+        if (shouldUpdateForegroundApp) {
+            mLoadingDialog = new ProgressDialog(mContext);
+            mLoadingDialog.setIndeterminate(true);
+            mLoadingDialog.setCancelable(false);
+            mLoadingDialog.setMessage(mContext.getResources().getString(R.string.loading));
+            mLoadingDialog.show();
+        }
+
+        File manifest = new File(mContext.getFilesDir().getPath(), MANIFEST);
+        if (manifest.exists()) {
+            manifest.delete();
+        }
     }
 
     @Override
     protected Void doInBackground(Void... v) {
 
-    	try {
+        try {
             InputStream input = null;
 
             URL url = new URL(Utils.getProp("ro.ota.manifest"));
@@ -104,15 +100,15 @@ public  class LoadUpdateManifest extends AsyncTask<Void, Void, Void> implements 
 
     @Override
     protected void onPostExecute(Void result) {
-    	Intent intent;
-    	if (shouldUpdateForegroundApp) {
-    		mLoadingDialog.cancel();
-        	intent = new Intent(MANIFEST_LOADED);
+        Intent intent;
+        if (shouldUpdateForegroundApp) {
+            mLoadingDialog.cancel();
+            intent = new Intent(MANIFEST_LOADED);
         } else {
             intent = new Intent(MANIFEST_CHECK_BACKGROUND);
         }
-    	
-    	mContext.sendBroadcast(intent);
+
+        mContext.sendBroadcast(intent);
         super.onPostExecute(result);
     }
 }

@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
  	Copyright (C) 2015 Nicholas Chum (nicholaschum) and Matt Booth (Kryten2k35).
 
  	Licensed under the Attribution-NonCommercial-ShareAlike 4.0 International
@@ -28,7 +27,7 @@
         <attr name="settingsIcon" format="reference" />
         <attr name="changelogIcon" format="reference" />
         <attr name="downloadIcon" format="reference" />
-		<attr name="addonsIcon" format="reference" />
+        <attr name="addonsIcon" format="reference" />
         <attr name="backgroundSelector" format="reference" />
         <attr name="separator" format="reference" />
         <attr name="browserIcon" format="reference" />

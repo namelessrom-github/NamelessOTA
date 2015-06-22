@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
  	Copyright (C) 2015 Matt Booth (Kryten2k35).
  
  	Licensed under the Attribution-NonCommercial-ShareAlike 4.0 International 
@@ -20,13 +19,13 @@
     style="?attr/cardStyle"
     card_view:cardCornerRadius="@dimen/card_view_radius"
     card_view:cardElevation="@dimen/shadow_height"
-    card_view:cardUseCompatPadding="true" >
+    card_view:cardUseCompatPadding="true">
 
     <LinearLayout
         style="@style/MainListElement"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="openAddons" >
+        android:onClick="openAddons">
 
         <ImageView
             android:layout_width="wrap_content"
@@ -39,7 +38,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
             <TextView
                 android:layout_width="wrap_content"

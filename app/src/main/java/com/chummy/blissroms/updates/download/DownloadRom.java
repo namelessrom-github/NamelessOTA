@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2015 Matt Booth (Kryten2k35).
+ * Copyright (C) 2015 Nicholas Chum (nicholaschum) and Matt Booth (Kryten2k35).
  *
  * Licensed under the Attribution-NonCommercial-ShareAlike 4.0 International 
  * (the "License") you may not use this file except in compliance with the License.
@@ -16,8 +16,6 @@
 
 package com.chummy.blissroms.updates.download;
 
-import java.io.File;
-
 import android.app.DownloadManager;
 import android.content.Context;
 import android.net.Uri;
@@ -28,65 +26,67 @@ import com.chummy.blissroms.updates.utils.Constants;
 import com.chummy.blissroms.updates.utils.Preferences;
 import com.chummy.blissroms.updates.utils.Utils;
 
+import java.io.File;
+
 public class DownloadRom implements Constants {
-	
-	public final static String TAG = "DownloadRomUpdate";
 
-	public DownloadRom() {
-		
-	}
-	
-	public void startDownload(Context context) {
-		String url = RomUpdate.getDirectUrl(context);
-		String fileName = RomUpdate.getFilename(context) + ".zip";
-		String description = context.getResources().getString(R.string.downloading);
-		File file = RomUpdate.getFullFile(context);
+    public final static String TAG = "DownloadRomUpdate";
 
-		DownloadManager.Request request = new DownloadManager.Request(Uri.parse(url));
+    public DownloadRom() {
 
-		if(Preferences.getNetworkType(context).equals(WIFI_ONLY)) {
-			// All network types are enabled by default
-			// So if we choose Wi-Fi only, then enable the restriction
-			request.setAllowedNetworkTypes(DownloadManager.Request.NETWORK_WIFI);
-		} 
-		
-		request.setTitle(fileName);
-		request.setDescription(description);
+    }
 
-		request.setVisibleInDownloadsUi(true);
-		request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE);
-		request.setDestinationInExternalPublicDir(OTA_DOWNLOAD_DIR, fileName);
-		
-		// Delete any existing files
-		Utils.deleteFile(file);
+    public void startDownload(Context context) {
+        String url = RomUpdate.getDirectUrl(context);
+        String fileName = RomUpdate.getFilename(context) + ".zip";
+        String description = context.getResources().getString(R.string.downloading);
+        File file = RomUpdate.getFullFile(context);
 
-		// Enqueue the download
-		DownloadManager downloadManager = (DownloadManager) context.getSystemService(Context.DOWNLOAD_SERVICE);
-		long mDownloadID = downloadManager.enqueue(request);
+        DownloadManager.Request request = new DownloadManager.Request(Uri.parse(url));
 
-		// Store the download ID
-		Preferences.setDownloadID(context, mDownloadID);
-		
-		// Set a setting indicating the download is now running
-		Preferences.setIsDownloadRunning(context, true);
-		
-		// Start updating the progress
-		new DownloadRomProgress(context, downloadManager).execute(mDownloadID);
-		
-		// MD5 checker has not been run, nor passed
-		Preferences.setMD5Passed(context, false);
-		Preferences.setHasMD5Run(context, false);
-	}
-	
-	public void cancelDownload(Context context) {
-		// Grab the download ID from settings
-		long mDownloadID = Preferences.getDownloadID(context);
-		
-		// Remove the download
-		DownloadManager downloadManager = (DownloadManager) context.getSystemService(Context.DOWNLOAD_SERVICE);
-		downloadManager.remove(mDownloadID);
-		
-		// Indicate that the download is no longer running
-		Preferences.setIsDownloadRunning(context, false);		
-	}
+        if (Preferences.getNetworkType(context).equals(WIFI_ONLY)) {
+            // All network types are enabled by default
+            // So if we choose Wi-Fi only, then enable the restriction
+            request.setAllowedNetworkTypes(DownloadManager.Request.NETWORK_WIFI);
+        }
+
+        request.setTitle(fileName);
+        request.setDescription(description);
+
+        request.setVisibleInDownloadsUi(true);
+        request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE);
+        request.setDestinationInExternalPublicDir(OTA_DOWNLOAD_DIR, fileName);
+
+        // Delete any existing files
+        Utils.deleteFile(file);
+
+        // Enqueue the download
+        DownloadManager downloadManager = (DownloadManager) context.getSystemService(Context.DOWNLOAD_SERVICE);
+        long mDownloadID = downloadManager.enqueue(request);
+
+        // Store the download ID
+        Preferences.setDownloadID(context, mDownloadID);
+
+        // Set a setting indicating the download is now running
+        Preferences.setIsDownloadRunning(context, true);
+
+        // Start updating the progress
+        new DownloadRomProgress(context, downloadManager).execute(mDownloadID);
+
+        // MD5 checker has not been run, nor passed
+        Preferences.setMD5Passed(context, false);
+        Preferences.setHasMD5Run(context, false);
+    }
+
+    public void cancelDownload(Context context) {
+        // Grab the download ID from settings
+        long mDownloadID = Preferences.getDownloadID(context);
+
+        // Remove the download
+        DownloadManager downloadManager = (DownloadManager) context.getSystemService(Context.DOWNLOAD_SERVICE);
+        downloadManager.remove(mDownloadID);
+
+        // Indicate that the download is no longer running
+        Preferences.setIsDownloadRunning(context, false);
+    }
 }

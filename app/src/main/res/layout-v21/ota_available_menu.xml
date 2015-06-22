@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
  	Copyright (C) 2015 Matt Booth (Kryten2k35).
  
  	Licensed under the Attribution-NonCommercial-ShareAlike 4.0 International 
@@ -17,14 +16,14 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:orientation="horizontal" >
+    android:orientation="horizontal">
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_centerInParent="true" >
+        android:layout_centerInParent="true">
 
         <Button
             android:id="@+id/menu_available_check_md5"
@@ -37,7 +36,7 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true" >
+        android:layout_centerInParent="true">
 
         <Button
             android:id="@+id/menu_available_delete"
@@ -52,7 +51,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_centerInParent="true" >
+        android:layout_centerInParent="true">
 
         <Button
             android:id="@+id/menu_available_download"

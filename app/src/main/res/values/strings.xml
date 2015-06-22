@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
  	Copyright (C) 2015 Nicholas Chum (nicholaschum) and Matt Booth (Kryten2k35).
  
  	Licensed under the Attribution-NonCommercial-ShareAlike 4.0 International 
@@ -16,10 +15,10 @@
 
 -->
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
-	
+
     <!-- ATTENTION -->
     <!-- DO NOT TRANSLATE THE ITEMS MARKED "translatable="false" -->
-    
+
     <!-- App Strings -->
     <string name="app_name" translatable="false">Updates</string>
 

@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
  	Copyright (C) 2015 Matt Booth (Kryten2k35).
  
  	Licensed under the Attribution-NonCommercial-ShareAlike 4.0 International 
@@ -19,16 +18,16 @@
     style="?attr/cardStyle"
     card_view:cardCornerRadius="@dimen/card_view_radius"
     card_view:cardElevation="@dimen/shadow_height"
-    card_view:cardUseCompatPadding="true" >
+    card_view:cardUseCompatPadding="true">
 
     <LinearLayout
         style="@style/MainListElement"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:clickable="false"
         android:orientation="vertical"
         android:paddingLeft="16dp"
-        android:paddingRight="16dp"
-        android:clickable="false">
+        android:paddingRight="16dp">
 
         <TextView
             android:id="@+id/tv_main_rom_information"

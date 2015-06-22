@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
  	Copyright (C) 2015 Matt Booth (Kryten2k35).
  
  	Licensed under the Attribution-NonCommercial-ShareAlike 4.0 International 
@@ -17,7 +16,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:orientation="vertical" >
+    android:orientation="vertical">
 
     <Toolbar
         android:id="@+id/toolbar_about"
@@ -31,22 +30,22 @@
         android:layout_height="10dp"
         android:background="@drawable/toolbar_dropshadow" />
 
-    <ScrollView 
+    <ScrollView
         android:layout_width="fill_parent"
-	    android:layout_height="wrap_content"
-	    android:scrollbars="vertical" >
-	
-	    <LinearLayout
-	        android:layout_width="fill_parent"
-	        android:layout_height="wrap_content"
-	        android:orientation="vertical" >
-	
-	        <include layout="@layout/card_credits" />
-	
-	        <include layout="@layout/card_app_donate_cdt" />
+        android:layout_height="wrap_content"
+        android:scrollbars="vertical">
 
-	        <include layout="@layout/card_app_donate_matt" />
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-		</LinearLayout>
-	</ScrollView>
+            <include layout="@layout/card_credits" />
+
+            <include layout="@layout/card_app_donate_cdt" />
+
+            <include layout="@layout/card_app_donate_matt" />
+
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>

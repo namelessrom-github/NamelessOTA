@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2015 Matt Booth (Kryten2k35).
+ * Copyright (C) 2015 Nicholas Chum (nicholaschum) and Matt Booth (Kryten2k35).
  *
  * Licensed under the Attribution-NonCommercial-ShareAlike 4.0 International 
  * (the "License") you may not use this file except in compliance with the License.
@@ -15,11 +15,6 @@
  */
 
 package com.chummy.blissroms.updates.activities;
-
-import java.io.File;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Locale;
 
 import android.app.ActionBar;
 import android.app.ActionBar.LayoutParams;
@@ -58,505 +53,504 @@ import com.chummy.blissroms.updates.utils.Constants;
 import com.chummy.blissroms.updates.utils.Preferences;
 import com.chummy.blissroms.updates.utils.Utils;
 
-public class MainActivity extends Activity implements Constants{
+import java.io.File;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
 
-	public final String TAG = this.getClass().getSimpleName();
+public class MainActivity extends Activity implements Constants {
 
-	private static Context mContext;
+    public static ProgressBar mProgressBar;
+    private static Context mContext;
+    public final String TAG = this.getClass().getSimpleName();
+    private Builder mCompatibilityDialog;
+    private Builder mDonateDialog;
+    private Builder mPlayStoreDialog;
+    private boolean isLollipop;
+    private BroadcastReceiver mReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            String action = intent.getAction();
 
-	private Builder mCompatibilityDialog;
-	private Builder mDonateDialog;
-	private Builder mPlayStoreDialog;
+            if (action.equals(MANIFEST_LOADED)) {
+                // Reloads layouts to reflect the updated manifest information
+                updateDonateLinkLayout();
+                updateAddonsLayout();
+                updateRomInformation();
+                updateRomUpdateLayouts();
+                updateWebsiteLayout();
+            }
+        }
+    };
 
-	private boolean isLollipop;
-	
-	public static ProgressBar mProgressBar;
+    public static void updateProgress(int progress, int downloaded, int total, Activity activity) {
+        if (mProgressBar != null) {
+            mProgressBar.setProgress((int) progress);
+        }
+    }
 
-	private BroadcastReceiver mReceiver = new BroadcastReceiver() {
-		@Override
-		public void onReceive(Context context, Intent intent) {
-			String action = intent.getAction();
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
 
-			if (action.equals(MANIFEST_LOADED)) {
-				// Reloads layouts to reflect the updated manifest information
-				updateDonateLinkLayout();
-				updateAddonsLayout();
-				updateRomInformation();
-				updateRomUpdateLayouts();
-				updateWebsiteLayout();
-			}
-		}
-	};
+        mContext = this;
+        setTheme(Preferences.getTheme(mContext));
+        isLollipop = Utils.isLollipop();
 
-	@Override
-	public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.ota_main);
 
-		mContext = this;
-		setTheme(Preferences.getTheme(mContext));
-		isLollipop = Utils.isLollipop();
+        if (isLollipop) {
+            Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_main);
+            setActionBar(toolbar);
+            toolbar.setTitle(getResources().getString(R.string.app_name));
+        } else {
+            // Custom ActionBar view
+            ActionBar actionBar = getActionBar();
+            actionBar.setTitle(R.string.app_name);
+            LayoutParams layoutParams = new LayoutParams(LayoutParams.WRAP_CONTENT,
+                    LayoutParams.WRAP_CONTENT,
+                    Gravity.END |
+                            Gravity.CENTER_VERTICAL);
+            View actionbarView = LayoutInflater.from(this).inflate(R.layout.ota_main_actionbar_top, null);
+            actionBar.setCustomView(actionbarView, layoutParams);
+            actionBar.setDisplayShowCustomEnabled(true);
+        }
 
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.ota_main);
+        boolean firstRun = Preferences.getFirstRun(mContext);
+        if (firstRun) {
+            Preferences.setFirstRun(mContext, false);
+            showWhatsNew();
+        }
 
-		if (isLollipop) {
-			Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_main);
-			setActionBar(toolbar);
-			toolbar.setTitle(getResources().getString(R.string.app_name));
-		} else {
-			// Custom ActionBar view
-			ActionBar actionBar = getActionBar();
-			actionBar.setTitle(R.string.app_name);
-			LayoutParams layoutParams = new LayoutParams(LayoutParams.WRAP_CONTENT,
-					LayoutParams.WRAP_CONTENT,
-					Gravity.END |
-					Gravity.CENTER_VERTICAL);
-			View actionbarView = LayoutInflater.from(this).inflate(R.layout.ota_main_actionbar_top, null);
-			actionBar.setCustomView(actionbarView, layoutParams);
-			actionBar.setDisplayShowCustomEnabled(true);
-		}
-		
-		boolean firstRun = Preferences.getFirstRun(mContext);				
-		if(firstRun) {
-			Preferences.setFirstRun(mContext, false);
-			showWhatsNew();
-		}
-		
-		String oldChangelog = Preferences.getOldChangelog(mContext);
-		String currentChangelog = getResources().getString(R.string.app_version);
-		if(!oldChangelog.equals(currentChangelog)) {
-			showWhatsNew();
-		}
-		
-		// Create download directories if needed
-		File installAfterFlashDir = new File(SD_CARD 
-				+ File.separator
-				+ OTA_DOWNLOAD_DIR
-				+ File.separator
-				+ INSTALL_AFTER_FLASH_DIR);
-		installAfterFlashDir.mkdirs();
+        String oldChangelog = Preferences.getOldChangelog(mContext);
+        String currentChangelog = getResources().getString(R.string.app_version);
+        if (!oldChangelog.equals(currentChangelog)) {
+            showWhatsNew();
+        }
 
-		createDialogs();
+        // Create download directories if needed
+        File installAfterFlashDir = new File(SD_CARD
+                + File.separator
+                + OTA_DOWNLOAD_DIR
+                + File.separator
+                + INSTALL_AFTER_FLASH_DIR);
+        installAfterFlashDir.mkdirs();
 
-		// Check the correct build prop values are installed
-		// Also executes the manifest/update check
-		if (!Utils.isConnected(mContext)) {
-			Builder notConnectedDialog = new Builder(mContext);
-			notConnectedDialog.setTitle(R.string.main_not_connected_title)
-			.setMessage(R.string.main_not_connected_message)
-			.setPositiveButton(R.string.ok, new OnClickListener() {
+        createDialogs();
 
-				@Override
-				public void onClick(DialogInterface dialog, int which) {
-					((Activity) mContext).finish();
-				}
-			})
-			.show();
-		} else {
-			new CompatibilityTask(mContext).execute();
-		}
+        // Check the correct build prop values are installed
+        // Also executes the manifest/update check
+        if (!Utils.isConnected(mContext)) {
+            Builder notConnectedDialog = new Builder(mContext);
+            notConnectedDialog.setTitle(R.string.main_not_connected_title)
+                    .setMessage(R.string.main_not_connected_message)
+                    .setPositiveButton(R.string.ok, new OnClickListener() {
 
-		// Has the download already completed?
-		Utils.setHasFileDownloaded(mContext);
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            ((Activity) mContext).finish();
+                        }
+                    })
+                    .show();
+        } else {
+            new CompatibilityTask(mContext).execute();
+        }
 
-		// Update the layouts
-		updateDonateLinkLayout();
-		updateAddonsLayout();
-		updateRomInformation();
-		updateRomUpdateLayouts();
-		updateWebsiteLayout();
+        // Has the download already completed?
+        Utils.setHasFileDownloaded(mContext);
 
-	}
+        // Update the layouts
+        updateDonateLinkLayout();
+        updateAddonsLayout();
+        updateRomInformation();
+        updateRomUpdateLayouts();
+        updateWebsiteLayout();
 
-	@Override
-	public void onStart() {
-		super.onStart();
-		this.registerReceiver(mReceiver, new IntentFilter(MANIFEST_LOADED));
-	}
+    }
 
-	@Override
-	public void onStop() {
-		super.onStop();
-		this.unregisterReceiver(mReceiver);
-	}
+    @Override
+    public void onStart() {
+        super.onStart();
+        this.registerReceiver(mReceiver, new IntentFilter(MANIFEST_LOADED));
+    }
 
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		if (isLollipop)
-			getMenuInflater().inflate(R.menu.ota_menu_main, menu);
-		return true;
-	}
+    @Override
+    public void onStop() {
+        super.onStop();
+        this.unregisterReceiver(mReceiver);
+    }
 
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		// Handle item selection
-		if (isLollipop)
-			switch (item.getItemId()) {
-			case R.id.menu_changelog:
-				openChangelog(null);
-				return true;
-			case R.id.menu_settings:
-				openSettings(null);
-				return true;
-			}
-			return false;
-	}
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        if (isLollipop)
+            getMenuInflater().inflate(R.menu.ota_menu_main, menu);
+        return true;
+    }
 
-	private void createDialogs() {
-		// Compatibility Dialog
-		mCompatibilityDialog = new AlertDialog.Builder(mContext);
-		mCompatibilityDialog.setCancelable(false);
-		mCompatibilityDialog.setTitle(R.string.main_not_compatible_title);
-		mCompatibilityDialog.setMessage(R.string.main_not_compatible_message);
-		mCompatibilityDialog.setPositiveButton(R.string.ok, new OnClickListener() {
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle item selection
+        if (isLollipop)
+            switch (item.getItemId()) {
+                case R.id.menu_changelog:
+                    openChangelog(null);
+                    return true;
+                case R.id.menu_settings:
+                    openSettings(null);
+                    return true;
+            }
+        return false;
+    }
 
-			@Override
-			public void onClick(DialogInterface dialog, int which) {
-				MainActivity.this.finish();
-			}
-		});
-		
-		// Donate Dialog
-		mDonateDialog = new AlertDialog.Builder(this);
-		String[] donateItems = { "PayPal", "BitCoin" };
-		mDonateDialog.setTitle(getResources().getString(R.string.donate))		
-		.setSingleChoiceItems(donateItems, 0, null)
-		.setPositiveButton(getResources().getString(R.string.ok), new DialogInterface.OnClickListener() {
+    private void createDialogs() {
+        // Compatibility Dialog
+        mCompatibilityDialog = new AlertDialog.Builder(mContext);
+        mCompatibilityDialog.setCancelable(false);
+        mCompatibilityDialog.setTitle(R.string.main_not_compatible_title);
+        mCompatibilityDialog.setMessage(R.string.main_not_compatible_message);
+        mCompatibilityDialog.setPositiveButton(R.string.ok, new OnClickListener() {
 
-			@Override
-			public void onClick(DialogInterface dialog, int which) {
-				String url = "";
-				int selectedPosition = ((AlertDialog)dialog).getListView().getCheckedItemPosition();
-				if (selectedPosition == 0) {
-					url = RomUpdate.getDonateLink(mContext);
-				} else {
-					url = RomUpdate.getBitCoinLink(mContext);
-				}
-				Intent intent = new Intent(Intent.ACTION_VIEW);
-				intent.setData(Uri.parse(url));
-				
-				try {
-					startActivity(intent);
-				} catch(ActivityNotFoundException ex) {
-					// Nothing to handle BitCoin payments. Send to Play Store
-					if (DEBUGGING)
-						Log.d(TAG, ex.getMessage());					
-					mPlayStoreDialog.show();
-				}
-			}
-		})
-		.setNegativeButton(getResources().getString(R.string.cancel), new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                MainActivity.this.finish();
+            }
+        });
 
-			@Override
-			public void onClick(DialogInterface dialog, int which) {
-				dialog.cancel();
-			}
-		});
-		
-		mPlayStoreDialog = new AlertDialog.Builder(mContext);
-		mPlayStoreDialog.setCancelable(true);
-		mPlayStoreDialog.setTitle(R.string.main_playstore_title);
-		mPlayStoreDialog.setMessage(R.string.main_playstore_message);
-		mPlayStoreDialog.setPositiveButton(R.string.ok, new OnClickListener() {
+        // Donate Dialog
+        mDonateDialog = new AlertDialog.Builder(this);
+        String[] donateItems = {"PayPal", "BitCoin"};
+        mDonateDialog.setTitle(getResources().getString(R.string.donate))
+                .setSingleChoiceItems(donateItems, 0, null)
+                .setPositiveButton(getResources().getString(R.string.ok), new DialogInterface.OnClickListener() {
 
-			@Override
-			public void onClick(DialogInterface dialog, int which) {
-				Intent intent = new Intent(Intent.ACTION_VIEW);
-				String url = "https://play.google.com/store/search?q=bitcoin%20wallet&c=apps";
-				intent.setData(Uri.parse(url));
-				startActivity(intent);
-			}
-		});
-		mPlayStoreDialog.setNegativeButton(getResources().getString(R.string.cancel), new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        String url = "";
+                        int selectedPosition = ((AlertDialog) dialog).getListView().getCheckedItemPosition();
+                        if (selectedPosition == 0) {
+                            url = RomUpdate.getDonateLink(mContext);
+                        } else {
+                            url = RomUpdate.getBitCoinLink(mContext);
+                        }
+                        Intent intent = new Intent(Intent.ACTION_VIEW);
+                        intent.setData(Uri.parse(url));
 
-			@Override
-			public void onClick(DialogInterface dialog, int which) {
-				dialog.cancel();
-			}
-		});
-	}
+                        try {
+                            startActivity(intent);
+                        } catch (ActivityNotFoundException ex) {
+                            // Nothing to handle BitCoin payments. Send to Play Store
+                            if (DEBUGGING)
+                                Log.d(TAG, ex.getMessage());
+                            mPlayStoreDialog.show();
+                        }
+                    }
+                })
+                .setNegativeButton(getResources().getString(R.string.cancel), new DialogInterface.OnClickListener() {
 
-	private void updateRomUpdateLayouts() {
-		View updateAvailable;
-		View updateNotAvailable;
-		updateAvailable = (CardView) findViewById(R.id.layout_main_update_available);
-		updateNotAvailable = (CardView) findViewById(R.id.layout_main_no_update_available);
-		updateAvailable.setVisibility(View.GONE);
-		updateNotAvailable.setVisibility(View.GONE);
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                    }
+                });
 
-		TextView updateAvailableSummary = (TextView) findViewById(R.id.main_tv_update_available_summary);
-		TextView updateNotAvailableSummary = (TextView) findViewById(R.id.main_tv_no_update_available_summary);
-		
-		mProgressBar = (ProgressBar) findViewById(R.id.bar_main_progress_bar);
-		mProgressBar.setVisibility(View.GONE);
+        mPlayStoreDialog = new AlertDialog.Builder(mContext);
+        mPlayStoreDialog.setCancelable(true);
+        mPlayStoreDialog.setTitle(R.string.main_playstore_title);
+        mPlayStoreDialog.setMessage(R.string.main_playstore_message);
+        mPlayStoreDialog.setPositiveButton(R.string.ok, new OnClickListener() {
 
-		// Update is available
-		if (RomUpdate.getUpdateAvailability(mContext) ||
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                String url = "https://play.google.com/store/search?q=bitcoin%20wallet&c=apps";
+                intent.setData(Uri.parse(url));
+                startActivity(intent);
+            }
+        });
+        mPlayStoreDialog.setNegativeButton(getResources().getString(R.string.cancel), new DialogInterface.OnClickListener() {
+
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.cancel();
+            }
+        });
+    }
+
+    private void updateRomUpdateLayouts() {
+        View updateAvailable;
+        View updateNotAvailable;
+        updateAvailable = (CardView) findViewById(R.id.layout_main_update_available);
+        updateNotAvailable = (CardView) findViewById(R.id.layout_main_no_update_available);
+        updateAvailable.setVisibility(View.GONE);
+        updateNotAvailable.setVisibility(View.GONE);
+
+        TextView updateAvailableSummary = (TextView) findViewById(R.id.main_tv_update_available_summary);
+        TextView updateNotAvailableSummary = (TextView) findViewById(R.id.main_tv_no_update_available_summary);
+
+        mProgressBar = (ProgressBar) findViewById(R.id.bar_main_progress_bar);
+        mProgressBar.setVisibility(View.GONE);
+
+        // Update is available
+        if (RomUpdate.getUpdateAvailability(mContext) ||
                 (!RomUpdate.getUpdateAvailability(mContext)) && Utils.isUpdateIgnored(mContext)) {
-			updateAvailable.setVisibility(View.VISIBLE);
-			TextView updateAvailableTitle = (TextView) findViewById(R.id.main_tv_update_available_title);
+            updateAvailable.setVisibility(View.VISIBLE);
+            TextView updateAvailableTitle = (TextView) findViewById(R.id.main_tv_update_available_title);
 
-			if (Preferences.getDownloadFinished(mContext)) { //  Update already finished?
-				updateAvailableTitle.setText(getResources().getString(R.string.main_update_finished));
-				String htmlColorOpen = "";
-				if (isLollipop) {
-					if (Preferences.getCurrentTheme(mContext) == 0) { // Light
-						htmlColorOpen = "<font color='#000000'>";
-					} else {
-						htmlColorOpen = "<font color='#ffffff'>";
-					}
-				} else {
-					htmlColorOpen = "<font color='#777777'>";
-				}
-				String htmlColorClose = "</font>";
-				String updateSummary = RomUpdate.getFilename(mContext)
-						+ "<br />"
-						+ htmlColorOpen
-						+ getResources().getString(R.string.main_download_completed_details)
-						+ htmlColorClose;
-				updateAvailableSummary.setText(Html.fromHtml(updateSummary));
-			} else if (Preferences.getIsDownloadOnGoing(mContext)) {
-				updateAvailableTitle.setText(getResources().getString(R.string.main_update_progress));
-				mProgressBar.setVisibility(View.VISIBLE);
-				String htmlColorOpen = "";
-				if (isLollipop) {
-					if (Preferences.getCurrentTheme(mContext) == 0) { // Light
-						htmlColorOpen = "<font color='#000000'>";
-					} else {
-						htmlColorOpen = "<font color='#ffffff'>";
-					}
-				} else {
-					htmlColorOpen = "<font color='#777777'>";
-				}
-				String htmlColorClose = "</font>";
-				String updateSummary = htmlColorOpen
-						+ getResources().getString(R.string.main_tap_to_view_progress)
-						+ htmlColorClose;
-				updateAvailableSummary.setText(Html.fromHtml(updateSummary));
-			} else {
-				updateAvailableTitle.setText(getResources().getString(R.string.main_update_available));
-				String htmlColorOpen = "";
-				if (isLollipop) {
-					if (Preferences.getCurrentTheme(mContext) == 0) { // Light
-						htmlColorOpen = "<font color='#000000'>";
-					} else {
-						htmlColorOpen = "<font color='#ffffff'>";
-					}
-				} else {
-					htmlColorOpen = "<font color='#777777'>";
-				}
-				String htmlColorClose = "</font>";
-				String updateSummary = RomUpdate.getFilename(mContext)
-						+ "<br />"
-						+ htmlColorOpen
-						+ getResources().getString(R.string.main_tap_to_download)
-						+ htmlColorClose;
-				updateAvailableSummary.setText(Html.fromHtml(updateSummary));
+            if (Preferences.getDownloadFinished(mContext)) { //  Update already finished?
+                updateAvailableTitle.setText(getResources().getString(R.string.main_update_finished));
+                String htmlColorOpen = "";
+                if (isLollipop) {
+                    if (Preferences.getCurrentTheme(mContext) == 0) { // Light
+                        htmlColorOpen = "<font color='#000000'>";
+                    } else {
+                        htmlColorOpen = "<font color='#ffffff'>";
+                    }
+                } else {
+                    htmlColorOpen = "<font color='#777777'>";
+                }
+                String htmlColorClose = "</font>";
+                String updateSummary = RomUpdate.getFilename(mContext)
+                        + "<br />"
+                        + htmlColorOpen
+                        + getResources().getString(R.string.main_download_completed_details)
+                        + htmlColorClose;
+                updateAvailableSummary.setText(Html.fromHtml(updateSummary));
+            } else if (Preferences.getIsDownloadOnGoing(mContext)) {
+                updateAvailableTitle.setText(getResources().getString(R.string.main_update_progress));
+                mProgressBar.setVisibility(View.VISIBLE);
+                String htmlColorOpen = "";
+                if (isLollipop) {
+                    if (Preferences.getCurrentTheme(mContext) == 0) { // Light
+                        htmlColorOpen = "<font color='#000000'>";
+                    } else {
+                        htmlColorOpen = "<font color='#ffffff'>";
+                    }
+                } else {
+                    htmlColorOpen = "<font color='#777777'>";
+                }
+                String htmlColorClose = "</font>";
+                String updateSummary = htmlColorOpen
+                        + getResources().getString(R.string.main_tap_to_view_progress)
+                        + htmlColorClose;
+                updateAvailableSummary.setText(Html.fromHtml(updateSummary));
+            } else {
+                updateAvailableTitle.setText(getResources().getString(R.string.main_update_available));
+                String htmlColorOpen = "";
+                if (isLollipop) {
+                    if (Preferences.getCurrentTheme(mContext) == 0) { // Light
+                        htmlColorOpen = "<font color='#000000'>";
+                    } else {
+                        htmlColorOpen = "<font color='#ffffff'>";
+                    }
+                } else {
+                    htmlColorOpen = "<font color='#777777'>";
+                }
+                String htmlColorClose = "</font>";
+                String updateSummary = RomUpdate.getFilename(mContext)
+                        + "<br />"
+                        + htmlColorOpen
+                        + getResources().getString(R.string.main_tap_to_download)
+                        + htmlColorClose;
+                updateAvailableSummary.setText(Html.fromHtml(updateSummary));
 
-			}
-		} else {
-			updateNotAvailable.setVisibility(View.VISIBLE);
+            }
+        } else {
+            updateNotAvailable.setVisibility(View.VISIBLE);
 
-			boolean is24 = DateFormat.is24HourFormat(mContext);
-			Date now = new Date();
-			Locale locale = Locale.getDefault();
-			String time = "";
+            boolean is24 = DateFormat.is24HourFormat(mContext);
+            Date now = new Date();
+            Locale locale = Locale.getDefault();
+            String time = "";
 
-			if (is24) {
-				time = new SimpleDateFormat("d, MMMM HH:mm", locale).format(now);
-			} else {
-				time = new SimpleDateFormat("d, MMMM hh:mm a", locale).format(now);
-			}
+            if (is24) {
+                time = new SimpleDateFormat("d, MMMM HH:mm", locale).format(now);
+            } else {
+                time = new SimpleDateFormat("d, MMMM hh:mm a", locale).format(now);
+            }
 
-			Preferences.setUpdateLastChecked(this, time);
-			String lastChecked = getString(R.string.main_last_checked);
-			updateNotAvailableSummary.setText(lastChecked + " " + time);
-		}
-	}
-	
-	private void updateAddonsLayout() {
-		CardView addonsLink = (CardView) findViewById(R.id.layout_main_addons);
-		addonsLink.setVisibility(View.GONE);
-		
-		if (RomUpdate.getAddonsCount(mContext) > 0) {
-			addonsLink.setVisibility(View.VISIBLE);
-		}
-	}
+            Preferences.setUpdateLastChecked(this, time);
+            String lastChecked = getString(R.string.main_last_checked);
+            updateNotAvailableSummary.setText(lastChecked + " " + time);
+        }
+    }
 
-	private void updateDonateLinkLayout() {
-		CardView donateLink = (CardView) findViewById(R.id.layout_main_dev_donate_link);
-		donateLink.setVisibility(View.GONE);
-		
-		if (!(RomUpdate.getDonateLink(mContext).trim().equals("null")) 
-				|| !(RomUpdate.getBitCoinLink(mContext).trim().equals("null"))) {
-			donateLink.setVisibility(View.VISIBLE);
-		}
-	}
+    private void updateAddonsLayout() {
+        CardView addonsLink = (CardView) findViewById(R.id.layout_main_addons);
+        addonsLink.setVisibility(View.GONE);
 
-	private void updateWebsiteLayout() {
-		CardView webLink = (CardView) findViewById(R.id.layout_main_dev_website);
-		webLink.setVisibility(View.GONE);
+        if (RomUpdate.getAddonsCount(mContext) > 0) {
+            addonsLink.setVisibility(View.VISIBLE);
+        }
+    }
 
-		if (!RomUpdate.getWebsite(mContext).trim().equals("null")) {
-			webLink.setVisibility(View.VISIBLE);
-		}
-	}
+    private void updateDonateLinkLayout() {
+        CardView donateLink = (CardView) findViewById(R.id.layout_main_dev_donate_link);
+        donateLink.setVisibility(View.GONE);
 
-	private void updateRomInformation() {
-		String htmlColorOpen = "";
-		if (isLollipop) {
-			if (Preferences.getCurrentTheme(mContext) == 0) { // Light
-				htmlColorOpen = "<font color='#000000'>";
-			} else {
-				htmlColorOpen = "<font color='#ffffff'>";
-			}
-		} else {
-			htmlColorOpen = "<font color='#777777'>";
-		}
-		String htmlColorClose = "</font>";
+        if (!(RomUpdate.getDonateLink(mContext).trim().equals("null"))
+                || !(RomUpdate.getBitCoinLink(mContext).trim().equals("null"))) {
+            donateLink.setVisibility(View.VISIBLE);
+        }
+    }
 
-		String space = " ";
-		String separator_open = " (";
-		String separator_close = ") ";
+    private void updateWebsiteLayout() {
+        CardView webLink = (CardView) findViewById(R.id.layout_main_dev_website);
+        webLink.setVisibility(View.GONE);
 
-		//ROM name
-		TextView romName = (TextView) findViewById(R.id.tv_main_rom_name);
-		String romNameTitle = getApplicationContext().getResources().getString(R.string.main_rom_name) + " ";
-		String romNameActual = Utils.getProp(getResources().getString(R.string.prop_name));
-		String romNameDevice = Utils.getProp(getResources().getString(R.string.prop_system_model));
-		String romNameVersion = Utils.getProp(getResources().getString(R.string.prop_rom_version));
-		romName.setText(Html.fromHtml(romNameTitle + htmlColorOpen + romNameActual + space + romNameVersion + separator_open + romNameDevice + separator_close + htmlColorClose));
+        if (!RomUpdate.getWebsite(mContext).trim().equals("null")) {
+            webLink.setVisibility(View.VISIBLE);
+        }
+    }
 
-		//ROM version
-		TextView romVersion = (TextView) findViewById(R.id.tv_main_rom_version);
-		String romVersionTitle = getApplicationContext().getResources().getString(R.string.main_rom_version) + " ";
-		String romVersionActual = Utils.getProp(getResources().getString(R.string.prop_version));
-		romVersion.setText(Html.fromHtml(romVersionTitle + htmlColorOpen + romVersionActual + htmlColorClose));
+    private void updateRomInformation() {
+        String htmlColorOpen = "";
+        if (isLollipop) {
+            if (Preferences.getCurrentTheme(mContext) == 0) { // Light
+                htmlColorOpen = "<font color='#000000'>";
+            } else {
+                htmlColorOpen = "<font color='#ffffff'>";
+            }
+        } else {
+            htmlColorOpen = "<font color='#777777'>";
+        }
+        String htmlColorClose = "</font>";
 
-		//ROM date
-		TextView romDate = (TextView) findViewById(R.id.tv_main_rom_date);
-		String romDateTitle = getApplicationContext().getResources().getString(R.string.main_rom_build_date) + " ";
-		String romDateActual = Utils.getProp(getResources().getString(R.string.prop_date));
-		romDate.setText(Html.fromHtml(romDateTitle + htmlColorOpen + romDateActual + htmlColorClose));
+        String space = " ";
+        String separator_open = " (";
+        String separator_close = ") ";
 
-		//ROM android version
-		TextView romAndroid = (TextView) findViewById(R.id.tv_main_android_version);
-		String romAndroidTitle = getApplicationContext().getResources().getString(R.string.main_android_version) + " ";
-		String romAndroidActual = Utils.getProp(getResources().getString(R.string.prop_release));
-		String romAndroidBuildID = Utils.getProp(getResources().getString(R.string.prop_release_build_id));
-		romAndroid.setText(Html.fromHtml(romAndroidTitle + htmlColorOpen + romAndroidActual + separator_open + romAndroidBuildID + separator_close +htmlColorClose));
+        //ROM name
+        TextView romName = (TextView) findViewById(R.id.tv_main_rom_name);
+        String romNameTitle = getApplicationContext().getResources().getString(R.string.main_rom_name) + " ";
+        String romNameActual = Utils.getProp(getResources().getString(R.string.prop_name));
+        String romNameDevice = Utils.getProp(getResources().getString(R.string.prop_system_model));
+        String romNameVersion = Utils.getProp(getResources().getString(R.string.prop_rom_version));
+        romName.setText(Html.fromHtml(romNameTitle + htmlColorOpen + romNameActual + space + romNameVersion + separator_open + romNameDevice + separator_close + htmlColorClose));
 
-		//ROM developer
-		TextView romDeveloper = (TextView) findViewById(R.id.tv_main_rom_developer);
-		boolean showDevName = !RomUpdate.getDeveloper(this).equals("null");
-		//romDeveloper.setVisibility(showDevName? View.VISIBLE : View.GONE);
+        //ROM version
+        TextView romVersion = (TextView) findViewById(R.id.tv_main_rom_version);
+        String romVersionTitle = getApplicationContext().getResources().getString(R.string.main_rom_version) + " ";
+        String romVersionActual = Utils.getProp(getResources().getString(R.string.prop_version));
+        romVersion.setText(Html.fromHtml(romVersionTitle + htmlColorOpen + romVersionActual + htmlColorClose));
 
-		String romDeveloperTitle = getApplicationContext().getResources().getString(R.string.main_rom_developer) + " ";
-		String romDeveloperActual = showDevName ? RomUpdate.getDeveloper(this) : Utils.getProp(getResources().getString(R.string.prop_developer));
-		romDeveloper.setText(Html.fromHtml(romDeveloperTitle + htmlColorOpen + romDeveloperActual + htmlColorClose));
+        //ROM date
+        TextView romDate = (TextView) findViewById(R.id.tv_main_rom_date);
+        String romDateTitle = getApplicationContext().getResources().getString(R.string.main_rom_build_date) + " ";
+        String romDateActual = Utils.getProp(getResources().getString(R.string.prop_date));
+        romDate.setText(Html.fromHtml(romDateTitle + htmlColorOpen + romDateActual + htmlColorClose));
 
-	}
+        //ROM android version
+        TextView romAndroid = (TextView) findViewById(R.id.tv_main_android_version);
+        String romAndroidTitle = getApplicationContext().getResources().getString(R.string.main_android_version) + " ";
+        String romAndroidActual = Utils.getProp(getResources().getString(R.string.prop_release));
+        String romAndroidBuildID = Utils.getProp(getResources().getString(R.string.prop_release_build_id));
+        romAndroid.setText(Html.fromHtml(romAndroidTitle + htmlColorOpen + romAndroidActual + separator_open + romAndroidBuildID + separator_close + htmlColorClose));
 
-	public void openCheckForUpdates(View v) {
-		new LoadUpdateManifest(mContext, true).execute();
-	}
+        //ROM developer
+        TextView romDeveloper = (TextView) findViewById(R.id.tv_main_rom_developer);
+        boolean showDevName = !RomUpdate.getDeveloper(this).equals("null");
+        //romDeveloper.setVisibility(showDevName? View.VISIBLE : View.GONE);
 
-	public void openDownload(View v) {
-		Intent intent = new Intent(mContext, AvailableActivity.class);
-		startActivity(intent);
-	}
-	
-	public void openAddons(View v) {
-		Intent intent = new Intent(mContext, AddonActivity.class);
-		startActivity(intent);
-	}
+        String romDeveloperTitle = getApplicationContext().getResources().getString(R.string.main_rom_developer) + " ";
+        String romDeveloperActual = showDevName ? RomUpdate.getDeveloper(this) : Utils.getProp(getResources().getString(R.string.prop_developer));
+        romDeveloper.setText(Html.fromHtml(romDeveloperTitle + htmlColorOpen + romDeveloperActual + htmlColorClose));
 
-	public void openDonationPage(View v) {
-		
-		boolean payPalLinkAvailable = RomUpdate.getDonateLink(mContext).trim().equals("null");
-		boolean bitCoinLinkAvailable = RomUpdate.getBitCoinLink(mContext).trim().equals("null");
-		if (!payPalLinkAvailable && !bitCoinLinkAvailable) {
-			mDonateDialog.show();
-		} else if (!payPalLinkAvailable && bitCoinLinkAvailable) {
-			String url = RomUpdate.getDonateLink(mContext);
-			Intent intent = new Intent(Intent.ACTION_VIEW);
-			intent.setData(Uri.parse(url));
-			startActivity(intent);			
-		} else if (payPalLinkAvailable && !bitCoinLinkAvailable) {
-			String url = RomUpdate.getBitCoinLink(mContext);
-			Intent intent = new Intent(Intent.ACTION_VIEW);
-			intent.setData(Uri.parse(url));
-			startActivity(intent);			
-		} else {
-			// Shouldn't be here
-		}
-	}
+    }
 
-	public void openWebsitePage(View v) {
-		String url = RomUpdate.getWebsite(mContext);
-		Intent intent = new Intent(Intent.ACTION_VIEW);
-		intent.setData(Uri.parse(url));
-		startActivity(intent);
-	}
+    public void openCheckForUpdates(View v) {
+        new LoadUpdateManifest(mContext, true).execute();
+    }
 
-	public void openSettings(View v) {
-		Intent intent = new Intent(mContext, SettingsActivity.class);
-		startActivity(intent);
-	}
+    public void openDownload(View v) {
+        Intent intent = new Intent(mContext, AvailableActivity.class);
+        startActivity(intent);
+    }
 
-	public void openChangelog(View v) {
-		String title = getResources().getString(R.string.changelog);
-		String changelog = getResources().getString(R.string.changelog_url);
-		new Changelog(this, mContext, title, changelog, true).execute();
-	}
+    public void openAddons(View v) {
+        Intent intent = new Intent(mContext, AddonActivity.class);
+        startActivity(intent);
+    }
 
+    public void openDonationPage(View v) {
 
-	private void showWhatsNew() {
-		String title = getResources().getString(R.string.changelog);
-		String changelog = getResources().getString(R.string.changelog_url);
-		new Changelog(this, mContext, title, changelog, true).execute();
-	}
-	
-	public static void updateProgress(int progress, int downloaded, int total, Activity activity) {
-		if(mProgressBar != null) {
-			mProgressBar.setProgress((int) progress);
-		}
-	}
+        boolean payPalLinkAvailable = RomUpdate.getDonateLink(mContext).trim().equals("null");
+        boolean bitCoinLinkAvailable = RomUpdate.getBitCoinLink(mContext).trim().equals("null");
+        if (!payPalLinkAvailable && !bitCoinLinkAvailable) {
+            mDonateDialog.show();
+        } else if (!payPalLinkAvailable && bitCoinLinkAvailable) {
+            String url = RomUpdate.getDonateLink(mContext);
+            Intent intent = new Intent(Intent.ACTION_VIEW);
+            intent.setData(Uri.parse(url));
+            startActivity(intent);
+        } else if (payPalLinkAvailable && !bitCoinLinkAvailable) {
+            String url = RomUpdate.getBitCoinLink(mContext);
+            Intent intent = new Intent(Intent.ACTION_VIEW);
+            intent.setData(Uri.parse(url));
+            startActivity(intent);
+        } else {
+            // Shouldn't be here
+        }
+    }
 
-	public class CompatibilityTask extends AsyncTask<Void, Boolean, Boolean> implements Constants{
+    public void openWebsitePage(View v) {
+        String url = RomUpdate.getWebsite(mContext);
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        intent.setData(Uri.parse(url));
+        startActivity(intent);
+    }
 
-		public final String TAG = this.getClass().getSimpleName();
+    public void openSettings(View v) {
+        Intent intent = new Intent(mContext, SettingsActivity.class);
+        startActivity(intent);
+    }
 
-		private Context mContext;
-		private String mPropName;
+    public void openChangelog(View v) {
+        String title = getResources().getString(R.string.changelog);
+        String changelog = getResources().getString(R.string.changelog_url);
+        new Changelog(this, mContext, title, changelog, true).execute();
+    }
 
-		public CompatibilityTask(Context context) {
-			mContext = context;
-			mPropName = mContext.getResources().getString(R.string.prop_name);
-		}
+    private void showWhatsNew() {
+        String title = getResources().getString(R.string.changelog);
+        String changelog = getResources().getString(R.string.changelog_url);
+        new Changelog(this, mContext, title, changelog, true).execute();
+    }
 
-		@Override
-		protected Boolean doInBackground(Void... v) {
-			return Utils.doesPropExist(mPropName);
-		}
+    public class CompatibilityTask extends AsyncTask<Void, Boolean, Boolean> implements Constants {
 
-		@Override
-		protected void onPostExecute(Boolean result) {
+        public final String TAG = this.getClass().getSimpleName();
 
-			if (result) {
-				if (DEBUGGING)
-					Log.d(TAG, "Prop found");
-				new LoadUpdateManifest(mContext, true).execute();
-			} else {
-				if (DEBUGGING)
-					Log.d(TAG, "Prop not found");
-				try {
-					mCompatibilityDialog.show();
-				} catch(WindowManager.BadTokenException ex) {
-					Log.e(TAG, ex.getMessage());
-				}
-			}
-			super.onPostExecute(result);
-		}
-	}
+        private Context mContext;
+        private String mPropName;
+
+        public CompatibilityTask(Context context) {
+            mContext = context;
+            mPropName = mContext.getResources().getString(R.string.prop_name);
+        }
+
+        @Override
+        protected Boolean doInBackground(Void... v) {
+            return Utils.doesPropExist(mPropName);
+        }
+
+        @Override
+        protected void onPostExecute(Boolean result) {
+
+            if (result) {
+                if (DEBUGGING)
+                    Log.d(TAG, "Prop found");
+                new LoadUpdateManifest(mContext, true).execute();
+            } else {
+                if (DEBUGGING)
+                    Log.d(TAG, "Prop not found");
+                try {
+                    mCompatibilityDialog.show();
+                } catch (WindowManager.BadTokenException ex) {
+                    Log.e(TAG, ex.getMessage());
+                }
+            }
+            super.onPostExecute(result);
+        }
+    }
 }

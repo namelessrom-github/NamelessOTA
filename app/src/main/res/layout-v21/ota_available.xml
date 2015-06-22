@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
  	Copyright (C) 2015 Matt Booth (Kryten2k35).
  
  	Licensed under the Attribution-NonCommercial-ShareAlike 4.0 International 
@@ -18,7 +17,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:orientation="vertical">
 
     <Toolbar
         android:id="@+id/toolbar_available_top"
@@ -39,7 +38,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="56dp"
         android:orientation="vertical"
-        android:padding="16dp" >
+        android:padding="16dp">
 
         <TextView
             android:id="@+id/tv_available_update_name"
@@ -92,12 +91,12 @@
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="56dp" >
+            android:layout_marginBottom="56dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical" >
+                android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/tv_available_changelog_content"
@@ -118,7 +117,7 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
         android:background="?attr/colorPrimary"
-        android:theme="@style/Theme.Dark" >
+        android:theme="@style/Theme.Dark">
 
         <include layout="@layout/ota_available_menu" />
     </Toolbar>

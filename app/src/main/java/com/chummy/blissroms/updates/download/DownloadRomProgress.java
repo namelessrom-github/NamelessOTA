@@ -1,5 +1,5 @@
 /*/*
- * Copyright (C) 2015 Matt Booth (Kryten2k35).
+ * Copyright (C) 2015 Nicholas Chum (nicholaschum) and Matt Booth (Kryten2k35).
  *
  * Licensed under the Attribution-NonCommercial-ShareAlike 4.0 International 
  * (the "License") you may not use this file except in compliance with the License.
@@ -29,62 +29,62 @@ import com.chummy.blissroms.updates.activities.MainActivity;
 import com.chummy.blissroms.updates.utils.Constants;
 import com.chummy.blissroms.updates.utils.Preferences;
 
-public class DownloadRomProgress  extends AsyncTask<Long, Integer, Void> implements Constants {
-	
-	public final String TAG = this.getClass().getSimpleName();
+public class DownloadRomProgress extends AsyncTask<Long, Integer, Void> implements Constants {
 
-	private Context mContext;
-	private DownloadManager mDownloadManager;
-	
-	public DownloadRomProgress(Context context, DownloadManager downloadManager) {
-		mContext = context;
-		mDownloadManager = downloadManager;
-	}
+    public final String TAG = this.getClass().getSimpleName();
 
-	@Override
-	protected Void doInBackground(Long... params) {
-		int previousValue = 0;
-		while(Preferences.getIsDownloadOnGoing(mContext)) {
-			long mDownloadID = Preferences.getDownloadID(mContext);
-			DownloadManager.Query q = new DownloadManager.Query();
-			q.setFilterById(mDownloadID);
+    private Context mContext;
+    private DownloadManager mDownloadManager;
 
-			Cursor cursor = mDownloadManager.query(q);
-			cursor.moveToFirst();
-			try {
-				final int bytesDownloaded = cursor.getInt(cursor
-						.getColumnIndex(DownloadManager.COLUMN_BYTES_DOWNLOADED_SO_FAR));
-				final int bytesInTotal = cursor.getInt(cursor
-						.getColumnIndex(DownloadManager.COLUMN_TOTAL_SIZE_BYTES));
+    public DownloadRomProgress(Context context, DownloadManager downloadManager) {
+        mContext = context;
+        mDownloadManager = downloadManager;
+    }
 
-				if (cursor.getInt(cursor.getColumnIndex(DownloadManager.COLUMN_STATUS)) == DownloadManager.STATUS_SUCCESSFUL) {
-					Preferences.setIsDownloadRunning(mContext, false);
-				}
+    @Override
+    protected Void doInBackground(Long... params) {
+        int previousValue = 0;
+        while (Preferences.getIsDownloadOnGoing(mContext)) {
+            long mDownloadID = Preferences.getDownloadID(mContext);
+            DownloadManager.Query q = new DownloadManager.Query();
+            q.setFilterById(mDownloadID);
 
-				final int progressPercent = (int) ((bytesDownloaded * 100l) / bytesInTotal);
-				
-				if (progressPercent != previousValue) {
-					// Only publish every 1%, to reduce the amount of work being done.
-					publishProgress(progressPercent, bytesDownloaded, bytesInTotal);
-					previousValue = progressPercent;
-				} 
-			} catch (CursorIndexOutOfBoundsException e) {
-				Preferences.setIsDownloadRunning(mContext, false);
-			} catch (ArithmeticException e) {
-				Preferences.setIsDownloadRunning(mContext, false);
-				Log.e(TAG, " " + e.getStackTrace());
-			}
-			cursor.close();
-		}
-		return null;
-	}
-	
-	protected void onProgressUpdate(Integer... progress) {
-		if (DEBUGGING)
-			Log.d(TAG, "Updating Progress - " + progress[0] + "%");
-		if (Preferences.getIsDownloadOnGoing(mContext)) {
-			AvailableActivity.updateProgress(progress[0], progress[1], progress[2], mContext);
-			MainActivity.updateProgress(progress[0], progress[1], progress[2], (Activity) mContext);
-		}
-     }
+            Cursor cursor = mDownloadManager.query(q);
+            cursor.moveToFirst();
+            try {
+                final int bytesDownloaded = cursor.getInt(cursor
+                        .getColumnIndex(DownloadManager.COLUMN_BYTES_DOWNLOADED_SO_FAR));
+                final int bytesInTotal = cursor.getInt(cursor
+                        .getColumnIndex(DownloadManager.COLUMN_TOTAL_SIZE_BYTES));
+
+                if (cursor.getInt(cursor.getColumnIndex(DownloadManager.COLUMN_STATUS)) == DownloadManager.STATUS_SUCCESSFUL) {
+                    Preferences.setIsDownloadRunning(mContext, false);
+                }
+
+                final int progressPercent = (int) ((bytesDownloaded * 100l) / bytesInTotal);
+
+                if (progressPercent != previousValue) {
+                    // Only publish every 1%, to reduce the amount of work being done.
+                    publishProgress(progressPercent, bytesDownloaded, bytesInTotal);
+                    previousValue = progressPercent;
+                }
+            } catch (CursorIndexOutOfBoundsException e) {
+                Preferences.setIsDownloadRunning(mContext, false);
+            } catch (ArithmeticException e) {
+                Preferences.setIsDownloadRunning(mContext, false);
+                Log.e(TAG, " " + e.getStackTrace());
+            }
+            cursor.close();
+        }
+        return null;
+    }
+
+    protected void onProgressUpdate(Integer... progress) {
+        if (DEBUGGING)
+            Log.d(TAG, "Updating Progress - " + progress[0] + "%");
+        if (Preferences.getIsDownloadOnGoing(mContext)) {
+            AvailableActivity.updateProgress(progress[0], progress[1], progress[2], mContext);
+            MainActivity.updateProgress(progress[0], progress[1], progress[2], (Activity) mContext);
+        }
+    }
 }

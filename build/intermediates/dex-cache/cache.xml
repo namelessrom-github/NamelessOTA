@@ -1,173 +1,148 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" >
+<items version="2">
 
     <item
         jar="C:\Users\Nicholas\Documents\GitHub\TeamBlissOTA\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-ads\7.0.0\jars\classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="e3d791b42eaa90416cd0b2d2e608092794a3baa4">
-        <dex dex="C:\Users\Nicholas\Documents\GitHub\TeamBlissOTA\app\build\intermediates\pre-dexed\debug\classes-232eccfcd0c5d754ecc6edd69fd402f538dfca73.jar" />
+        jumboMode="false" revision="21.1.2" sha1="e3d791b42eaa90416cd0b2d2e608092794a3baa4">
+        <dex
+            dex="C:\Users\Nicholas\Documents\GitHub\TeamBlissOTA\app\build\intermediates\pre-dexed\debug\classes-232eccfcd0c5d754ecc6edd69fd402f538dfca73.jar" />
     </item>
     <item
         jar="C:\Users\Nicholas\Documents\GitHub\TeamBlissOTA\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-games\7.0.0\jars\classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="055783146ba9654a725442563be78cad303aad1f">
-        <dex dex="C:\Users\Nicholas\Documents\GitHub\TeamBlissOTA\app\build\intermediates\pre-dexed\debug\classes-3989834b8a6ae2f40d75179885b4180f664122c7.jar" />
+        jumboMode="false" revision="21.1.2" sha1="055783146ba9654a725442563be78cad303aad1f">
+        <dex
+            dex="C:\Users\Nicholas\Documents\GitHub\TeamBlissOTA\app\build\intermediates\pre-dexed\debug\classes-3989834b8a6ae2f40d75179885b4180f664122c7.jar" />
     </item>
     <item
         jar="C:\Users\Nicholas\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\22.1.1\support-annotations-22.1.1.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="01d051a6bfb1218b1db2d3a5af0480ac2c25c42a">
-        <dex dex="C:\Users\Nicholas\Documents\GitHub\TeamBlissOTA\app\build\intermediates\pre-dexed\debug\support-annotations-22.1.1-45b7a97c023ccd9b028242c2f33209bbeb294648.jar" />
+        jumboMode="false" revision="21.1.2" sha1="01d051a6bfb1218b1db2d3a5af0480ac2c25c42a">
+        <dex
+            dex="C:\Users\Nicholas\Documents\GitHub\TeamBlissOTA\app\build\intermediates\pre-dexed\debug\support-annotations-22.1.1-45b7a97c023ccd9b028242c2f33209bbeb294648.jar" />
     </item>
     <item
         jar="C:\Users\Nicholas\Documents\GitHub\TeamBlissOTA\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-panorama\7.0.0\jars\classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="1c5a76debf0c2857ccad422c4a80ed785982f8df">
-        <dex dex="C:\Users\Nicholas\Documents\GitHub\TeamBlissOTA\app\build\intermediates\pre-dexed\debug\classes-25ef157d886f8bc2ee04bf331d1dd79683e9df16.jar" />
+        jumboMode="false" revision="21.1.2" sha1="1c5a76debf0c2857ccad422c4a80ed785982f8df">
+        <dex
+            dex="C:\Users\Nicholas\Documents\GitHub\TeamBlissOTA\app\build\intermediates\pre-dexed\debug\classes-25ef157d886f8bc2ee04bf331d1dd79683e9df16.jar" />
     </item>
     <item
         jar="C:\Users\Nicholas\Documents\GitHub\TeamBlissOTA\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-appstate\7.0.0\jars\classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="7ff613bf78ab057293892fdbd4169eda899c89b9">
-        <dex dex="C:\Users\Nicholas\Documents\GitHub\TeamBlissOTA\app\build\intermediates\pre-dexed\debug\classes-ca727f6047be0f0cc03f4d87a9c507cf90b8dd09.jar" />
+        jumboMode="false" revision="21.1.2" sha1="7ff613bf78ab057293892fdbd4169eda899c89b9">
+        <dex
+            dex="C:\Users\Nicholas\Documents\GitHub\TeamBlissOTA\app\build\intermediates\pre-dexed\debug\classes-ca727f6047be0f0cc03f4d87a9c507cf90b8dd09.jar" />
     </item>
     <item
         jar="C:\Users\Nicholas\Documents\GitHub\TeamBlissOTA\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-gcm\7.0.0\jars\classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="9224bc4c54ba95147c7eabd874573763c07cb6be">
-        <dex dex="C:\Users\Nicholas\Documents\GitHub\TeamBlissOTA\app\build\intermediates\pre-dexed\debug\classes-0ce2318e1b228042be63c2360d470f72432d6b4a.jar" />
+        jumboMode="false" revision="21.1.2" sha1="9224bc4c54ba95147c7eabd874573763c07cb6be">
+        <dex
+            dex="C:\Users\Nicholas\Documents\GitHub\TeamBlissOTA\app\build\intermediates\pre-dexed\debug\classes-0ce2318e1b228042be63c2360d470f72432d6b4a.jar" />
     </item>
     <item
         jar="C:\Users\Nicholas\Documents\GitHub\TeamBlissOTA\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.1.1\jars\libs\internal_impl-22.1.1.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="9e070ad32b2700b0343e8e0cccc437733d91ba3a">
-        <dex dex="C:\Users\Nicholas\Documents\GitHub\TeamBlissOTA\app\build\intermediates\pre-dexed\debug\internal_impl-22.1.1-4c4bb5a6e33f63fe321cbdaaf23e0b331de3438e.jar" />
+        jumboMode="false" revision="21.1.2" sha1="9e070ad32b2700b0343e8e0cccc437733d91ba3a">
+        <dex
+            dex="C:\Users\Nicholas\Documents\GitHub\TeamBlissOTA\app\build\intermediates\pre-dexed\debug\internal_impl-22.1.1-4c4bb5a6e33f63fe321cbdaaf23e0b331de3438e.jar" />
     </item>
     <item
         jar="C:\Users\Nicholas\Documents\GitHub\TeamBlissOTA\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-location\7.0.0\jars\classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="73ccb92b70112f2e463e415ef8d7275de7da6516">
-        <dex dex="C:\Users\Nicholas\Documents\GitHub\TeamBlissOTA\app\build\intermediates\pre-dexed\debug\classes-680755af3d6b16ba6139e895153ec90b9faaba0a.jar" />
+        jumboMode="false" revision="21.1.2" sha1="73ccb92b70112f2e463e415ef8d7275de7da6516">
+        <dex
+            dex="C:\Users\Nicholas\Documents\GitHub\TeamBlissOTA\app\build\intermediates\pre-dexed\debug\classes-680755af3d6b16ba6139e895153ec90b9faaba0a.jar" />
     </item>
     <item
         jar="C:\Users\Nicholas\Documents\GitHub\TeamBlissOTA\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-appindexing\7.0.0\jars\classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="a08d65794b844d8e7540bf9a33859bf3b2482d7f">
-        <dex dex="C:\Users\Nicholas\Documents\GitHub\TeamBlissOTA\app\build\intermediates\pre-dexed\debug\classes-0ad6517beba40e1876ec79124eac813f7a9fe1ee.jar" />
+        jumboMode="false" revision="21.1.2" sha1="a08d65794b844d8e7540bf9a33859bf3b2482d7f">
+        <dex
+            dex="C:\Users\Nicholas\Documents\GitHub\TeamBlissOTA\app\build\intermediates\pre-dexed\debug\classes-0ad6517beba40e1876ec79124eac813f7a9fe1ee.jar" />
     </item>
     <item
         jar="C:\Users\Nicholas\Documents\GitHub\TeamBlissOTA\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-fitness\7.0.0\jars\classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="3c0b099f9de16b265ecd6122fcb603e7d0d29f90">
-        <dex dex="C:\Users\Nicholas\Documents\GitHub\TeamBlissOTA\app\build\intermediates\pre-dexed\debug\classes-6ce460373bd32424f6c6b7bc225c4f036d3988a1.jar" />
+        jumboMode="false" revision="21.1.2" sha1="3c0b099f9de16b265ecd6122fcb603e7d0d29f90">
+        <dex
+            dex="C:\Users\Nicholas\Documents\GitHub\TeamBlissOTA\app\build\intermediates\pre-dexed\debug\classes-6ce460373bd32424f6c6b7bc225c4f036d3988a1.jar" />
     </item>
     <item
         jar="C:\Users\Nicholas\Documents\GitHub\TeamBlissOTA\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-plus\7.0.0\jars\classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="0e8228b4bc69c6a2c8d7c18498a77e53417d2574">
-        <dex dex="C:\Users\Nicholas\Documents\GitHub\TeamBlissOTA\app\build\intermediates\pre-dexed\debug\classes-bb77187a0ff870dd0769690e43bc98c757c16c12.jar" />
+        jumboMode="false" revision="21.1.2" sha1="0e8228b4bc69c6a2c8d7c18498a77e53417d2574">
+        <dex
+            dex="C:\Users\Nicholas\Documents\GitHub\TeamBlissOTA\app\build\intermediates\pre-dexed\debug\classes-bb77187a0ff870dd0769690e43bc98c757c16c12.jar" />
     </item>
     <item
         jar="C:\Users\Nicholas\Documents\GitHub\TeamBlissOTA\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\7.0.0\jars\classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="4c93d99d454c975536bbe3b42283eee847f03ea3">
-        <dex dex="C:\Users\Nicholas\Documents\GitHub\TeamBlissOTA\app\build\intermediates\pre-dexed\debug\classes-35240c95b581bb242c6beec8c1f2dfa452769895.jar" />
+        jumboMode="false" revision="21.1.2" sha1="4c93d99d454c975536bbe3b42283eee847f03ea3">
+        <dex
+            dex="C:\Users\Nicholas\Documents\GitHub\TeamBlissOTA\app\build\intermediates\pre-dexed\debug\classes-35240c95b581bb242c6beec8c1f2dfa452769895.jar" />
     </item>
     <item
         jar="C:\Users\Nicholas\Documents\GitHub\TeamBlissOTA\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-wallet\7.0.0\jars\classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="a96b762bde4139de855735f175ec4d17dca55a6d">
-        <dex dex="C:\Users\Nicholas\Documents\GitHub\TeamBlissOTA\app\build\intermediates\pre-dexed\debug\classes-96491a483709a57b882f992b27e57fa5ba21d438.jar" />
+        jumboMode="false" revision="21.1.2" sha1="a96b762bde4139de855735f175ec4d17dca55a6d">
+        <dex
+            dex="C:\Users\Nicholas\Documents\GitHub\TeamBlissOTA\app\build\intermediates\pre-dexed\debug\classes-96491a483709a57b882f992b27e57fa5ba21d438.jar" />
     </item>
     <item
         jar="C:\Users\Nicholas\Documents\GitHub\TeamBlissOTA\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-safetynet\7.0.0\jars\classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="c976518693e89ad44fbfccfc654941eaec198d08">
-        <dex dex="C:\Users\Nicholas\Documents\GitHub\TeamBlissOTA\app\build\intermediates\pre-dexed\debug\classes-b21b41a6aa66f402895797f9ff5b36a30e62f7a4.jar" />
+        jumboMode="false" revision="21.1.2" sha1="c976518693e89ad44fbfccfc654941eaec198d08">
+        <dex
+            dex="C:\Users\Nicholas\Documents\GitHub\TeamBlissOTA\app\build\intermediates\pre-dexed\debug\classes-b21b41a6aa66f402895797f9ff5b36a30e62f7a4.jar" />
     </item>
     <item
         jar="C:\Users\Nicholas\Documents\GitHub\TeamBlissOTA\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-nearby\7.0.0\jars\classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="ef5f051e7308febe289dc93c67c5f32785b4260a">
-        <dex dex="C:\Users\Nicholas\Documents\GitHub\TeamBlissOTA\app\build\intermediates\pre-dexed\debug\classes-b48e92adacf9da6fc4cb7df55904a839f3cc9307.jar" />
+        jumboMode="false" revision="21.1.2" sha1="ef5f051e7308febe289dc93c67c5f32785b4260a">
+        <dex
+            dex="C:\Users\Nicholas\Documents\GitHub\TeamBlissOTA\app\build\intermediates\pre-dexed\debug\classes-b48e92adacf9da6fc4cb7df55904a839f3cc9307.jar" />
     </item>
     <item
         jar="C:\Users\Nicholas\Documents\GitHub\TeamBlissOTA\app\build\intermediates\exploded-aar\com.android.support\cardview-v7\22.0.0\jars\classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="11842de6a309c447b3a3d60d73ad637a87c58994">
-        <dex dex="C:\Users\Nicholas\Documents\GitHub\TeamBlissOTA\app\build\intermediates\pre-dexed\debug\classes-5fa3af62da3e77b72eb2cc081ffb1aa56c58c8d6.jar" />
+        jumboMode="false" revision="21.1.2" sha1="11842de6a309c447b3a3d60d73ad637a87c58994">
+        <dex
+            dex="C:\Users\Nicholas\Documents\GitHub\TeamBlissOTA\app\build\intermediates\pre-dexed\debug\classes-5fa3af62da3e77b72eb2cc081ffb1aa56c58c8d6.jar" />
     </item>
     <item
         jar="C:\Users\Nicholas\Documents\GitHub\TeamBlissOTA\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-identity\7.0.0\jars\classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="fb04b12526b0073c7fb1ebb70c5842d82ee95596">
-        <dex dex="C:\Users\Nicholas\Documents\GitHub\TeamBlissOTA\app\build\intermediates\pre-dexed\debug\classes-02bb3346e453ac3c4d5b62e1c1a39b2cde20cce0.jar" />
+        jumboMode="false" revision="21.1.2" sha1="fb04b12526b0073c7fb1ebb70c5842d82ee95596">
+        <dex
+            dex="C:\Users\Nicholas\Documents\GitHub\TeamBlissOTA\app\build\intermediates\pre-dexed\debug\classes-02bb3346e453ac3c4d5b62e1c1a39b2cde20cce0.jar" />
     </item>
     <item
         jar="C:\Users\Nicholas\Documents\GitHub\TeamBlissOTA\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-analytics\7.0.0\jars\classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="29fd6d3794b71491c2789708cd8d03c71feb8954">
-        <dex dex="C:\Users\Nicholas\Documents\GitHub\TeamBlissOTA\app\build\intermediates\pre-dexed\debug\classes-44c1e996c802920096d97cf469c811d86223d7c2.jar" />
+        jumboMode="false" revision="21.1.2" sha1="29fd6d3794b71491c2789708cd8d03c71feb8954">
+        <dex
+            dex="C:\Users\Nicholas\Documents\GitHub\TeamBlissOTA\app\build\intermediates\pre-dexed\debug\classes-44c1e996c802920096d97cf469c811d86223d7c2.jar" />
     </item>
     <item
         jar="C:\Users\Nicholas\Documents\GitHub\TeamBlissOTA\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-maps\7.0.0\jars\classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="17f8750d5c0749e44dd7c54aa390d9c937803825">
-        <dex dex="C:\Users\Nicholas\Documents\GitHub\TeamBlissOTA\app\build\intermediates\pre-dexed\debug\classes-125b21b2ec5e9919883743dbbffaf3c4795d50c9.jar" />
+        jumboMode="false" revision="21.1.2" sha1="17f8750d5c0749e44dd7c54aa390d9c937803825">
+        <dex
+            dex="C:\Users\Nicholas\Documents\GitHub\TeamBlissOTA\app\build\intermediates\pre-dexed\debug\classes-125b21b2ec5e9919883743dbbffaf3c4795d50c9.jar" />
     </item>
     <item
         jar="C:\Users\Nicholas\Documents\GitHub\TeamBlissOTA\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-drive\7.0.0\jars\classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="41b3870cbe5fa546d8095b5b89d42cb69f3dd175">
-        <dex dex="C:\Users\Nicholas\Documents\GitHub\TeamBlissOTA\app\build\intermediates\pre-dexed\debug\classes-4c787928df0c7f3fc8a0832673ad74a51b9333e3.jar" />
+        jumboMode="false" revision="21.1.2" sha1="41b3870cbe5fa546d8095b5b89d42cb69f3dd175">
+        <dex
+            dex="C:\Users\Nicholas\Documents\GitHub\TeamBlissOTA\app\build\intermediates\pre-dexed\debug\classes-4c787928df0c7f3fc8a0832673ad74a51b9333e3.jar" />
     </item>
-    <item
-        jar="C:\Users\Nicholas\Documents\GitHub\TeamBlissOTA\app\libs\RootTools.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="0366ac8a28a574b3964f360c027ad287d173cfa7">
-        <dex dex="C:\Users\Nicholas\Documents\GitHub\TeamBlissOTA\app\build\intermediates\pre-dexed\debug\RootTools-5980947244394a2c5c6739631221f7a25239da9b.jar" />
+    <item jar="C:\Users\Nicholas\Documents\GitHub\TeamBlissOTA\app\libs\RootTools.jar"
+        jumboMode="false" revision="21.1.2" sha1="0366ac8a28a574b3964f360c027ad287d173cfa7">
+        <dex
+            dex="C:\Users\Nicholas\Documents\GitHub\TeamBlissOTA\app\build\intermediates\pre-dexed\debug\RootTools-5980947244394a2c5c6739631221f7a25239da9b.jar" />
     </item>
     <item
         jar="C:\Users\Nicholas\Documents\GitHub\TeamBlissOTA\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-cast\7.0.0\jars\classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="4cd0b093824b3228fffc21ea369b98d0b1db6566">
-        <dex dex="C:\Users\Nicholas\Documents\GitHub\TeamBlissOTA\app\build\intermediates\pre-dexed\debug\classes-82974451ed75ffa463d505600edd55219223c704.jar" />
+        jumboMode="false" revision="21.1.2" sha1="4cd0b093824b3228fffc21ea369b98d0b1db6566">
+        <dex
+            dex="C:\Users\Nicholas\Documents\GitHub\TeamBlissOTA\app\build\intermediates\pre-dexed\debug\classes-82974451ed75ffa463d505600edd55219223c704.jar" />
     </item>
     <item
         jar="C:\Users\Nicholas\Documents\GitHub\TeamBlissOTA\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.1.1\jars\classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="c95ba8152923e4872e86a82cfcba9a51c0214328">
-        <dex dex="C:\Users\Nicholas\Documents\GitHub\TeamBlissOTA\app\build\intermediates\pre-dexed\debug\classes-eb8061fbeb31799c1cc3728502e5c7a255c422f4.jar" />
+        jumboMode="false" revision="21.1.2" sha1="c95ba8152923e4872e86a82cfcba9a51c0214328">
+        <dex
+            dex="C:\Users\Nicholas\Documents\GitHub\TeamBlissOTA\app\build\intermediates\pre-dexed\debug\classes-eb8061fbeb31799c1cc3728502e5c7a255c422f4.jar" />
     </item>
     <item
         jar="C:\Users\Nicholas\Documents\GitHub\TeamBlissOTA\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-wearable\7.0.0\jars\classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="3033cc3a2c68dff3e5b646d6d084bdbdf7d00b25">
-        <dex dex="C:\Users\Nicholas\Documents\GitHub\TeamBlissOTA\app\build\intermediates\pre-dexed\debug\classes-b8cfd15bc02088b31c18969bc4c23dcbdaa06e52.jar" />
+        jumboMode="false" revision="21.1.2" sha1="3033cc3a2c68dff3e5b646d6d084bdbdf7d00b25">
+        <dex
+            dex="C:\Users\Nicholas\Documents\GitHub\TeamBlissOTA\app\build\intermediates\pre-dexed\debug\classes-b8cfd15bc02088b31c18969bc4c23dcbdaa06e52.jar" />
     </item>
 
 </items>
