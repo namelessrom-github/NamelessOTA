@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+ 	Copyright (C) 2015 Nicholas Chum (nicholaschum) and Matt Booth (Kryten2k35).
+ 
+ 	Licensed under the Attribution-NonCommercial-ShareAlike 4.0 International 
+ 	(the "License") you may not use this file except in compliance with the License.
+ 	You may obtain a copy of the License at
+ 
+ 		http://creativecommons.org/licenses/by-nc-sa/4.0/legalcode
+ 
+ 	Unless required by applicable law or agreed to in writing, software
+ 	distributed under the License is distributed on an "AS IS" BASIS,
+	WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+	See the License for the specific language governing permissions and
+	limitations under the License.
+-->
+<resources>
+    <string name="credits_title">Concernant BlissOTA 5.0.0</string>
+    <string name="preferences_name">Paramètres</string>
+    <string name="download_folder" translatable="false">/storage/emulated/0/Download</string>
+    <string name="list_summary" translatable="false">%s</string>
+    <string name="twrp_ors_cat" translatable="false">OpenRecoveryScript</string>
+    <string name="twrp_ors_title">Activer OpenRecoveryScript</string>
+    <string name="twrp_ors_summary">Activer le flashage automatique de la ROM.</string>
+    <string name="twrp_ors_information">Flash automatique après le téléchargement, disponible seulement pour TWRP et les customs-CMW.</string>
+    <string name="twrp_ors_delete_after">Supprimer le fichier après installation</string>
+    <string name="twrp_ors_delete_after_summary">Should the script remove the update after updating?</string>
+    <string name="twrp_ors_install_prefs">Configuration d'OpenRecoveryScript</string>
+    <string name="twrp_ors_install_prefs_summary">Configurer les préférences d'installations d'OpenRecoveryScript</string>
+    <string name="twrp_ors_wipe_data">Effacer les Données</string>
+    <string name="twrp_ors_wipe_cache">Effacer le Cache</string>
+    <string name="twrp_ors_wipe_dalvik">Effacer le Dalvik Cache</string>
+    <string name="notifications_title">Notifications</string>
+    <string name="background_service_summary">Vérifier automatiquements les mises à jours et afficher une notifications si disponible.</string>
+    <string name="background_frequency">Fréquence de vérification des mises à jours</string>
+    <string name="background_30mins">30 Mins</string>
+    <string name="background_60mins">60 Mins</string>
+    <string name="background_2hours">2 Heures</string>
+    <string name="background_3hours">3 Heures</string>
+    <string name="background_6hours">6 Heures</string>
+    <string name="background_12hours">12 Heures</string>
+    <string name="background_24hours">Quotidiennement</string>
+    <string name="background_2days">2 jours</string>
+    <string name="background_3days">3 jours</string>
+    <string name="background_7days">Hebdomadaire</string>
+    <string name="theme_title">Theme App</string>
+    <string name="mobile_wifi_network">Réseau</string>
+    <string name="mobile_wifi_title">Mise à jour sur réseau</string>
+    <string name="wifi_network_only">WiFi seulement</string>
+    <string name="mobile_or_wifi">Réseau mobile ou WiFi</string>
+    <string name="theme">Thème séléctionné</string>
+    <string name="theme_config">Configuration du thème</string>
+    <string name="theme_dark">Matérial Sombre</string>
+    <string name="theme_light">Matérial Lumineux</string>
+    <string name="notifications_sound">Son</string>
+    <string name="notifications_vibrate">Vibrer</string>
+    <string name="silent_ringtone">Silencieux</string>
+    <string name="notification_ignore_release_title">Ignorer la mise à jour</string>
+    <string name="notification_ignoring_release">Version ignorer actuellement: </string>
+    <string name="notification_not_ignoring_release">Vpus ne ratez aucune mise à jour</string>
+</resources>
