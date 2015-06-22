@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+ 	Copyright (C) 2015 Nicholas Chum (nicholaschum) and Matt Booth (Kryten2k35).
+ 
+ 	Licensed under the Attribution-NonCommercial-ShareAlike 4.0 International 
+ 	(the "License") you may not use this file except in compliance with the License.
+ 	You may obtain a copy of the License at
+ 
+ 		http://creativecommons.org/licenses/by-nc-sa/4.0/legalcode
+ 
+ 	Unless required by applicable law or agreed to in writing, software
+ 	distributed under the License is distributed on an "AS IS" BASIS,
+	WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+	See the License for the specific language governing permissions and
+	limitations under the License.
+-->
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+
+    <string name="main_update_available">Mise à jour!</string>
+    <string name="main_update_finished">Téléchargmeent terminé</string>
+    <string name="main_no_update_available">Aucune mise à jour disponible</string>
+    <string name="main_update_filename">Nom du fichier</string>
+    <string name="main_update_progress">Progression du téléchargement</string>
+    <string name="main_website">Site Internet</string>
+    <string name="main_website_summary">Visiter notre site officiel</string>
+    <string name="main_donate">Donation</string>
+    <string name="main_donate_summary">Donner à TeamBliss!</string>
+    <string name="main_tap_to_download">Appuyer pour télécharger</string>
+    <string name="main_download_completed_details">Appuyer pour plus d'informations</string>
+    <string name="main_tap_to_view_progress">Appuyer pour voir la progression</string>
+    <string name="main_last_checked">Dernière vérification fait a:</string>
+    <string name="main_addon">Addons</string>
+    <string name="main_addon_summary">Explorer et télécharger des addons pour la ROM</string>
+
+    <!-- ROM Information -->
+    <string name="main_rom_information">Informations sur l'appareil</string>
+    <string name="main_rom_name">Nom du système:</string>
+    <string name="main_rom_version">Date de publication:</string>
+    <string name="main_rom_codename">Nom de code de la ROM:</string>
+    <string name="main_rom_build_date">Date de compilation:</string>
+    <string name="main_android_version">Version d'Android:</string>
+    <string name="main_rom_developer">Maintaineur(s):</string>
+
+    <!-- Dialogs -->
+    <string name="main_not_compatible_title">Incompatible</string>
+    <string name="main_not_compatible_message">Votre téléphone n'est pas configurer pour recevoir les mises à jour via OTA. Veuillez flasher la derniere ROM manuellement pour configurer l'OTA.</string>
+    <string name="main_not_connected_title">Non connecté</string>
+    <string name="main_not_connected_message">Vous n'êtes pas connecter a Internet. Veuillez activer vos données mobiles ou votre WiFi.</string>
+    <string name="main_playstore_title">BitCoin</string>
+    <string name="main_playstore_message">You do not have any available apps to handle the \"bitcoin:\" mime-type.\n\nWould you like to search the Google Play Store to find one?</string>
+
+    <!-- Content Descriptions -->
+    <string name="main_button_icon">Button icon</string>
+    <string name="main_dev_website_icon">Developer Website Icon</string>
+    <string name="main_actionbar_button">Actionbar Buttons</string>
+
+    <!-- Toast -->
+    <string name="main_release_ignored">Mise à jour ignorer</string>
+</resources>
