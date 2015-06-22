@@ -27,8 +27,7 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toolbar;
 
-import com.ota.updates.R;
-import com.chummy.blissroms.updates.tasks.Changelog;
+import com.chummy.blissroms.updates.R;
 import com.chummy.blissroms.updates.utils.Preferences;
 import com.chummy.blissroms.updates.utils.Utils;
 

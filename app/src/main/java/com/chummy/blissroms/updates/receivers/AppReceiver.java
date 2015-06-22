@@ -33,7 +33,7 @@ import android.support.v4.app.NotificationCompat.Builder;
 import android.util.Log;
 
 import com.chummy.blissroms.updates.OtaUpdates;
-import com.ota.updates.R;
+import com.chummy.blissroms.updates.R;
 import com.chummy.blissroms.updates.RomUpdate;
 import com.chummy.blissroms.updates.activities.AddonActivity;
 import com.chummy.blissroms.updates.activities.AvailableActivity;

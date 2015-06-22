@@ -22,7 +22,7 @@ import android.app.DownloadManager;
 import android.content.Context;
 import android.net.Uri;
 
-import com.ota.updates.R;
+import com.chummy.blissroms.updates.R;
 import com.chummy.blissroms.updates.RomUpdate;
 import com.chummy.blissroms.updates.utils.Constants;
 import com.chummy.blissroms.updates.utils.Preferences;

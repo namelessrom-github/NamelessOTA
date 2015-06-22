@@ -42,7 +42,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.Toolbar;
 
-import com.ota.updates.R;
+import com.chummy.blissroms.updates.R;
 import com.chummy.blissroms.updates.RomUpdate;
 import com.chummy.blissroms.updates.download.DownloadRom;
 import com.chummy.blissroms.updates.download.DownloadRomProgress;

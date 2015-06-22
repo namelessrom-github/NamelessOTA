@@ -22,7 +22,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
-import com.ota.updates.R;
+import com.chummy.blissroms.updates.R;
 
 public class Changelog extends AsyncTask<Void, Void, String> {
 

@@ -50,7 +50,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toolbar;
 
-import com.ota.updates.R;
+import com.chummy.blissroms.updates.R;
 import com.chummy.blissroms.updates.RomUpdate;
 import com.chummy.blissroms.updates.tasks.Changelog;
 import com.chummy.blissroms.updates.tasks.LoadUpdateManifest;

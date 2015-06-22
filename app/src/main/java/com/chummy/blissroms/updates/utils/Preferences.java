@@ -23,7 +23,7 @@ import android.content.SharedPreferences;
 import android.util.Log;
 import android.os.Build;
 
-import com.ota.updates.R;
+import com.chummy.blissroms.updates.R;
 
 public class Preferences implements Constants{
     

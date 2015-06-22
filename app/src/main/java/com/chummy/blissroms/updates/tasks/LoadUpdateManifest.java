@@ -29,7 +29,7 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.util.Log;
 
-import com.ota.updates.R;
+import com.chummy.blissroms.updates.R;
 import com.chummy.blissroms.updates.utils.Constants;
 import com.chummy.blissroms.updates.utils.Utils;
 

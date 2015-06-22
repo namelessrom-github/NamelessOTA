@@ -40,7 +40,7 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.util.SparseBooleanArray;
 
-import com.ota.updates.R;
+import com.chummy.blissroms.updates.R;
 import com.chummy.blissroms.updates.utils.Constants;
 import com.chummy.blissroms.updates.utils.Preferences;
 import com.chummy.blissroms.updates.utils.Tools;

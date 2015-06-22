@@ -37,7 +37,7 @@ import android.support.v4.app.NotificationCompat.Builder;
 import android.support.v4.app.TaskStackBuilder;
 import android.util.Log;
 
-import com.ota.updates.R;
+import com.chummy.blissroms.updates.R;
 import com.chummy.blissroms.updates.RomUpdate;
 import com.chummy.blissroms.updates.activities.AvailableActivity;
 import com.chummy.blissroms.updates.activities.MainActivity;
