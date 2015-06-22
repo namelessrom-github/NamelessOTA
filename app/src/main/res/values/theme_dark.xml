@@ -18,6 +18,7 @@
 <resources>
 
     <style name="Theme.Dark" parent="@android:style/Theme.Material">
+        <item name="changelogIcon">@drawable/ic_changelog</item>
         <item name="noUpdateAvailable">@color/material_red_500</item>
         <item name="updateAvailable">@color/material_light_green_500</item>
         <item name="settingsIcon">@drawable/ic_settings_dark</item>

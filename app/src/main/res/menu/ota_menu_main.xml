@@ -20,7 +20,7 @@
     <item android:icon="?attr/changelogIcon" 
         android:id="@+id/menu_changelog" 
         android:orderInCategory="98"
-        android:showAsAction="ifRoom" 
+        android:showAsAction="ifRoom"
         android:title="@string/menu_info" />
     
     <item android:icon="?attr/settingsIcon" 

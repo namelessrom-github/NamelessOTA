@@ -452,10 +452,10 @@ public class MainActivity extends Activity implements Constants{
 		//ROM developer
 		TextView romDeveloper = (TextView) findViewById(R.id.tv_main_rom_developer);
 		boolean showDevName = !RomUpdate.getDeveloper(this).equals("null");
-		romDeveloper.setVisibility(showDevName? View.VISIBLE : View.GONE);
+		//romDeveloper.setVisibility(showDevName? View.VISIBLE : View.GONE);
 
 		String romDeveloperTitle = getApplicationContext().getResources().getString(R.string.main_rom_developer) + " ";
-		String romDeveloperActual = RomUpdate.getDeveloper(this);
+		String romDeveloperActual = showDevName ? RomUpdate.getDeveloper(this) : Utils.getProp(getResources().getString(R.string.prop_developer));
 		romDeveloper.setText(Html.fromHtml(romDeveloperTitle + htmlColorOpen + romDeveloperActual + htmlColorClose));
 
 	}
@@ -506,12 +506,13 @@ public class MainActivity extends Activity implements Constants{
 		Intent intent = new Intent(mContext, SettingsActivity.class);
 		startActivity(intent);
 	}
-	
-	public void openChangelog (View v) {
+
+	public void openChangelog(View v) {
 		String title = getResources().getString(R.string.changelog);
-		String changelog = RomUpdate.getChangelog(mContext);
-		new Changelog(this, mContext, title, changelog, false).execute();
+		String changelog = getResources().getString(R.string.changelog_url);
+		new Changelog(this, mContext, title, changelog, true).execute();
 	}
+
 
 	private void showWhatsNew() {
 		String title = getResources().getString(R.string.changelog);
