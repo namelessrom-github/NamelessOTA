@@ -371,24 +371,16 @@ public class AvailableActivity extends Activity implements Constants, android.vi
 	}
 
 	private void setupRomHut() {
-		String romHutText = RomUpdate.getRomHut(mContext);
-		boolean isRomHut = romHutText != null;
-		if (isRomHut) {
-			TextView sponsoredBy = (TextView) findViewById(R.id.tv_available_romhut);
-			sponsoredBy.setText(romHutText);
-			if (Utils.isLollipop()) {	
-				int color;
-				if (Preferences.getCurrentTheme(mContext) == 0) { // Light
-					color = getResources().getColor(R.color.material_deep_teal_500);
-				} else {
-					color = getResources().getColor(R.color.material_deep_teal_200);
-				}
-				sponsoredBy.setTextColor(color);
-			} else {
-				sponsoredBy.setTextColor(getResources().getColor(R.color.holo_blue_light));
-			}
+		TextView ServerInfo = (TextView) findViewById(R.id.tv_available_romhut);
+		ServerInfo.setText("Server Download");
+		int colorServer;
+		if (Preferences.getCurrentTheme(mContext) == 0) { // Light
+			colorServer = getResources().getColor(R.color.material_deep_teal_500);
+		} else {
+			colorServer = getResources().getColor(R.color.material_deep_teal_200);
 		}
-	}
+		ServerInfo.setTextColor(colorServer);
+		}
 
 	private void setupUpdateNameInfo() {
 		boolean isDownloadOnGoing = Preferences.getIsDownloadOnGoing(mContext);
@@ -396,17 +388,13 @@ public class AvailableActivity extends Activity implements Constants, android.vi
 		String downloading = getResources().getString(R.string.available_downloading);
 		String filename = RomUpdate.getFilename(mContext);
 
-		if (Utils.isLollipop()) {
-			int color;
-			if (Preferences.getCurrentTheme(mContext) == 0) { // Light
-				color = getResources().getColor(R.color.material_deep_teal_500);
-			} else {
-				color = getResources().getColor(R.color.material_deep_teal_200);
-			}
-			updateNameInfoText.setTextColor(color);
+		int color;
+		if (Preferences.getCurrentTheme(mContext) == 0) { // Light
+			color = getResources().getColor(R.color.material_deep_teal_500);
 		} else {
-			updateNameInfoText.setTextColor(getResources().getColor(R.color.holo_blue_light));
+			color = getResources().getColor(R.color.material_deep_teal_200);
 		}
+		updateNameInfoText.setTextColor(color);
 
 		if (isDownloadOnGoing) {
 			updateNameInfoText.setText(downloading); 	
@@ -471,15 +459,14 @@ public class AvailableActivity extends Activity implements Constants, android.vi
 			if (DEBUGGING)
 				Log.d(TAG, "Download finished. Setting up Progress Bars accordingly.");
 			String ready = context.getResources().getString(R.string.available_ready_to_install);
-
-			int color = res.getColor(R.color.holo_blue_light);
+			int color = res.getColor(R.color.grey);
 			if (Utils.isLollipop()) {
-				if (Preferences.getCurrentTheme(context) == 0) { // Light
-					color = context.getResources().getColor(R.color.material_deep_teal_500);
-				} else {
-					color = context.getResources().getColor(R.color.material_deep_teal_200);
-				}		
-			} 
+                if (Preferences.getCurrentTheme(context) == 0) { // Light
+                    color = context.getResources().getColor(R.color.material_deep_teal_500);
+                } else {
+                    color = context.getResources().getColor(R.color.material_deep_teal_200);
+                }
+            }
 			if(mProgressCounterText != null) {
 				mProgressCounterText.setTextColor(color);
 				mProgressCounterText.setText(ready);
