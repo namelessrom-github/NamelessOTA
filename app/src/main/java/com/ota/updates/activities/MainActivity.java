@@ -418,11 +418,17 @@ public class MainActivity extends Activity implements Constants{
 		}
 		String htmlColorClose = "</font>";
 
+		String space = " ";
+		String separator_open = " (";
+		String separator_close = ") ";
+
 		//ROM name
 		TextView romName = (TextView) findViewById(R.id.tv_main_rom_name);
 		String romNameTitle = getApplicationContext().getResources().getString(R.string.main_rom_name) + " ";
 		String romNameActual = Utils.getProp(getResources().getString(R.string.prop_name));
-		romName.setText(Html.fromHtml(romNameTitle + htmlColorOpen + romNameActual + htmlColorClose));
+		String romNameDevice = Utils.getProp(getResources().getString(R.string.prop_system_model));
+		String romNameVersion = Utils.getProp(getResources().getString(R.string.prop_rom_version));
+		romName.setText(Html.fromHtml(romNameTitle + htmlColorOpen + romNameActual + space + romNameVersion + separator_open + romNameDevice + separator_close + htmlColorClose));
 
 		//ROM version
 		TextView romVersion = (TextView) findViewById(R.id.tv_main_rom_version);
@@ -440,7 +446,8 @@ public class MainActivity extends Activity implements Constants{
 		TextView romAndroid = (TextView) findViewById(R.id.tv_main_android_version);
 		String romAndroidTitle = getApplicationContext().getResources().getString(R.string.main_android_version) + " ";
 		String romAndroidActual = Utils.getProp(getResources().getString(R.string.prop_release));
-		romAndroid.setText(Html.fromHtml(romAndroidTitle + htmlColorOpen + romAndroidActual + htmlColorClose));
+		String romAndroidBuildID = Utils.getProp(getResources().getString(R.string.prop_release_build_id));
+		romAndroid.setText(Html.fromHtml(romAndroidTitle + htmlColorOpen + romAndroidActual + separator_open + romAndroidBuildID + separator_close +htmlColorClose));
 
 		//ROM developer
 		TextView romDeveloper = (TextView) findViewById(R.id.tv_main_rom_developer);

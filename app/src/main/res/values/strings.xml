@@ -28,6 +28,9 @@
     <string name="prop_version" translatable="false">ro.ota.version</string>
     <string name="prop_date" translatable="false">ro.build.date</string>
     <string name="prop_release" translatable="false">ro.build.version.release</string>
+    <string name="prop_system_model" translatable="false">ro.product.device</string>
+    <string name="prop_release_build_id" translatable="false">ro.build.id</string>
+    <string name="prop_rom_version" translatable="false">ro.modversion</string>
 
     <string name="app_version" translatable="false">5.0.0</string>
     <string name="changelog_url" translatable="false">https://raw.githubusercontent.com/Kryten2k35/OTAUpdates/stable/Changelog.md</string>
