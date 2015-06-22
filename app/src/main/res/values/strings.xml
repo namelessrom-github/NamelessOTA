@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
- 	Copyright (C) 2015 Matt Booth (Kryten2k35).
+ 	Copyright (C) 2015 Nicholas Chum (nicholaschum) and Matt Booth (Kryten2k35).
  
  	Licensed under the Attribution-NonCommercial-ShareAlike 4.0 International 
  	(the "License") you may not use this file except in compliance with the License.
@@ -31,6 +31,7 @@
     <string name="prop_system_model" translatable="false">ro.product.device</string>
     <string name="prop_release_build_id" translatable="false">ro.build.id</string>
     <string name="prop_rom_version" translatable="false">ro.modversion</string>
+    <string name="prop_developer" translatable="false">ro.build.user</string>
 
     <string name="app_version" translatable="false">5.0.0</string>
     <string name="changelog_url" translatable="false">https://raw.githubusercontent.com/Kryten2k35/OTAUpdates/stable/Changelog.md</string>
