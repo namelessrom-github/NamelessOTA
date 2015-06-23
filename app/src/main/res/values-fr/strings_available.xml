@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+ 	Copyright (C) 2015 Nicholas Chum (nicholaschum) and Matt Booth (Kryten2k35).
+ 
+ 	Licensed under the Attribution-NonCommercial-ShareAlike 4.0 International 
+ 	(the "License") you may not use this file except in compliance with the License.
+ 	You may obtain a copy of the License at
+ 
+ 		http://creativecommons.org/licenses/by-nc-sa/4.0/legalcode
+ 
+ 	Unless required by applicable law or agreed to in writing, software
+ 	distributed under the License is distributed on an "AS IS" BASIS,
+	WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+	See the License for the specific language governing permissions and
+	limitations under the License.
+-->
+<resources>
+
+   <string name="available_update_name">Vérifier les mises à jours</string>
+   <string name="available_progress_counter">0MB / 0MB</string>
+   <string name="available_changelog_title">Changelog</string>
+   <string name="available_changelog_content">Changelog se trouve ici</string>
+   <string name="available_md5" translatable="false">MD5:</string>
+   <string name="available_check_md5">Vérifier le MD5</string>
+   <string name="available_ready_to_install">Prêt à installer</string>
+   <string name="available_md5_ok">Vérification du MD5 réussi</string>
+   <string name="available_md5_failed">Erreur lors de la vérification du MD5</string>
+   <string name="available_checking_md5">Vérification du MD5&#8230;</string>
+   <string name="available_downloading">Téléchargement&#8230;</string>
+   <string name="are_you_sure">Etes vous sur?</string>
+   <string name="available_delete_confirm_message">Etes vous sur de vouloir supprimer le fichier téléchargé?</string>
+   <string name="available_reboot_confirm">Voulez vous redémarrer maintenant?</string>
+   <string name="available_url_error">Bad URL, contacter le maintaineur de votre ROM.</string>
+   <string name="available_reboot_manual_title">Redémarrez</string>
+   <string name="available_reboot_manual_message">Entrer dans le recovery et flashez la ROM.\n\nLe fichier est situé dans/sdcard/Downloads</string>
+   <string name="available_wrong_network_title">Mauvaise connection choisie</string>
+   <string name="available_wrong_network_message">Votre appareil n'est pas configuré pour télécharger le fichier avec les données mobiles. Veuillez changer vos paramètres.</string>
+
+</resources>
