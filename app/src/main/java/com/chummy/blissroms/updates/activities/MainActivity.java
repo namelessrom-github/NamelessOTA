@@ -364,14 +364,14 @@ public class MainActivity extends Activity implements Constants {
             String time = "";
 
             if (is24) {
-                time = new SimpleDateFormat("d, MMMM HH:mm", locale).format(now);
+                time = new SimpleDateFormat("MMMM d - HH:mm", locale).format(now);
             } else {
-                time = new SimpleDateFormat("d, MMMM hh:mm a", locale).format(now);
+                time = new SimpleDateFormat("MMMM d - hh:mm a", locale).format(now);
             }
 
             Preferences.setUpdateLastChecked(this, time);
             String lastChecked = getString(R.string.main_last_checked);
-            updateNotAvailableSummary.setText(lastChecked + " " + time);
+            updateNotAvailableSummary.setText(lastChecked + time);
         }
     }
 
