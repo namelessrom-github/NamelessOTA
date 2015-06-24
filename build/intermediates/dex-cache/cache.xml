@@ -2,11 +2,11 @@
 <items version="2" >
 
     <item
-        jar="C:\Users\Nicholas\Documents\GitHub\TeamBlissOTA\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.1.1\jars\libs\internal_impl-22.1.1.jar"
+        jar="C:\Users\Nicholas\Documents\GitHub\TeamBlissOTA\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.1.1\jars\classes.jar"
         jumboMode="false"
         revision="21.1.2"
-        sha1="9e070ad32b2700b0343e8e0cccc437733d91ba3a">
-        <dex dex="C:\Users\Nicholas\Documents\GitHub\TeamBlissOTA\app\build\intermediates\pre-dexed\debug\internal_impl-22.1.1-4c4bb5a6e33f63fe321cbdaaf23e0b331de3438e.jar" />
+        sha1="c95ba8152923e4872e86a82cfcba9a51c0214328">
+        <dex dex="C:\Users\Nicholas\Documents\GitHub\TeamBlissOTA\app\build\intermediates\pre-dexed\debug\classes-eb8061fbeb31799c1cc3728502e5c7a255c422f4.jar" />
     </item>
     <item
         jar="C:\Users\Nicholas\Documents\GitHub\TeamBlissOTA\app\build\intermediates\exploded-aar\com.android.support\cardview-v7\22.0.0\jars\classes.jar"
@@ -30,11 +30,11 @@
         <dex dex="C:\Users\Nicholas\Documents\GitHub\TeamBlissOTA\app\build\intermediates\pre-dexed\debug\RootTools-5980947244394a2c5c6739631221f7a25239da9b.jar" />
     </item>
     <item
-        jar="C:\Users\Nicholas\Documents\GitHub\TeamBlissOTA\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.1.1\jars\classes.jar"
+        jar="C:\Users\Nicholas\Documents\GitHub\TeamBlissOTA\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.1.1\jars\libs\internal_impl-22.1.1.jar"
         jumboMode="false"
         revision="21.1.2"
-        sha1="c95ba8152923e4872e86a82cfcba9a51c0214328">
-        <dex dex="C:\Users\Nicholas\Documents\GitHub\TeamBlissOTA\app\build\intermediates\pre-dexed\debug\classes-eb8061fbeb31799c1cc3728502e5c7a255c422f4.jar" />
+        sha1="9e070ad32b2700b0343e8e0cccc437733d91ba3a">
+        <dex dex="C:\Users\Nicholas\Documents\GitHub\TeamBlissOTA\app\build\intermediates\pre-dexed\debug\internal_impl-22.1.1-4c4bb5a6e33f63fe321cbdaaf23e0b331de3438e.jar" />
     </item>
 
 </items>
