@@ -22,7 +22,7 @@
     <string name="twrp_ors_cat" translatable="false">OpenRecoveryScript</string>
     <string name="twrp_ors_title">Enable OpenRecoveryScript</string>
     <string name="twrp_ors_summary">Enable auto flashing of the downloaded update.</string>
-    <string name="twrp_ors_information">Auto flash new updates after downloading, available only on TWRP and custom-CWM releases.</string>
+    <string name="twrp_ors_information">Auto flash new updates after downloading, available only on TWRP and custom-CWM recoveries.</string>
     <string name="twrp_ors_delete_after">Delete after install</string>
     <string name="twrp_ors_delete_after_summary">Should the script remove the update after updating?</string>
     <string name="twrp_ors_install_prefs">OpenRecoveryScript Configuration</string>

@@ -12,6 +12,7 @@ public class Element {
     Type type;
     Element parent;
     int nestLevel = 0;
+
     public Element(String text, int type) {
         this.text = text;
         this.type = Type.fromInteger(type);

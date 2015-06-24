@@ -16,7 +16,7 @@
 -->
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
 
-    <string name="main_update_available">Update Available!</string>
+    <string name="main_update_available">New Update Available!</string>
     <string name="main_update_finished">Download complete</string>
     <string name="main_no_update_available">No Update Available</string>
     <string name="main_update_filename">Filename</string>
@@ -43,9 +43,9 @@
 
     <!-- Dialogs -->
     <string name="main_not_compatible_title">Not compatible</string>
-    <string name="main_not_compatible_message">This ROM is not compatible with OTA Updates. Please contact your ROM developer. This app requires a custom ROM where the developer has specifically enabled support. Do not rate 1 star because of this. This is not a fault.</string>
+    <string name="main_not_compatible_message">The current ROM set up is not configured to run with BlissOTA. Please contact the ROM maintainer to fix this issue.</string>
     <string name="main_not_connected_title">Not connected</string>
-    <string name="main_not_connected_message">You are not connected to any network. Please enable your network or WiFi and try again.</string>
+    <string name="main_not_connected_message">You are not connected to any network. Please enable your Mobile Network or WiFi and try again.</string>
     <string name="main_playstore_title">BitCoin</string>
     <string name="main_playstore_message">You do not have any available apps to handle the \"bitcoin:\" mime-type.\n\nWould you like to search the Google Play Store to find one?</string>
 
@@ -55,5 +55,5 @@
     <string name="main_actionbar_button">Actionbar Buttons</string>
 
     <!-- Toast -->
-    <string name="main_release_ignored">Release ignored</string>
+    <string name="main_release_ignored">Release skipped</string>
 </resources>

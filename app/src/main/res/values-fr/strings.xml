@@ -14,26 +14,6 @@
 	limitations under the License.
 -->
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
-
-    <!-- ATTENTION -->
-    <!-- DO NOT TRANSLATE THE ITEMS MARKED "translatable="false" -->
-
-    <!-- App Strings -->
-    <string name="app_name" translatable="false">Updates</string>
-
-    <!-- Set build.prop value names here -->
-    <string name="prop_name" translatable="false">ro.ota.romname</string>
-    <string name="prop_version" translatable="false">ro.ota.version</string>
-    <string name="prop_date" translatable="false">ro.build.date</string>
-    <string name="prop_release" translatable="false">ro.build.version.release</string>
-    <string name="prop_system_model" translatable="false">ro.product.device</string>
-    <string name="prop_release_build_id" translatable="false">ro.build.id</string>
-    <string name="prop_rom_version" translatable="false">ro.modversion</string>
-    <string name="prop_developer" translatable="false">ro.build.user</string>
-
-    <string name="app_version" translatable="false">5.0.0</string>
-    <string name="changelog_url" translatable="false">http://team.blissroms.com/Changelog/CHANGELOG-bliss.txt</string>
-
     <!-- Generic strings -->
     <string name="cancel">Annuler</string>
     <string name="ok">OK</string>

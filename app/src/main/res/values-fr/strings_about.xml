@@ -15,8 +15,8 @@
 -->
 <resources>
     <string name="about_about_title">Concernant BlissOTA 5.0.0</string>
-    <string name="about_preferences_summary">Plus d'informations sur l'application, crédits et donations.</string>
-    <string name="about_about_summary">Cet application est né de ma frustration d'utiliser d'autres applications qui n'ont pas marché comment je voulais. Je l'ai développé pour ma ROM, mais je me suis rapidement rendu compte que d'autres développeurs pourraient trouver cet application utile aussi. En conséquence, je l'ai généralisé et ai écrit quelques guides de mise en œuvre pour d'autres développeurs pour l'utiliser.</string>
+    <string name="about_preferences_summary">Plus d\'informations sur l\'application, crédits et donations.</string>
+    <string name="about_about_summary">Cet application est né de ma frustration d\'utiliser d\'autres applications qui n\'ont pas marché comment je voulais. Je l\'ai développé pour ma ROM, mais je me suis rapidement rendu compte que d\'autres développeurs pourraient trouver cet application utile aussi. En conséquence, je l\'ai généralisé et ai écrit quelques guides de mise en œuvre pour d\'autres développeurs pour l\'utiliser.</string>
     <string name="about_credits_title">Crédits</string>
     <string name="about_credits_summary">Résumé des crédits</string>
     <string name="about_donate_title_cdt">Donner a Nicholas Chum (nicholaschum)</string>
@@ -25,8 +25,8 @@
     <string name="about_donate_summary_matt">Nous voulons remercier Matt Booth pour magnifique base. Pour voir les appréciations, Veuillez lui faire un don!</string>
     <string name="about_donate_button_summary">Paye moi une bière</string>
     <string name="about_version_title">Version</string>
-    <string name="about_app_version">Version de l'application:</string>
+    <string name="about_app_version">Version de l\'application:</string>
     <string name="changelog">Changelog</string>
-    <string name="changelog_summary">Voir le changelog de l'application</string>
+    <string name="changelog_summary">Voir le changelog de l\'application</string>
     <string name="changelog_error">Erreur lors de la lecture du changelog</string>
 </resources>

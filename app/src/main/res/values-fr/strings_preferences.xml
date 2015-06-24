@@ -16,16 +16,13 @@
 <resources>
     <string name="credits_title">Concernant BlissOTA 5.0.0</string>
     <string name="preferences_name">Paramètres</string>
-    <string name="download_folder" translatable="false">/storage/emulated/0/Download</string>
-    <string name="list_summary" translatable="false">%s</string>
-    <string name="twrp_ors_cat" translatable="false">OpenRecoveryScript</string>
     <string name="twrp_ors_title">Activer OpenRecoveryScript</string>
     <string name="twrp_ors_summary">Activer le flashage automatique de la ROM.</string>
     <string name="twrp_ors_information">Flash automatique après le téléchargement, disponible seulement pour TWRP et les customs-CMW.</string>
     <string name="twrp_ors_delete_after">Supprimer le fichier après installation</string>
     <string name="twrp_ors_delete_after_summary">Should the script remove the update after updating?</string>
-    <string name="twrp_ors_install_prefs">Configuration d'OpenRecoveryScript</string>
-    <string name="twrp_ors_install_prefs_summary">Configurer les préférences d'installations d'OpenRecoveryScript</string>
+    <string name="twrp_ors_install_prefs">Configuration d\'OpenRecoveryScript</string>
+    <string name="twrp_ors_install_prefs_summary">Configurer les préférences d\'installations d\'OpenRecoveryScript</string>
     <string name="twrp_ors_wipe_data">Effacer les Données</string>
     <string name="twrp_ors_wipe_cache">Effacer le Cache</string>
     <string name="twrp_ors_wipe_dalvik">Effacer le Dalvik Cache</string>
