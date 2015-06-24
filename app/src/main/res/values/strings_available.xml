@@ -15,7 +15,6 @@
 
 -->
 <resources>
-
     <string name="available_update_name">Update name and file info here</string>
     <string name="available_progress_counter">0MB / 0MB</string>
     <string name="available_changelog_title">Changelog</string>
@@ -35,5 +34,4 @@
     <string name="available_reboot_manual_message">Please reboot to recovery and flash your ROM.\n\nYou can find it in /sdcard/Downloads</string>
     <string name="available_wrong_network_title">Wrong network selected</string>
     <string name="available_wrong_network_message">You are trying to download over your mobile network, and the settings only allow Wi-Fi. Please change the settings accordingly.</string>
-
 </resources>

@@ -41,7 +41,6 @@
         <item name="cardStyle">@style/CardStyle.Dark</item>
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowActionBar">false</item>
-
     </style>
 
     <style name="Theme.Dark.Settings" parent="Theme.Dark">

@@ -14,7 +14,6 @@
 	limitations under the License.
 -->
 <resources>
-    <string name="credits_title">Concernant BlissOTA 5.0.0</string>
     <string name="preferences_name">Paramètres</string>
     <string name="twrp_ors_title">Activer OpenRecoveryScript</string>
     <string name="twrp_ors_summary">Activer le flashage automatique de la ROM.</string>

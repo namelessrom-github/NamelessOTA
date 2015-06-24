@@ -23,7 +23,7 @@
     <string name="app_name" translatable="false">Updates</string>
 
     <!-- Set build.prop value names here -->
-    <string name="prop_name" translatable="false">ro.ota.romname</string>
+    <string name="prop_name" translatable="false">ro.ota.systemname</string>
     <string name="prop_version" translatable="false">ro.ota.version</string>
     <string name="prop_date" translatable="false">ro.build.date</string>
     <string name="prop_release" translatable="false">ro.build.version.release</string>

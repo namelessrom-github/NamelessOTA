@@ -14,9 +14,6 @@
 	limitations under the License.
 -->
 <resources>
-
-    <!-- Menu Main -->
     <string name="menu_settings">Paramètres</string>
     <string name="menu_info">Informations</string>
-
 </resources>

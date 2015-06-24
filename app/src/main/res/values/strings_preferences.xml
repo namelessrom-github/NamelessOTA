@@ -15,7 +15,6 @@
 
 -->
 <resources>
-    <string name="credits_title">About BlissOTA 5.0.0</string>
     <string name="preferences_name">Settings</string>
     <string name="download_folder" translatable="false">/storage/emulated/0/Download</string>
     <string name="list_summary" translatable="false">%s</string>
@@ -33,16 +32,16 @@
     <string name="notifications_title">Notifications</string>
     <string name="background_service_summary">Automatically check for updates and show a notification if one is available</string>
     <string name="background_frequency">Update check frequency</string>
-    <string name="background_30mins">30 Mins</string>
-    <string name="background_60mins">60 Mins</string>
-    <string name="background_2hours">2 Hours</string>
+    <string name="background_30mins">30 mins</string>
+    <string name="background_60mins">60 mins</string>
+    <string name="background_2hours">2 hours</string>
     <string name="background_3hours">3 hours</string>
     <string name="background_6hours">6 hours</string>
     <string name="background_12hours">12 hours</string>
-    <string name="background_24hours">Daily</string>
-    <string name="background_2days">2 days</string>
-    <string name="background_3days">3 days</string>
-    <string name="background_7days">Weekly</string>
+    <string name="background_24hours">Once a day</string>
+    <string name="background_2days">Every two days</string>
+    <string name="background_3days">Every three days</string>
+    <string name="background_7days">Once a week</string>
     <string name="theme_title">App Theme</string>
     <string name="mobile_wifi_network">Network</string>
     <string name="mobile_wifi_title">Update over network</string>

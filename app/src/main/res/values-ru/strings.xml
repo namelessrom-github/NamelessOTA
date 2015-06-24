@@ -15,7 +15,6 @@ limitations under the License.
 
 -->
 <resources>
-
     <string name="app_name">Artmod обновления</string>
     <string name="cancel">Отмена</string>
     <string name="ok">OK</string>
@@ -120,5 +119,4 @@ limitations under the License.
     <string name="notifications_sound">Звук</string>
     <string name="notifications_vibrate">Вибрация</string>
     <string name="silent_ringtone">Без звука</string>
-
 </resources>

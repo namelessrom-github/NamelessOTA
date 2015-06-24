@@ -15,14 +15,13 @@
 
 -->
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
-
     <string name="main_update_available">New Update Available!</string>
     <string name="main_update_finished">Download complete</string>
     <string name="main_no_update_available">No Update Available</string>
     <string name="main_update_filename">Filename</string>
     <string name="main_update_progress">Download Progress</string>
     <string name="main_website">Website</string>
-    <string name="main_website_summary">Visit the official BlissRoms website</string>
+    <string name="main_website_summary">Visit the official Team Bliss website</string>
     <string name="main_donate">Donate</string>
     <string name="main_donate_summary">Donate to Team Bliss!</string>
     <string name="main_tap_to_download">Tap to download</string>
@@ -42,7 +41,7 @@
     <string name="main_rom_developer">Maintainer(s):</string>
 
     <!-- Dialogs -->
-    <string name="main_not_compatible_title">Not compatible</string>
+    <string name="main_not_compatible_title">Hold on!</string>
     <string name="main_not_compatible_message">The current ROM set up is not configured to run with BlissOTA. Please contact the ROM maintainer to fix this issue.</string>
     <string name="main_not_connected_title">Not connected</string>
     <string name="main_not_connected_message">You are not connected to any network. Please enable your Mobile Network or WiFi and try again.</string>
@@ -55,5 +54,5 @@
     <string name="main_actionbar_button">Actionbar Buttons</string>
 
     <!-- Toast -->
-    <string name="main_release_ignored">Release skipped</string>
+    <string name="main_release_ignored">Release skipped.</string>
 </resources>

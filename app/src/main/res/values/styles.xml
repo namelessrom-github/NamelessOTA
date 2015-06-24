@@ -55,5 +55,4 @@
         <item name="android:paddingBottom">16dp</item>
         <item name="cardBackgroundColor">?attr/cardBackground</item>
     </style>
-
 </resources>

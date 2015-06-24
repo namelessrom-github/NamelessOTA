@@ -14,8 +14,6 @@
 	limitations under the License.
 -->
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
-
     <string name="addons_created_on">Créer:</string>
     <string name="addons_updated_on">Mis à jour:</string>
-
 </resources>

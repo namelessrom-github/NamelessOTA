@@ -15,7 +15,6 @@
 
 -->
 <resources>
-
     <string-array name="updater_background_frequency_entries">
         <item>@string/background_30mins</item>
         <item>@string/background_60mins</item>
@@ -61,5 +60,4 @@
         <item>@string/twrp_ors_wipe_dalvik</item>
         <item>@string/twrp_ors_delete_after</item>
     </string-array>
-
 </resources>

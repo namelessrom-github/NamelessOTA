@@ -14,8 +14,6 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
-    <!-- App Strings: DO NOT TRANSLATE, OTHERWISE COMPILE ERRORS! -->
-
     <!-- Generic strings -->
     <string name="cancel">Vazgeç</string>
     <string name="ok">TAMAM</string>

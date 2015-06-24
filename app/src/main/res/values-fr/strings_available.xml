@@ -14,7 +14,6 @@
 	limitations under the License.
 -->
 <resources>
-
     <string name="available_update_name">Vérifier les mises à jours</string>
     <string name="available_progress_counter">0MB / 0MB</string>
     <string name="available_changelog_title">Changelog</string>
@@ -34,5 +33,4 @@
     <string name="available_reboot_manual_message">Entrer dans le recovery et flashez la ROM.\n\nLe fichier est situé dans/sdcard/Downloads</string>
     <string name="available_wrong_network_title">Mauvaise connection choisie</string>
     <string name="available_wrong_network_message">Votre appareil n\'est pas configuré pour télécharger le fichier avec les données mobiles. Veuillez changer vos paramètres.</string>
-
 </resources>
