@@ -44,7 +44,7 @@
     <string name="main_not_compatible_title">Hold on!</string>
     <string name="main_not_compatible_message">The current ROM set up is not configured to run with BlissOTA. Please contact the ROM maintainer to fix this issue.</string>
     <string name="main_not_connected_title">Not connected</string>
-    <string name="main_not_connected_message">You are not connected to any network. Please enable your Mobile Network or WiFi and try again.</string>
+    <string name="main_not_connected_message">You are not connected to any network. Please enable Mobile Network or WiFi and try again.</string>
     <string name="main_playstore_title">BitCoin</string>
     <string name="main_playstore_message">You do not have any available apps to handle the \"bitcoin:\" mime-type.\n\nWould you like to search the Google Play Store to find one?</string>
 

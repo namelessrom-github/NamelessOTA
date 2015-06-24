@@ -25,7 +25,7 @@
     <string name="about_donate_summary_matt">We would like to thank Matt Booth for this amazing base. To show appreciation, please decide to donate to him!</string>
     <string name="about_version_title">Version</string>
     <string name="about_app_version">App version:</string>
-    <string name="changelog">Changelog</string>
+    <string name="changelog">Server Changelog</string>
     <string name="changelog_summary">View the app\'s changelog</string>
     <string name="changelog_error">Error reading changelog</string>
 </resources>
