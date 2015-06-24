@@ -68,7 +68,7 @@ public class AboutActivity extends Activity {
         String creditsText =
                 openHTML + "Nicholas Chum (nicholaschum)" + closeHTML + " - BlissOTA Developer" + newLine +
                         openHTML + "Jezebel Ng (BellaxMiu)" + closeHTML + " - Icon and graphics designer" + newLine +
-                        openHTML + "Matt Booth (Kryten2k35)" + closeHTML + " - Original Source Developer" + newLine + newLine +
+                        openHTML + "Matthew Booth (Kryten2k35)" + closeHTML + " - Original Source Developer" + newLine + newLine +
 
                         openHTML + "Erwan Leboucher (genesixxbf3)" + closeHTML + " - Source Contributor" + newLine +
                         openHTML + "Tobias Teschner (tobitege)" + closeHTML + " - BlissOTA Server Automation" + newLine + newLine +
