@@ -66,14 +66,12 @@ public class AboutActivity extends Activity {
         String closeHTML = "</font>";
         String newLine = "<br />";
         String creditsText =
-                openHTML + "Nicholas Chum (nicholaschum)" + closeHTML + " - BlissOTA Implementer/Source Rewrites" + newLine +
+                openHTML + "Nicholas Chum (nicholaschum)" + closeHTML + " - BlissOTA Developer" + newLine +
                         openHTML + "Jezebel Ng (BellaxMiu)" + closeHTML + " - Icon and graphics designer" + newLine +
-                        openHTML + "Matt Booth (Kryten2k35)" + closeHTML + " - OTAUpdates Original Source Creator" + newLine + newLine +
+                        openHTML + "Matt Booth (Kryten2k35)" + closeHTML + " - Original Source Developer" + newLine + newLine +
 
                         openHTML + "Erwan Leboucher (genesixxbf3)" + closeHTML + " - Source Contributor" + newLine +
-                        openHTML + "Tobias Teschner (tobitege)" + closeHTML + " - OTA server automation" + newLine + newLine +
-
-                        openHTML + "Bunyamin Ozdemir (KeTuRr74)" + closeHTML + " - BlissOTA French Translations";
+                        openHTML + "Tobias Teschner (tobitege)" + closeHTML + " - BlissOTA Server Automation";
         creditsSummary.setText(Html.fromHtml(creditsText));
 
     }
