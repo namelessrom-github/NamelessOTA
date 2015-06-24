@@ -71,7 +71,9 @@ public class AboutActivity extends Activity {
                         openHTML + "Matt Booth (Kryten2k35)" + closeHTML + " - Original Source Developer" + newLine + newLine +
 
                         openHTML + "Erwan Leboucher (genesixxbf3)" + closeHTML + " - Source Contributor" + newLine +
-                        openHTML + "Tobias Teschner (tobitege)" + closeHTML + " - BlissOTA Server Automation";
+                        openHTML + "Tobias Teschner (tobitege)" + closeHTML + " - BlissOTA Server Automation" + newLine + newLine +
+
+                        openHTML + "BlissOTA Translation Credits" + closeHTML + " - KeTuRr74, razor84";
         creditsSummary.setText(Html.fromHtml(creditsText));
 
     }
