@@ -79,8 +79,8 @@ public class GenerateRecoveryScript extends AsyncTask<Void, String, Boolean> imp
         File[] filesArr = installAfterFlashDir.listFiles();
         if (filesArr != null && filesArr.length > 0) {
             for (int i = 0; i < filesArr.length; i++) {
-                mScript.append("install "
-                        + "/sdcard"
+                mScript.append(NEW_LINE
+                        + "install /sdcard"
                         + File.separator
                         + OTA_DOWNLOAD_DIR
                         + File.separator
