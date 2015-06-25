@@ -27,15 +27,13 @@ public interface Constants {
     public static final String SD_CARD = Environment.getExternalStorageDirectory().getAbsolutePath();
     public static final String OTA_DOWNLOAD_DIR = "Updates";
     public static final String INSTALL_AFTER_FLASH_DIR = "InstallAfterFlash";
-    public static final String INSTALL_AFTER_FLASH_DIR_ADDON = "Updates/InstallAfterFlash";
+    public static final String INSTALL_AFTER_FLASH_DIR_ADDON = "/Updates/InstallAfterFlash";
 
     // Networks
     public static final String WIFI_ONLY = "2";
-    public static final String WIFI_OR_MOBILE = "1";
 
     // Theme
     public static final String THEME_LIGHT = "0";
-    public static final String THEME_LIGHT_DARKACTIONBAR = "1";
     public static final String THEME_DARK = "2";
 
     // Settings
@@ -55,7 +53,6 @@ public interface Constants {
     public static final String UPDATER_BACK_SERVICE = "background_service";
     public static final String UPDATER_BACK_FREQ = "background_frequency";
     public static final String UPDATER_ENABLE_ORS = "updater_twrp_ors";
-    public static final String MOVE_TO_EXT_SD = "move_to_ext_sd";
     public static final String NOTIFICATIONS_SOUND = "notifications_sound";
     public static final String NOTIFICATIONS_VIBRATE = "notifications_vibrate";
     public static final String IGNORE_RELEASE_VERSION = "ignored_release";
