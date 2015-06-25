@@ -64,7 +64,7 @@ public class GenerateRecoveryScript extends AsyncTask<Void, String, Boolean> imp
             mScript.append("wipe dalvik" + NEW_LINE);
         }
 
-        mScript.append("install " + "/sdcard"
+        mScript.append("install /sdcard"
                 + File.separator
                 + OTA_DOWNLOAD_DIR
                 + File.separator
