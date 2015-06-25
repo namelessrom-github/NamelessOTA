@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+ 	Copyright (C) 2015 Nicholas Chum (nicholaschum) and Matt Booth (Kryten2k35).
+ 
+ 	Licensed under the Attribution-NonCommercial-ShareAlike 4.0 International 
+ 	(the "License") you may not use this file except in compliance with the License.
+ 	You may obtain a copy of the License at
+ 
+ 		http://creativecommons.org/licenses/by-nc-sa/4.0/legalcode
+ 
+ 	Unless required by applicable law or agreed to in writing, software
+ 	distributed under the License is distributed on an "AS IS" BASIS,
+	WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+	See the License for the specific language governing permissions and
+	limitations under the License.
+
+-->
+<resources>
+    <string name="preferences_name">Einstellungen</string>
+    <string name="twrp_ors_title">OpenRecoveryScript aktivieren</string>
+    <string name="twrp_ors_summary">Aktivieren Sie die Autoinstallation des heruntergeladenen Updates.</string>
+    <string name="twrp_ors_information">Automatische Installation von neuen Updates nach dem Download, nur mit TWRP und individuelle-CWM Recovery verfügbar.</string>
+    <string name="twrp_ors_delete_after">Nach der Installation löschen</string>
+    <string name="twrp_ors_delete_after_summary">Soll das Skript das Update nach der Aktualisierung entfernen?</string>
+    <string name="twrp_ors_install_prefs">OpenRecoveryScript Konfiguration</string>
+    <string name="twrp_ors_install_prefs_summary">OpenRecoveryScript-Installationseinstellungen konfigurieren</string>
+    <string name="twrp_ors_wipe_data">Wipe Data</string>
+    <string name="twrp_ors_wipe_cache">Wipe Cache</string>
+    <string name="twrp_ors_wipe_dalvik">Wipe Dalvik</string>
+    <string name="notifications_title">Benachrichtigungen</string>
+    <string name="background_service_summary">Automatisch auf Updates überprüfen und eine Benachrichtigung zeigen, wenn eines verfügbar ist</string>
+    <string name="background_frequency">Intervall für Aktualisierungsprüfung</string>
+    <string name="background_30mins">30 min</string>
+    <string name="background_60mins">60 min</string>
+    <string name="background_2hours">2 Stunden</string>
+    <string name="background_3hours">3 Stunden</string>
+    <string name="background_6hours">6 Stunden</string>
+    <string name="background_12hours">12 Stunden</string>
+    <string name="background_24hours">Einmal pro Tag</string>
+    <string name="background_2days">Alle zwei Tage</string>
+    <string name="background_3days">Alle drei Tage</string>
+    <string name="background_7days">Einmal pro Woche</string>
+    <string name="theme_title">App-Design</string>
+    <string name="mobile_wifi_network">Netzwerk</string>
+    <string name="mobile_wifi_title">Aktualisierung über Netzwerk</string>
+    <string name="wifi_network_only">nur Wi-Fi</string>
+    <string name="mobile_or_wifi">Mobilfunknetz oder Wi-Fi</string>
+    <string name="theme">Ausgewähltes Design</string>
+    <string name="theme_config">Design-Konfiguration</string>
+    <string name="theme_dark">Material Dark</string>
+    <string name="theme_light">Material Light</string>
+    <string name="notifications_sound">Töne</string>
+    <string name="notifications_vibrate">Vibrieren</string>
+    <string name="silent_ringtone">Lautlos</string>
+    <string name="notification_ignore_release_title">Update überspringen</string>
+    <string name="notification_ignoring_release">Überspringe Version: </string>
+    <string name="notification_not_ignoring_release">Es werden keine Updates übersprungen.</string>
+</resources>

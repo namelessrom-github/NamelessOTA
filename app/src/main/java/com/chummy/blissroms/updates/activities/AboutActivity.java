@@ -73,7 +73,7 @@ public class AboutActivity extends Activity {
                         openHTML + "Erwan Leboucher (genesixxbf3)" + closeHTML + " - Source Contributor" + newLine +
                         openHTML + "Tobias Teschner (tobitege)" + closeHTML + " - BlissOTA Server Automation" + newLine + newLine +
 
-                        openHTML + "BlissOTA Translation Credits" + closeHTML + " - KeTuRr74, razor84";
+                        openHTML + "BlissOTA Translation Credits" + closeHTML + " - KeTuRr74, razor84, Stone_88";
         creditsSummary.setText(Html.fromHtml(creditsText));
 
     }
