@@ -52,5 +52,5 @@
     <string name="silent_ringtone">Silencieux</string>
     <string name="notification_ignore_release_title">Ignorer la mise à jour</string>
     <string name="notification_ignoring_release">Version ignorer actuellement: </string>
-    <string name="notification_not_ignoring_release">Vpus ne ratez aucune mise à jour</string>
+    <string name="notification_not_ignoring_release">Vous ne ratez aucune mise à jour</string>
 </resources>
