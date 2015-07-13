@@ -20,8 +20,8 @@ limitations under the License.
     <string name="available_changelog_content">Sizin Değişiklikleriniz burada</string>
     <string name="available_check_md5">MD5 Kontrol</string>
     <string name="available_ready_to_install">Yüklemeye hazır</string>
-    <string name="available_md5_ok">MD5 Kontrolden Geçti</string>
-    <string name="available_md5_failed">MD5 Kontrol Başarısız</string>
+    <!--     <string name="available_md5_ok">MD5 Kontrolden Geçti</string>
+        <string name="available_md5_failed">MD5 Kontrol Başarısız</string> -->
     <string name="available_checking_md5">Kontrol Ediliyor MD5&#8230;</string>
     <string name="available_downloading">İndiriliyor&#8230;</string>
     <string name="are_you_sure">Emin misiniz?</string>

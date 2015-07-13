@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+ 	Copyright (C) 2015 Nicholas Chum (nicholaschum) and Matt Booth (Kryten2k35).
+ 
+ 	Licensed under the Attribution-NonCommercial-ShareAlike 4.0 International 
+ 	(the "License") you may not use this file except in compliance with the License.
+ 	You may obtain a copy of the License at
+ 
+ 		http://creativecommons.org/licenses/by-nc-sa/4.0/legalcode
+ 
+ 	Unless required by applicable law or agreed to in writing, software
+ 	distributed under the License is distributed on an "AS IS" BASIS,
+	WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+	See the License for the specific language governing permissions and
+	limitations under the License.
+
+-->
+<resources>
+    <string name="preferences_name">הגדרות</string>
+    <string name="twrp_ors_title">Enable OpenRecoveryScript</string>
+    <string name="twrp_ors_summary">Enable auto flashing of the downloaded update.</string>
+    <string name="twrp_ors_information">Auto flash new updates after downloading, available only on TWRP and custom-CWM recoveries.</string>
+    <string name="twrp_ors_delete_after">מחק לאחר ההתקנה</string>
+    <string name="twrp_ors_delete_after_summary">Should the script remove the update after updating?</string>
+    <string name="twrp_ors_install_prefs">OpenRecoveryScript Configuration</string>
+    <string name="twrp_ors_install_prefs_summary">Configure OpenRecoveryScript installation preferences</string>
+    <string name="twrp_ors_wipe_data">Wipe Data</string>
+    <string name="twrp_ors_wipe_cache">Wipe Cache</string>
+    <string name="twrp_ors_wipe_dalvik">Wipe Dalvik</string>
+    <string name="notifications_title">הודעות</string>
+    <string name="background_service_summary">Automatically check for updates and show a notification if one is available</string>
+    <string name="background_frequency">Update check frequency</string>
+    <string name="background_30mins">30 דקות</string>
+    <string name="background_60mins">60 דקות</string>
+    <string name="background_2hours">שעתיים</string>
+    <string name="background_3hours">3 שעות</string>
+    <string name="background_6hours">6 שעות</string>
+    <string name="background_12hours">12 שעות</string>
+    <string name="background_24hours">פעם ביום</string>
+    <string name="background_2days">בכל יומיים</string>
+    <string name="background_3days">כל שלושה ימים</string>
+    <string name="background_7days">פעם בשבוע</string>
+    <string name="theme_title">App Theme</string>
+    <string name="mobile_wifi_network">רשת</string>
+    <string name="mobile_wifi_title">עדכן ברשת</string>
+    <string name="wifi_network_only">Wi-Fi בלבד</string>
+    <string name="mobile_or_wifi">רשת סלולרית או Wi-Fi</string>
+    <string name="theme">הנושא הנבחר</string>
+    <string name="theme_config">הגדרת נושא</string>
+    <string name="theme_dark">Material Dark</string>
+    <string name="theme_light">Material Light</string>
+    <string name="notifications_sound">צליל</string>
+    <string name="notifications_vibrate">רטט</string>
+    <string name="silent_ringtone">שקט</string>
+    <string name="notification_ignore_release_title">דלג על העדכון</string>
+    <string name="notification_ignoring_release">Currently skipping version: </string>
+    <string name="notification_not_ignoring_release">You are not skipping any updates</string>
+</resources>

@@ -22,8 +22,8 @@
     <string name="available_md5" translatable="false">MD5:</string>
     <string name="available_check_md5">Check MD5</string>
     <string name="available_ready_to_install">Ready to install</string>
-    <string name="available_md5_ok">MD5 Check Success!</string>
-    <string name="available_md5_failed">MD5 Check Failed</string>
+    <string name="available_md5_ok">MD5 Matched</string>
+    <string name="available_md5_failed">MD5 Failed</string>
     <string name="available_checking_md5">Checking MD5&#8230;</string>
     <string name="available_downloading">Downloading&#8230;</string>
     <string name="are_you_sure">Are you sure?</string>

@@ -21,8 +21,8 @@
     <string name="available_changelog_content">Your Changelog goes here</string>
     <string name="available_check_md5">Verifica MD5</string>
     <string name="available_ready_to_install">Pronto per l\'installazione</string>
-    <string name="available_md5_ok">Verifica MD5 con Successo!</string>
-    <string name="available_md5_failed">Verifica MD5 non riuscita</string>
+    <!--     <string name="available_md5_ok">Verifica MD5 con Successo!</string>
+        <string name="available_md5_failed">Verifica MD5 non riuscita</string> -->
     <string name="available_checking_md5">Verifica MD5&#8230;</string>
     <string name="available_downloading">Download in corso&#8230;</string>
     <string name="are_you_sure">Sei sicuro?</string>

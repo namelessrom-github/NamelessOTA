@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+ 	Copyright (C) 2015 Nicholas Chum (nicholaschum) and Matt Booth (Kryten2k35).
+ 
+ 	Licensed under the Attribution-NonCommercial-ShareAlike 4.0 International 
+ 	(the "License") you may not use this file except in compliance with the License.
+ 	You may obtain a copy of the License at
+ 
+ 		http://creativecommons.org/licenses/by-nc-sa/4.0/legalcode
+ 
+ 	Unless required by applicable law or agreed to in writing, software
+ 	distributed under the License is distributed on an "AS IS" BASIS,
+	WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+	See the License for the specific language governing permissions and
+	limitations under the License.
+
+-->
+<resources>
+    <string name="available_update_name">Update name and file info here</string>
+    <string name="available_progress_counter">0MB / 0MB</string>
+    <string name="available_changelog_title">רשימת שינויים</string>
+    <string name="available_changelog_content">Your Changelog goes here</string>
+    <string name="available_check_md5">בדוק MD5</string>
+    <string name="available_ready_to_install">מוכן להתקנה</string>
+    <!--   <string name="available_md5_ok">בדיקת MD5 עברה בהצלחה!</string>
+      <string name="available_md5_failed">בדיקת MD5 נכשלה</string> -->
+    <string name="available_checking_md5">בדיקת MD5&#8230;</string>
+    <string name="available_downloading">מוריד&#8230;</string>
+    <string name="are_you_sure">האם אתה בטוח?</string>
+    <string name="available_delete_confirm_message">האם אתה בטוח שברצונך למחוק את הקובץ שהורדת?</string>
+    <string name="available_reboot_confirm">האם ברצונך לאתחל כעת?</string>
+    <string name="available_url_error">כתובת URL שגוייה: נא עיין במפתח ה-ROM שלך</string>
+    <string name="available_reboot_manual_title">אנא אתחל מחדש</string>
+    <string name="available_reboot_manual_message">Please reboot to recovery and flash your ROM.\n\nYou can find it in /sdcard/Downloads</string>
+    <string name="available_wrong_network_title">נבחרה רשת לא נכונה</string>
+    <string name="available_wrong_network_message">אתה מנסה להוריד ברשת הסלולרית שלך, וההגדרות מאפשרות רק חיבור Wi-Fi. אנא שנה את ההגדרות בהתאם.</string>
+</resources>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+ 	Copyright (C) 2015 Nicholas Chum (nicholaschum) and Matt Booth (Kryten2k35).
+ 
+ 	Licensed under the Attribution-NonCommercial-ShareAlike 4.0 International 
+ 	(the "License") you may not use this file except in compliance with the License.
+ 	You may obtain a copy of the License at
+ 
+ 		http://creativecommons.org/licenses/by-nc-sa/4.0/legalcode
+ 
+ 	Unless required by applicable law or agreed to in writing, software
+ 	distributed under the License is distributed on an "AS IS" BASIS,
+	WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+	See the License for the specific language governing permissions and
+	limitations under the License.
+
+-->
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <string name="main_update_available">עדכון חדש זמין!</string>
+    <string name="main_update_finished">ההורדה הושלמה</string>
+    <string name="main_no_update_available">אין עדכון זמין</string>
+    <string name="main_update_filename">שם קובץ</string>
+    <string name="main_update_progress">התקדמות ההורדה</string>
+    <string name="main_website">אתר אינטרנט</string>
+    <string name="main_website_summary">בקר באתר האינטרנט הרשמי של צוות Bliss</string>
+    <string name="main_donate">תרום</string>
+    <string name="main_donate_summary">תרום לצוות Bliss!</string>
+    <string name="main_tap_to_download">לחץ כדי להוריד</string>
+    <string name="main_download_completed_details">לחץ לפרטים</string>
+    <string name="main_tap_to_view_progress">לחץ כדי להציג את ההתקדמות</string>
+    <string name="main_last_checked">עדכון אחרון נבדק ב: \n</string>
+    <string name="main_addon">הרחבות</string>
+    <string name="main_addon_summary">עיין והורד קבצים נוספים ל-ROM הזה</string>
+    <string name="main_rom_information">אודות ההתקן שלך</string>
+    <string name="main_rom_name">שם המערכת:</string>
+    <string name="main_rom_version">גירסת השחרור:</string>
+    <string name="main_rom_codename">ROM codename:</string>
+    <string name="main_rom_build_date">Build date:</string>
+    <string name="main_android_version">גירסת אנדרואיד:</string>
+    <string name="main_rom_developer">Maintainer(s):</string>
+    <string name="main_not_compatible_title">רק שניה!</string>
+    <string name="main_not_compatible_message">The current ROM set up is not configured to run with BlissOTA. Please contact the ROM maintainer to fix this issue.</string>
+    <string name="main_not_connected_title">לא מחובר</string>
+    <string name="main_not_connected_message">אינך מחובר לאף רשת. אנא אפשר חיבור לרשת סלולרית או WiFi ונסה שוב.</string>
+    <string name="main_playstore_title">ביטקוין</string>
+    <string name="main_playstore_message">You do not have any available apps to handle the \"bitcoin:\" mime-type.\n\nWould you like to search the Google Play Store to find one?</string>
+    <string name="main_button_icon">סמל הלחצן</string>
+    <string name="main_dev_website_icon">סמל אתר המפתחים</string>
+    <string name="main_actionbar_button">Actionbar Buttons</string>
+    <string name="main_release_ignored">Release skipped.</string>
+</resources>

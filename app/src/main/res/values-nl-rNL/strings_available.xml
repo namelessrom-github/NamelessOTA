@@ -21,8 +21,8 @@
     <string name="available_changelog_content">Your Changelog goes here</string>
     <string name="available_check_md5">MD5 Controleren</string>
     <string name="available_ready_to_install">Klaar om te installeren</string>
-    <string name="available_md5_ok">MD5 controle succesvol!</string>
-    <string name="available_md5_failed">MD5 controle mislukt</string>
+    <!--     <string name="available_md5_ok">MD5 controle succesvol!</string>
+        <string name="available_md5_failed">MD5 controle mislukt</string> -->
     <string name="available_checking_md5">MD5 controle&#8230;</string>
     <string name="available_downloading">Bezig met downloaden&#8230;</string>
     <string name="are_you_sure">Weet u het zeker?</string>

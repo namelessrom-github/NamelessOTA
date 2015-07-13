@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+ 	Copyright (C) 2015 Nicholas Chum (nicholaschum) and Matt Booth (Kryten2k35).
+ 
+ 	Licensed under the Attribution-NonCommercial-ShareAlike 4.0 International 
+ 	(the "License") you may not use this file except in compliance with the License.
+ 	You may obtain a copy of the License at
+ 
+ 		http://creativecommons.org/licenses/by-nc-sa/4.0/legalcode
+ 
+ 	Unless required by applicable law or agreed to in writing, software
+ 	distributed under the License is distributed on an "AS IS" BASIS,
+	WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+	See the License for the specific language governing permissions and
+	limitations under the License.
+
+-->
+<resources>
+    <string name="preferences_name">設置</string>
+    <string name="twrp_ors_title">啟用 OpenRecoveryScript</string>
+    <string name="twrp_ors_summary">Enable auto flashing of the downloaded update.</string>
+    <string name="twrp_ors_information">Auto flash new updates after downloading, available only on TWRP and custom-CWM recoveries.</string>
+    <string name="twrp_ors_delete_after">在安裝後刪除</string>
+    <string name="twrp_ors_delete_after_summary">Should the script remove the update after updating?</string>
+    <string name="twrp_ors_install_prefs">OpenRecoveryScript 配置</string>
+    <string name="twrp_ors_install_prefs_summary">配置 OpenRecoveryScript 安裝首選項</string>
+    <string name="twrp_ors_wipe_data">擦除資料</string>
+    <string name="twrp_ors_wipe_cache">清除緩存</string>
+    <string name="twrp_ors_wipe_dalvik">擦 Dalvik</string>
+    <string name="notifications_title">通知</string>
+    <string name="background_service_summary">自動檢查更新並顯示一個通知，如果一個是可用</string>
+    <string name="background_frequency">更新檢查頻率</string>
+    <string name="background_30mins">30 分鐘</string>
+    <string name="background_60mins">60 分鐘</string>
+    <string name="background_2hours">2 個小時</string>
+    <string name="background_3hours">3 個小時</string>
+    <string name="background_6hours">6 個小時</string>
+    <string name="background_12hours">12 個小時</string>
+    <string name="background_24hours">一天一次</string>
+    <string name="background_2days">每隔兩天</string>
+    <string name="background_3days">每三天</string>
+    <string name="background_7days">每周</string>
+    <string name="theme_title">應用程式主題</string>
+    <string name="mobile_wifi_network">網路</string>
+    <string name="mobile_wifi_title">Update over network</string>
+    <string name="wifi_network_only">只有 Wifi</string>
+    <string name="mobile_or_wifi">Mobile Network or Wi-Fi</string>
+    <string name="theme">所選的主題</string>
+    <string name="theme_config">主題配置</string>
+    <string name="theme_dark">暗</string>
+    <string name="theme_light">光</string>
+    <string name="notifications_sound">聲音</string>
+    <string name="notifications_vibrate">震動</string>
+    <string name="silent_ringtone">沉默</string>
+    <string name="notification_ignore_release_title">跳過更新</string>
+    <string name="notification_ignoring_release">正在跳過版本: </string>
+    <string name="notification_not_ignoring_release">沒有跳過任何更新</string>
+</resources>
