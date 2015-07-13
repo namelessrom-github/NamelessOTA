@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+ 	Copyright (C) 2015 Nicholas Chum (nicholaschum) and Matt Booth (Kryten2k35).
+ 
+ 	Licensed under the Attribution-NonCommercial-ShareAlike 4.0 International 
+ 	(the "License") you may not use this file except in compliance with the License.
+ 	You may obtain a copy of the License at
+ 
+ 		http://creativecommons.org/licenses/by-nc-sa/4.0/legalcode
+ 
+ 	Unless required by applicable law or agreed to in writing, software
+ 	distributed under the License is distributed on an "AS IS" BASIS,
+	WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+	See the License for the specific language governing permissions and
+	limitations under the License.
+
+-->
+<resources>
+    <string name="preferences_name">Instellingen</string>
+    <string name="twrp_ors_title">OpenRecoveryScript inschakelen</string>
+    <string name="twrp_ors_summary">Schakel automatisch flashen van de gedownloade update in.</string>
+    <string name="twrp_ors_information">Flash automatisch nieuwe updates na het downloaden, alleen beschikbaar op TWRP en aangepaste CWM herstellingen.</string>
+    <string name="twrp_ors_delete_after">Verwijderen na installatie</string>
+    <string name="twrp_ors_delete_after_summary">Moet het script de update verwijderen na het updaten?</string>
+    <string name="twrp_ors_install_prefs">OpenRecoveryScript configuratie</string>
+    <string name="twrp_ors_install_prefs_summary">OpenRecoveryScript installatievoorkeuren configureren</string>
+    <string name="twrp_ors_wipe_data">Gegevens wissen</string>
+    <string name="twrp_ors_wipe_cache">Cache wissen</string>
+    <string name="twrp_ors_wipe_dalvik">Dalvik wissen</string>
+    <string name="notifications_title">Notificaties</string>
+    <string name="background_service_summary">Automatisch controleren op updates en een melding weergeven wanneer er een beschikbaar is</string>
+    <string name="background_frequency">Updatecontrole frequentie</string>
+    <string name="background_30mins">30 minuten</string>
+    <string name="background_60mins">60 minuten</string>
+    <string name="background_2hours">2 uur</string>
+    <string name="background_3hours">3 uur</string>
+    <string name="background_6hours">6 uur</string>
+    <string name="background_12hours">12 uur</string>
+    <string name="background_24hours">Één keer per dag</string>
+    <string name="background_2days">Om de twee dagen</string>
+    <string name="background_3days">Om de 3 dagen</string>
+    <string name="background_7days">Één keer per weer</string>
+    <string name="theme_title">App Thema</string>
+    <string name="mobile_wifi_network">Netwerk</string>
+    <string name="mobile_wifi_title">Update via netwerk</string>
+    <string name="wifi_network_only">Alleen WiFi</string>
+    <string name="mobile_or_wifi">Mobiel netwerk of WiFi</string>
+    <string name="theme">Geselecteerde Thema</string>
+    <string name="theme_config">Thema configuratie</string>
+    <string name="theme_dark">Material Dark</string>
+    <string name="theme_light">Material Light</string>
+    <string name="notifications_sound">Geluid</string>
+    <string name="notifications_vibrate">Trillen</string>
+    <string name="silent_ringtone">Stil</string>
+    <string name="notification_ignore_release_title">Update overslaan</string>
+    <string name="notification_ignoring_release">Overgeslagen versie: </string>
+    <string name="notification_not_ignoring_release">U slaat geen updates over</string>
+</resources>

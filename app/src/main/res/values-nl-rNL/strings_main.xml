@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+ 	Copyright (C) 2015 Nicholas Chum (nicholaschum) and Matt Booth (Kryten2k35).
+ 
+ 	Licensed under the Attribution-NonCommercial-ShareAlike 4.0 International 
+ 	(the "License") you may not use this file except in compliance with the License.
+ 	You may obtain a copy of the License at
+ 
+ 		http://creativecommons.org/licenses/by-nc-sa/4.0/legalcode
+ 
+ 	Unless required by applicable law or agreed to in writing, software
+ 	distributed under the License is distributed on an "AS IS" BASIS,
+	WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+	See the License for the specific language governing permissions and
+	limitations under the License.
+
+-->
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <string name="main_update_available">Nieuwe update beschikbaar!</string>
+    <string name="main_update_finished">Download voltooid</string>
+    <string name="main_no_update_available">Geen update beschikbaar</string>
+    <string name="main_update_filename">Bestandsnaam</string>
+    <string name="main_update_progress">Download vooruitgang</string>
+    <string name="main_website">Website</string>
+    <string name="main_website_summary">Bezoek de officiële website van Team Bliss</string>
+    <string name="main_donate">Doneren</string>
+    <string name="main_donate_summary">Doneer aan het Team van Bliss!</string>
+    <string name="main_tap_to_download">Tik om te downloaden</string>
+    <string name="main_download_completed_details">Tik voor details</string>
+    <string name="main_tap_to_view_progress">Tik om voortgang te bekijken</string>
+    <string name="main_last_checked">Laatst gecontroleerd voor een update op:\n</string>
+    <string name="main_addon">Add-ons</string>
+    <string name="main_addon_summary">Blader en download extra bestanden voor deze ROM</string>
+    <string name="main_rom_information">Over uw apparaat</string>
+    <string name="main_rom_name">Systeemnaam:</string>
+    <string name="main_rom_version">Versie:</string>
+    <string name="main_rom_codename">ROM codenaam:</string>
+    <string name="main_rom_build_date">Build datum:</string>
+    <string name="main_android_version">Android versie:</string>
+    <string name="main_rom_developer">Onderhouder(s):</string>
+    <string name="main_not_compatible_title">Wacht even!</string>
+    <string name="main_not_compatible_message">De huidige ROM installatie is niet geconfigureerd om uit te voeren met BlissOTA. Neem contact op met de onderhouder van de ROM om dit probleem op te lossen.</string>
+    <string name="main_not_connected_title">Niet verbonden</string>
+    <string name="main_not_connected_message">U bent niet verbonden met een netwerk. Schakel Mobiel netwerk of WiFi in en probeer het opnieuw.</string>
+    <string name="main_playstore_title">BitCoin</string>
+    <string name="main_playstore_message">U heeft geen beschikbare app die het \"bitcoin\" mime-type aan kan.\n\nWilt u er een zoeken in de Google Play Store?</string>
+    <string name="main_button_icon">Knopicoon</string>
+    <string name="main_dev_website_icon">Ontwikkelaarswebsite icoon</string>
+    <string name="main_actionbar_button">Actiebalk knoppen</string>
+    <string name="main_release_ignored">Release overgeslagen.</string>
+</resources>
