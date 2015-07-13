@@ -33,7 +33,7 @@
     <string name="prop_developer" translatable="false">ro.build.user</string>
 
     <string name="app_version" translatable="false">5.0.0</string>
-    <string name="changelog_url" translatable="false">http://team.blissroms.com/Changelog/CHANGELOG-bliss.txt</string>
+    <string name="changelog_url" translatable="false">http://downloads.blissroms.com/Changelog/CHANGELOG-bliss.txt</string>
 
     <!-- Generic strings -->
     <string name="cancel">Cancel</string>
