@@ -1,34 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2">
+<items version="2" >
 
     <item
-        jar="C:\Users\Nicholas\Documents\GitHub\TeamBlissOTA\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.1.1\jars\classes.jar"
-        jumboMode="false" revision="21.1.2" sha1="c95ba8152923e4872e86a82cfcba9a51c0214328">
-        <dex
-            dex="C:\Users\Nicholas\Documents\GitHub\TeamBlissOTA\app\build\intermediates\pre-dexed\debug\classes-eb8061fbeb31799c1cc3728502e5c7a255c422f4.jar" />
-    </item>
-    <item jar="C:\Users\Nicholas\Documents\GitHub\TeamBlissOTA\app\src\main\libs\RootTools.jar"
-        jumboMode="false" revision="21.1.2" sha1="0366ac8a28a574b3964f360c027ad287d173cfa7">
-        <dex
-            dex="C:\Users\Nicholas\Documents\GitHub\TeamBlissOTA\app\build\intermediates\pre-dexed\debug\RootTools-9e3c4a2077dc65ae60f7f4a89e3f74456ecd636d.jar" />
-    </item>
-    <item
-        jar="C:\Users\Nicholas\Documents\GitHub\TeamBlissOTA\app\build\intermediates\exploded-aar\com.android.support\cardview-v7\22.0.0\jars\classes.jar"
-        jumboMode="false" revision="21.1.2" sha1="11842de6a309c447b3a3d60d73ad637a87c58994">
-        <dex
-            dex="C:\Users\Nicholas\Documents\GitHub\TeamBlissOTA\app\build\intermediates\pre-dexed\debug\classes-5fa3af62da3e77b72eb2cc081ffb1aa56c58c8d6.jar" />
-    </item>
-    <item
         jar="C:\Users\Nicholas\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\22.1.1\support-annotations-22.1.1.jar"
-        jumboMode="false" revision="21.1.2" sha1="01d051a6bfb1218b1db2d3a5af0480ac2c25c42a">
-        <dex
-            dex="C:\Users\Nicholas\Documents\GitHub\TeamBlissOTA\app\build\intermediates\pre-dexed\debug\support-annotations-22.1.1-45b7a97c023ccd9b028242c2f33209bbeb294648.jar" />
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="01d051a6bfb1218b1db2d3a5af0480ac2c25c42a">
+        <dex dex="C:\Users\Nicholas\Documents\GitHub\TeamBlissOTA\app\build\intermediates\pre-dexed\debug\support-annotations-22.1.1-45b7a97c023ccd9b028242c2f33209bbeb294648.jar" />
     </item>
     <item
         jar="C:\Users\Nicholas\Documents\GitHub\TeamBlissOTA\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.1.1\jars\libs\internal_impl-22.1.1.jar"
-        jumboMode="false" revision="21.1.2" sha1="9e070ad32b2700b0343e8e0cccc437733d91ba3a">
-        <dex
-            dex="C:\Users\Nicholas\Documents\GitHub\TeamBlissOTA\app\build\intermediates\pre-dexed\debug\internal_impl-22.1.1-4c4bb5a6e33f63fe321cbdaaf23e0b331de3438e.jar" />
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="9e070ad32b2700b0343e8e0cccc437733d91ba3a">
+        <dex dex="C:\Users\Nicholas\Documents\GitHub\TeamBlissOTA\app\build\intermediates\pre-dexed\debug\internal_impl-22.1.1-4c4bb5a6e33f63fe321cbdaaf23e0b331de3438e.jar" />
+    </item>
+    <item
+        jar="C:\Users\Nicholas\Documents\GitHub\TeamBlissOTA\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.1.1\jars\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="c95ba8152923e4872e86a82cfcba9a51c0214328">
+        <dex dex="C:\Users\Nicholas\Documents\GitHub\TeamBlissOTA\app\build\intermediates\pre-dexed\debug\classes-eb8061fbeb31799c1cc3728502e5c7a255c422f4.jar" />
+    </item>
+    <item
+        jar="C:\Users\Nicholas\Documents\GitHub\TeamBlissOTA\app\src\main\libs\RootTools.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="0366ac8a28a574b3964f360c027ad287d173cfa7">
+        <dex dex="C:\Users\Nicholas\Documents\GitHub\TeamBlissOTA\app\build\intermediates\pre-dexed\debug\RootTools-9e3c4a2077dc65ae60f7f4a89e3f74456ecd636d.jar" />
+    </item>
+    <item
+        jar="C:\Users\Nicholas\Documents\GitHub\TeamBlissOTA\app\build\intermediates\exploded-aar\com.android.support\cardview-v7\22.0.0\jars\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="11842de6a309c447b3a3d60d73ad637a87c58994">
+        <dex dex="C:\Users\Nicholas\Documents\GitHub\TeamBlissOTA\app\build\intermediates\pre-dexed\debug\classes-5fa3af62da3e77b72eb2cc081ffb1aa56c58c8d6.jar" />
     </item>
 
 </items>
