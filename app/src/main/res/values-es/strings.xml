@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+ 	Copyright (C) 2015 Nicholas Chum (nicholaschum) and Matt Booth (Kryten2k35).
+ 
+ 	Licensed under the Attribution-NonCommercial-ShareAlike 4.0 International 
+ 	(the "License") you may not use this file except in compliance with the License.
+ 	You may obtain a copy of the License at
+ 
+ 		http://creativecommons.org/licenses/by-nc-sa/4.0/legalcode
+ 
+ 	Unless required by applicable law or agreed to in writing, software
+ 	distributed under the License is distributed on an "AS IS" BASIS,
+	WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+	See the License for the specific language governing permissions and
+	limitations under the License.
+
+-->
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+
+    <!-- ATTENTION -->
+    <!-- DO NOT TRANSLATE THE ITEMS MARKED "translatable="false" -->
+
+    <!-- App Strings -->
+    <string name="app_name" translatable="false">Updates</string>
+
+    <!-- Set build.prop value names here -->
+    <string name="prop_name" translatable="false">ro.ota.systemname</string>
+    <string name="prop_version" translatable="false">ro.ota.version</string>
+    <string name="prop_date" translatable="false">ro.build.date</string>
+    <string name="prop_release" translatable="false">ro.build.version.release</string>
+    <string name="prop_system_model" translatable="false">ro.product.device</string>
+    <string name="prop_release_build_id" translatable="false">ro.build.id</string>
+    <string name="prop_rom_version" translatable="false">ro.modversion</string>
+    <string name="prop_developer" translatable="false">ro.build.user</string>
+
+    <string name="app_version" translatable="false">5.0.0</string>
+    <string name="changelog_url" translatable="false">http://downloads.blissroms.com/Changelog/CHANGELOG-bliss.txt</string>
+
+    <!-- Generic strings -->
+    <string name="cancel">Cancelar</string>
+    <string name="ok">OK</string>
+    <string name="delete">Borrar</string>
+    <string name="back">Atrás</string>
+    <string name="help">Ayuda</string>
+    <string name="loading">Cargando&#8230;</string>
+    <string name="filename_separator">-</string>
+    <string name="download">Descargar</string>
+    <string name="install">Instalar</string>
+    <string name="downloading">Descargando&#8230;</string>
+    <string name="rebooting">Reiniciando&#8230;</string>
+    <string name="information">Información</string>
+    <string name="update_available">Actualización ROM disponible</string>
+    <string name="ignore">Ignorar</string>
+    <string name="donate">Donar</string>
+    <string name="finished">Finalizado</string>
+    <string name="settings">Ajustes</string>
+    <string name="done">Hecho</string>
+    <string name="delete_confirm">¿Está seguro de borrar este fichero?</string>
+
+</resources>

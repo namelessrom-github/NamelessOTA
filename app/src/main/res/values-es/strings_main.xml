@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+ 	Copyright (C) 2015 Nicholas Chum (nicholaschum) and Matt Booth (Kryten2k35).
+ 
+ 	Licensed under the Attribution-NonCommercial-ShareAlike 4.0 International 
+ 	(the "License") you may not use this file except in compliance with the License.
+ 	You may obtain a copy of the License at
+ 
+ 		http://creativecommons.org/licenses/by-nc-sa/4.0/legalcode
+ 
+ 	Unless required by applicable law or agreed to in writing, software
+ 	distributed under the License is distributed on an "AS IS" BASIS,
+	WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+	See the License for the specific language governing permissions and
+	limitations under the License.
+
+-->
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <string name="main_update_available">Nueva actualización disponible!</string>
+    <string name="main_update_finished">Descarga completada</string>
+    <string name="main_no_update_available">No hay actualizaciones</string>
+    <string name="main_update_filename">Nombre fichero</string>
+    <string name="main_update_progress">Progreso de descarga</string>
+    <string name="main_website">Website</string>
+    <string name="main_website_summary">Visita el site oficial de Team Bliss</string>
+    <string name="main_donate">Donar</string>
+    <string name="main_donate_summary">Donar al Team Bliss!</string>
+    <string name="main_tap_to_download">Toca para descargar</string>
+    <string name="main_download_completed_details">Toca para detalles</string>
+    <string name="main_tap_to_view_progress">Toca para ver progresos</string>
+    <string name="main_last_checked">Fecha última comprobación:\n</string>
+    <string name="main_addon">Addons</string>
+    <string name="main_addon_summary">Explora y descarga ficheros adicionales para esta ROM</string>
+
+    <!-- ROM Information -->
+    <string name="main_rom_information">Acerca de tu dispositivo</string>
+    <string name="main_rom_name">Nombre sistema:</string>
+    <string name="main_rom_version">Release version:</string>
+    <string name="main_rom_codename">Código ROM:</string>
+    <string name="main_rom_build_date">Fecha construcción:</string>
+    <string name="main_android_version">Versión Android:</string>
+    <string name="main_rom_developer">Mantenedor(es):</string>
+
+    <!-- Dialogs -->
+    <string name="main_not_compatible_title">Espera!</string>
+    <string name="main_not_compatible_message">La ROM actual no está configurada para ejecutar BlissOTA. Por favor, contacta con el mantenedor de la ROM para revisarlo.</string>
+    <string name="main_not_connected_title">No conectado</string>
+    <string name="main_not_connected_message">No está conectado a ninguna red. Por favor activa la Red Móvil o WiFi y vuelva a probar.</string>
+    <string name="main_playstore_title">BitCoin</string>
+    <string name="main_playstore_message">No dispone de ninguna app para manejar el \"bitcoin:\" mime-type.\n\nQuiere buscar en Google Play Store para instalar alguna?</string>
+
+    <!-- Content Descriptions -->
+    <string name="main_button_icon">Icono de botón</string>
+    <string name="main_dev_website_icon">Icono Website de desarrollador</string>
+    <string name="main_actionbar_button">Botones Actionbar</string>
+
+    <!-- Toast -->
+    <string name="main_release_ignored">Release ignorada.</string>
+</resources>
