@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+ 	Copyright (C) 2015 Nicholas Chum (nicholaschum) and Matt Booth (Kryten2k35).
+ 
+ 	Licensed under the Attribution-NonCommercial-ShareAlike 4.0 International 
+ 	(the "License") you may not use this file except in compliance with the License.
+ 	You may obtain a copy of the License at
+ 
+ 		http://creativecommons.org/licenses/by-nc-sa/4.0/legalcode
+ 
+ 	Unless required by applicable law or agreed to in writing, software
+ 	distributed under the License is distributed on an "AS IS" BASIS,
+	WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+	See the License for the specific language governing permissions and
+	limitations under the License.
+
+-->
+<resources>
+    <string name="preferences_name">Ajustes</string>
+    <string name="download_folder" translatable="false">/storage/emulated/0/Download</string>
+    <string name="list_summary" translatable="false">%s</string>
+    <string name="twrp_ors_cat" translatable="false">OpenRecoveryScript</string>
+    <string name="twrp_ors_title">Habilitar OpenRecoveryScript</string>
+    <string name="twrp_ors_summary">Habilitar auto flasheo de la actualización descargada.</string>
+    <string name="twrp_ors_information">Instalación automática de la actualización tras su descarga, sólo disponible en custom recovery tipo TWRP.</string>
+    <string name="twrp_ors_delete_after">Borrar tras instalar</string>
+    <string name="twrp_ors_delete_after_summary">¿Debería el script borrar el fichero de actualización tras actualizar?</string>
+    <string name="twrp_ors_install_prefs">Configuración OpenRecoveryScript</string>
+    <string name="twrp_ors_install_prefs_summary">Configura las preferencias de OpenRecoveryScript</string>
+    <string name="twrp_ors_wipe_data">Wipe Data</string>
+    <string name="twrp_ors_wipe_cache">Wipe Cache</string>
+    <string name="twrp_ors_wipe_dalvik">Wipe Dalvik</string>
+    <string name="notifications_title">Notificaciones</string>
+    <string name="background_service_summary">Busca nuevas actualizaciones automáticamente y notifica si hay alguna disponible.</string>
+    <string name="background_frequency">Frecuencia de búsqueda de actualizaciones</string>
+    <string name="background_30mins">30 mins</string>
+    <string name="background_60mins">60 mins</string>
+    <string name="background_2hours">2 horas</string>
+    <string name="background_3hours">3 horas</string>
+    <string name="background_6hours">6 horas</string>
+    <string name="background_12hours">12 horas</string>
+    <string name="background_24hours">1 vez al día</string>
+    <string name="background_2days">Cada 2 días</string>
+    <string name="background_3days">Cada 3 días</string>
+    <string name="background_7days">1 vez a la semana</string>
+    <string name="theme_title">Tema de la App</string>
+    <string name="mobile_wifi_network">Red</string>
+    <string name="mobile_wifi_title">Actualización sobre red</string>
+    <string name="wifi_network_only">Sólo Wi-Fi</string>
+    <string name="mobile_or_wifi">Red Móvil o Wi-Fi</string>
+    <string name="theme">Tema seleccionado</string>
+    <string name="theme_config">Configuración de ltema</string>
+    <string name="theme_dark">Material Dark</string>
+    <string name="theme_light">Material Light</string>
+    <string name="notifications_sound">Sonido</string>
+    <string name="notifications_vibrate">Vibrar</string>
+    <string name="silent_ringtone">Silencio</string>
+    <string name="notification_ignore_release_title">Ignorar actualización</string>
+    <string name="notification_ignoring_release">Version actual ignorada: </string>
+    <string name="notification_not_ignoring_release">No estás ignorando ninguna actualización</string>
+</resources>
