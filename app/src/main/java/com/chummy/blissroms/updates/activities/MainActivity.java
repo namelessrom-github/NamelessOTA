@@ -28,9 +28,12 @@ import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.CardView;
 import android.text.Html;
 import android.text.format.DateFormat;
@@ -58,8 +61,10 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
-public class MainActivity extends Activity implements Constants {
+public class MainActivity extends Activity implements Constants,
+        ActivityCompat.OnRequestPermissionsResultCallback {
 
+    private static final int PERMISSIONS_REQUEST_WRITE_EXTERNAL_STORAGE = 1;
     public static ProgressBar mProgressBar;
     private static Context mContext;
     public final String TAG = this.getClass().getSimpleName();
@@ -140,6 +145,7 @@ public class MainActivity extends Activity implements Constants {
 
         // Check the correct build prop values are installed
         // Also executes the manifest/update check
+
         if (!Utils.isConnected(mContext)) {
             Builder notConnectedDialog = new Builder(mContext);
             notConnectedDialog.setTitle(R.string.main_not_connected_title)
@@ -166,18 +172,57 @@ public class MainActivity extends Activity implements Constants {
         updateRomUpdateLayouts();
         updateWebsiteLayout();
 
+        // But check permissions first - download will be started in the callback
+        int permissionCheck = ContextCompat.checkSelfPermission(getApplicationContext(),
+                android.Manifest.permission.WRITE_EXTERNAL_STORAGE);
+        if (permissionCheck == PackageManager.PERMISSION_GRANTED) {
+            // permission already granted, allow the program to continue running
+        } else {
+            // permission not granted, request it from the user
+            ActivityCompat.requestPermissions(this,
+                    new String[]{android.Manifest.permission.WRITE_EXTERNAL_STORAGE},
+                    PERMISSIONS_REQUEST_WRITE_EXTERNAL_STORAGE);
+        }
     }
 
     @Override
     public void onStart() {
         super.onStart();
         this.registerReceiver(mReceiver, new IntentFilter(MANIFEST_LOADED));
+
     }
 
     @Override
     public void onStop() {
         super.onStop();
         this.unregisterReceiver(mReceiver);
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String permissions[],
+                                           int[] grantResults) {
+        switch (requestCode) {
+            case PERMISSIONS_REQUEST_WRITE_EXTERNAL_STORAGE: {
+                if (grantResults.length > 0
+                        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    // permission already granted, allow the program to continue running
+                } else {
+                    // permission was not granted, show closing dialog
+                    new AlertDialog.Builder(this)
+                            .setTitle(R.string.permission_not_granted_dialog_title)
+                            .setMessage(R.string.permission_not_granted_dialog_message)
+                            .setPositiveButton(R.string.dialog_ok, new OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    MainActivity.this.finish();
+                                }
+                            })
+                            .show();
+                    return;
+                }
+                break;
+            }
+        }
     }
 
     @Override
