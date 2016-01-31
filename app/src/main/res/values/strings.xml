@@ -32,7 +32,7 @@
     <string name="prop_rom_version" translatable="false">ro.modversion</string>
     <string name="prop_developer" translatable="false">ro.build.user</string>
 
-    <string name="app_version" translatable="false">5.0.0</string>
+    <string name="app_version" translatable="false">6.0.0</string>
     <string name="changelog_url" translatable="false">http://downloads.blissroms.com/Changelog/CHANGELOG-bliss.txt</string>
 
     <!-- Generic strings -->

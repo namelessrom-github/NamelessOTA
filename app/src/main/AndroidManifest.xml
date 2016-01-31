@@ -16,7 +16,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.chummy.blissroms.updates"
-    android:versionCode="22"
+    android:versionCode="23"
     android:versionName="@string/app_version">
 
     <uses-sdk android:maxSdkVersion="23" />
@@ -54,7 +54,7 @@
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
+                <category android:name="android.intent.category.LAUNCHER" />
                 <category android:name="android.intent.category.SHORTCUT" />
             </intent-filter>
         </activity>
