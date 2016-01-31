@@ -1,6 +1,11 @@
+# TeamBlissOTA - Updater for custom ROMs
+
+With this new version, it now requests Marshmallow permissions at runtime, and if denied, it will close the app.
+
+
 # Maintainers, your ROM must be set up to include these or else it would not work properly:
 
-1. A place to host your ROM addons to be placed into ota.xml (Default goes to http://downloads.blissroms.com/Add-ons/addons.xml but you can make your own)
+1. A place to host your ROM addons to be placed into ota.xml (Default goes to http://downloads.blissroms.com/Add-ons/addons.xml but you can make your own) [Template: http://pastebin.com/B7Sstbeg]
 3. A place to host your update info (Add it into http://downloads.blissroms.com/BlissPop/Official/modelname/ota.xml)
 3. Build.prop entries (To ensure compatibility/non-compatible dialogs from showing up)
 
@@ -15,6 +20,13 @@ This file needs to be added into http://downloads.blissroms.com/Add-ons/, please
 # BUILD.PROP Entries
 
 If you haven't already, please merge http://review.blissroms.com:8081/#/c/78/ to get the build.prop entries "ro.ota.systemname, ro.ota.version, ro.ota.device, ro.ota.manifest"
+
+Example:
+ro.ota.systemname=BlissPop     (this must match up with the template's romname tags)
+ro.ota.version=2016010100      (this goes by YYYYMMDDXX, where XX is the build number)
+ro.ota.device=scorpion         (the model name of your device)
+ro.ota.manifest=               (link of your ota.xml file, must be a direct link to the .xml file)
+
 
 # Instructions to compile this app yourself
 
