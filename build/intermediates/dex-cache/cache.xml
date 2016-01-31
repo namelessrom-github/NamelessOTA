@@ -2,25 +2,32 @@
 <items version="2" >
 
     <item
-        jar="C:\Users\Nicholas\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\22.1.1\support-annotations-22.1.1.jar"
+        jar="C:\Users\Nicholas\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.1.1\support-annotations-23.1.1.jar"
         jumboMode="false"
         revision="21.1.2"
-        sha1="01d051a6bfb1218b1db2d3a5af0480ac2c25c42a">
-        <dex dex="C:\Users\Nicholas\Documents\GitHub\TeamBlissOTA\app\build\intermediates\pre-dexed\debug\support-annotations-22.1.1-45b7a97c023ccd9b028242c2f33209bbeb294648.jar" />
+        sha1="8d680ba5a623724d1fb0e81c36a790f023a6cede">
+        <dex dex="C:\Users\Nicholas\Documents\GitHub\TeamBlissOTA\app\build\intermediates\pre-dexed\debug\support-annotations-23.1.1-6953429b984985af2bd4f49bc2eef4ebb63d5f22.jar" />
     </item>
     <item
-        jar="C:\Users\Nicholas\Documents\GitHub\TeamBlissOTA\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.1.1\jars\libs\internal_impl-22.1.1.jar"
+        jar="C:\Users\Nicholas\Documents\GitHub\TeamBlissOTA\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\jars\classes.jar"
         jumboMode="false"
         revision="21.1.2"
-        sha1="9e070ad32b2700b0343e8e0cccc437733d91ba3a">
-        <dex dex="C:\Users\Nicholas\Documents\GitHub\TeamBlissOTA\app\build\intermediates\pre-dexed\debug\internal_impl-22.1.1-4c4bb5a6e33f63fe321cbdaaf23e0b331de3438e.jar" />
+        sha1="6cbc7773921fcfedbe55657578f0cbfe614778dc">
+        <dex dex="C:\Users\Nicholas\Documents\GitHub\TeamBlissOTA\app\build\intermediates\pre-dexed\debug\classes-61f82de69b3effe82cb44f1743502e370838b78a.jar" />
     </item>
     <item
-        jar="C:\Users\Nicholas\Documents\GitHub\TeamBlissOTA\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.1.1\jars\classes.jar"
+        jar="C:\Users\Nicholas\Documents\GitHub\TeamBlissOTA\app\build\intermediates\exploded-aar\com.android.support\cardview-v7\23.0.0\jars\classes.jar"
         jumboMode="false"
         revision="21.1.2"
-        sha1="c95ba8152923e4872e86a82cfcba9a51c0214328">
-        <dex dex="C:\Users\Nicholas\Documents\GitHub\TeamBlissOTA\app\build\intermediates\pre-dexed\debug\classes-eb8061fbeb31799c1cc3728502e5c7a255c422f4.jar" />
+        sha1="1ccbc26be2c465c622a48310e8092241b01abe80">
+        <dex dex="C:\Users\Nicholas\Documents\GitHub\TeamBlissOTA\app\build\intermediates\pre-dexed\debug\classes-a19ef49059a3ee6dce2d65f23c503ba3bc44cc74.jar" />
+    </item>
+    <item
+        jar="C:\Users\Nicholas\Documents\GitHub\TeamBlissOTA\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\jars\libs\internal_impl-23.1.1.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="a4de9c81ae239414e1ed0f86441b02abaf29bca9">
+        <dex dex="C:\Users\Nicholas\Documents\GitHub\TeamBlissOTA\app\build\intermediates\pre-dexed\debug\internal_impl-23.1.1-9fdfc121b57eebe8e560085ba69769d120d7dd1c.jar" />
     </item>
     <item
         jar="C:\Users\Nicholas\Documents\GitHub\TeamBlissOTA\app\src\main\libs\RootTools.jar"
@@ -28,13 +35,6 @@
         revision="21.1.2"
         sha1="0366ac8a28a574b3964f360c027ad287d173cfa7">
         <dex dex="C:\Users\Nicholas\Documents\GitHub\TeamBlissOTA\app\build\intermediates\pre-dexed\debug\RootTools-9e3c4a2077dc65ae60f7f4a89e3f74456ecd636d.jar" />
-    </item>
-    <item
-        jar="C:\Users\Nicholas\Documents\GitHub\TeamBlissOTA\app\build\intermediates\exploded-aar\com.android.support\cardview-v7\22.0.0\jars\classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="11842de6a309c447b3a3d60d73ad637a87c58994">
-        <dex dex="C:\Users\Nicholas\Documents\GitHub\TeamBlissOTA\app\build\intermediates\pre-dexed\debug\classes-5fa3af62da3e77b72eb2cc081ffb1aa56c58c8d6.jar" />
     </item>
 
 </items>

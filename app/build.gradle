@@ -1,13 +1,13 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 21
+    compileSdkVersion 23
     buildToolsVersion "21.1.2"
 
     defaultConfig {
         applicationId "com.chummy.blissroms.updates"
         minSdkVersion 22
-        targetSdkVersion 22
+        targetSdkVersion 23
     }
 
     buildTypes {
@@ -20,7 +20,7 @@ android {
 
 dependencies {
     compile fileTree(include: '*.jar', dir: 'libs')
-    compile 'com.android.support:support-v4:22.1.1'
-    compile 'com.android.support:cardview-v7:22.0.0'
+    compile 'com.android.support:support-v4:23.1.1'
+    compile 'com.android.support:cardview-v7:23.0.0'
     compile files('src/main/libs/RootTools.jar')
 }
