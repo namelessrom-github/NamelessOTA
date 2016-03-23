@@ -6,9 +6,6 @@ buildscript {
     dependencies {
         classpath 'com.android.tools.build:gradle:1.2.3'
     }
-	lintOptions {
-		abortOnError false
-	}
 }
 
 allprojects {
