@@ -217,3 +217,4 @@ pip-log.txt
 
 # Development
 app/build
+.idea
