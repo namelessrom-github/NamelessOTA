@@ -20,7 +20,6 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.util.Log;
 
-import com.chummy.blissroms.updates.BuildConfig;
 import com.chummy.blissroms.updates.R;
 
 public class Preferences implements Constants {
@@ -142,10 +141,6 @@ public class Preferences implements Constants {
 
     public static String getIgnoredRelease(Context context) {
         return getPrefs(context).getString(IGNORE_RELEASE_VERSION, "0");
-    }
-
-    public static String getOldChangelog(Context context) {
-        return getPrefs(context).getString(OLD_CHANGELOG, BuildConfig.VERSION_NAME);
     }
 
     public static Boolean getFirstRun(Context context) {

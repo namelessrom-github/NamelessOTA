@@ -48,7 +48,6 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toolbar;
 
-import com.chummy.blissroms.updates.BuildConfig;
 import com.chummy.blissroms.updates.R;
 import com.chummy.blissroms.updates.RomUpdate;
 import com.chummy.blissroms.updates.tasks.Changelog;
@@ -126,12 +125,6 @@ public class MainActivity extends Activity implements Constants,
         boolean firstRun = Preferences.getFirstRun(mContext);
         if (firstRun) {
             Preferences.setFirstRun(mContext, false);
-            showWhatsNew();
-        }
-
-        String oldChangelog = Preferences.getOldChangelog(mContext);
-        String currentChangelog = BuildConfig.VERSION_NAME;
-        if (!oldChangelog.equals(currentChangelog)) {
             showWhatsNew();
         }
 

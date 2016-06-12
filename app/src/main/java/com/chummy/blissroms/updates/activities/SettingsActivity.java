@@ -40,7 +40,6 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.util.SparseBooleanArray;
 
-import com.chummy.blissroms.updates.BuildConfig;
 import com.chummy.blissroms.updates.R;
 import com.chummy.blissroms.updates.utils.Constants;
 import com.chummy.blissroms.updates.utils.Preferences;
@@ -108,9 +107,6 @@ public class SettingsActivity extends PreferenceActivity implements OnPreference
         } else {
             setNotIgnore(false);
         }
-
-        Preference customPref = (Preference) findPreference("about_activity_pref");
-        customPref.setTitle(getString(R.string.about_title) + " " + BuildConfig.VERSION_NAME);
     }
 
     @Override
