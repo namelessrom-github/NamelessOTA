@@ -30,7 +30,6 @@ import android.content.res.Resources;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.text.method.LinkMovementMethod;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -51,9 +50,8 @@ import com.chummy.blissroms.updates.utils.Preferences;
 import com.chummy.blissroms.updates.utils.Tools;
 import com.chummy.blissroms.updates.utils.Utils;
 
-import in.uncod.android.bypass.Bypass;
-
-public class AvailableActivity extends Activity implements Constants, android.view.View.OnClickListener {
+public class AvailableActivity extends Activity implements Constants, android.view.View
+        .OnClickListener {
 
     public final static String TAG = "AvailableActivity";
     public static ProgressBar mProgressBar;
@@ -64,6 +62,7 @@ public class AvailableActivity extends Activity implements Constants, android.vi
     private static Button mInstallButton;
     private static Button mDownloadButton;
     private static Button mCancelButton;
+    private static Button mChangelogButton;
     private Builder mDeleteDialog;
     private Builder mRebootDialog;
     private Builder mRebootManualDialog;
@@ -188,20 +187,20 @@ public class AvailableActivity extends Activity implements Constants, android.vi
             mInstallButton = (Button) findViewById(R.id.menu_available_install);
             mDownloadButton = (Button) findViewById(R.id.menu_available_download);
             mCancelButton = (Button) findViewById(R.id.menu_available_cancel);
+            mChangelogButton = (Button) findViewById(R.id.menu_available_changelog);
 
             mCheckMD5Button.setOnClickListener(this);
             mDeleteButton.setOnClickListener(this);
             mInstallButton.setOnClickListener(this);
             mDownloadButton.setOnClickListener(this);
             mCancelButton.setOnClickListener(this);
+            mChangelogButton.setOnClickListener(this);
         }
 
         setupDialogs();
         setupUpdateNameInfo();
         setupProgress(mContext);
         setupMd5Info();
-        setupRomHut();
-        setupChangeLog();
         if (Utils.isLollipop()) {
             setupMenuToolbar(mContext);
         }
@@ -211,7 +210,8 @@ public class AvailableActivity extends Activity implements Constants, android.vi
             // Then start updating the progress bar again
             if (DEBUGGING)
                 Log.d(TAG, "Starting progress updater");
-            DownloadManager downloadManager = (DownloadManager) mContext.getSystemService(Context.DOWNLOAD_SERVICE);
+            DownloadManager downloadManager = (DownloadManager) mContext.getSystemService(Context
+                    .DOWNLOAD_SERVICE);
             new DownloadRomProgress(mContext, downloadManager).execute();
         }
     }
@@ -249,6 +249,11 @@ public class AvailableActivity extends Activity implements Constants, android.vi
                 } else {
                     mRebootDialog.show();
                 }
+                return true;
+            case R.id.menu_available_changelog:
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R
+                        .string.changelog_url)));
+                startActivity(browserIntent);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
@@ -340,6 +345,11 @@ public class AvailableActivity extends Activity implements Constants, android.vi
                 setupProgress(mContext);
                 setupMenuToolbar(mContext);
                 break;
+            case R.id.menu_available_changelog:
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R
+                        .string.changelog_url)));
+                startActivity(browserIntent);
+                break;
         }
     }
 
@@ -406,27 +416,6 @@ public class AvailableActivity extends Activity implements Constants, android.vi
         mRebootManualDialog.setTitle(R.string.available_reboot_manual_title)
                 .setMessage(R.string.available_reboot_manual_message)
                 .setPositiveButton(R.string.cancel, null);
-    }
-
-    private void setupChangeLog() {
-        TextView changelogView = (TextView) findViewById(R.id.tv_available_changelog_content);
-        Bypass byPass = new Bypass(this);
-        String changeLogStr = RomUpdate.getChangelog(mContext);
-        CharSequence string = byPass.markdownToSpannable(changeLogStr);
-        changelogView.setText(string);
-        changelogView.setMovementMethod(LinkMovementMethod.getInstance());
-    }
-
-    private void setupRomHut() {
-        TextView ServerInfo = (TextView) findViewById(R.id.tv_available_romhut);
-        ServerInfo.setText("Server Download");
-        int colorServer;
-        if (Preferences.getCurrentTheme(mContext) == 0) { // Light
-            colorServer = getResources().getColor(R.color.material_deep_teal_500);
-        } else {
-            colorServer = getResources().getColor(R.color.material_deep_teal_200);
-        }
-        ServerInfo.setTextColor(colorServer);
     }
 
     private void setupUpdateNameInfo() {
@@ -521,8 +510,10 @@ public class AvailableActivity extends Activity implements Constants, android.vi
         @Override
         protected Boolean doInBackground(Object... params) {
             String file = RomUpdate.getFullFile(mContext).getAbsolutePath(); // Full file, with path
-            String md5Remote = RomUpdate.getMd5(mContext); // Remote MD5 form the manifest. This is what we expect it to be
-            String md5Local = Tools.shell("md5sum " + file + " | cut -d ' ' -f 1", false); // Run the check on our local file
+            String md5Remote = RomUpdate.getMd5(mContext); // Remote MD5 form the manifest. This
+            // is what we expect it to be
+            String md5Local = Tools.shell("md5sum " + file + " | cut -d ' ' -f 1", false); // Run
+            // the check on our local file
             md5Local = md5Local.trim(); // Trim both to remove any whitespace
             md5Remote = md5Remote.trim();
             return md5Local.equalsIgnoreCase(md5Remote); // Return the comparison
@@ -534,9 +525,11 @@ public class AvailableActivity extends Activity implements Constants, android.vi
 
             // Show toast letting the user know immediately
             if (result) {
-                Toast.makeText(mContext, mContext.getString(R.string.available_md5_ok), Toast.LENGTH_LONG).show();
+                Toast.makeText(mContext, mContext.getString(R.string.available_md5_ok), Toast
+                        .LENGTH_LONG).show();
             } else {
-                Toast.makeText(mContext, mContext.getString(R.string.available_md5_failed), Toast.LENGTH_LONG).show();
+                Toast.makeText(mContext, mContext.getString(R.string.available_md5_failed), Toast
+                        .LENGTH_LONG).show();
             }
 
             Preferences.setMD5Passed(mContext, result); // Set value for other persistent settings

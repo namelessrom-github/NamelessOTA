@@ -40,6 +40,7 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.util.SparseBooleanArray;
 
+import com.chummy.blissroms.updates.BuildConfig;
 import com.chummy.blissroms.updates.R;
 import com.chummy.blissroms.updates.utils.Constants;
 import com.chummy.blissroms.updates.utils.Preferences;
@@ -48,7 +49,8 @@ import com.chummy.blissroms.updates.utils.Utils;
 
 @SuppressLint("SdCardPath")
 @SuppressWarnings("deprecation")
-public class SettingsActivity extends PreferenceActivity implements OnPreferenceClickListener, OnPreferenceChangeListener, OnSharedPreferenceChangeListener, Constants {
+public class SettingsActivity extends PreferenceActivity implements OnPreferenceClickListener,
+        OnPreferenceChangeListener, OnSharedPreferenceChangeListener, Constants {
 
     private static final String NOTIFICATIONS_IGNORED_RELEASE = "notifications_ignored_release";
     public final String TAG = this.getClass().getSimpleName();
@@ -82,7 +84,8 @@ public class SettingsActivity extends PreferenceActivity implements OnPreference
         mRingtonePreference = (RingtonePreference) findPreference(NOTIFICATIONS_SOUND);
 
         String defValue = android.provider.Settings.System.DEFAULT_NOTIFICATION_URI.toString();
-        String soundValue = getPreferenceManager().getSharedPreferences().getString(NOTIFICATIONS_SOUND, defValue);
+        String soundValue = getPreferenceManager().getSharedPreferences().getString
+                (NOTIFICATIONS_SOUND, defValue);
         setRingtoneSummary(soundValue);
 
         if (!Tools.isRootAvailable()) {
@@ -105,19 +108,24 @@ public class SettingsActivity extends PreferenceActivity implements OnPreference
         } else {
             setNotIgnore(false);
         }
+
+        Preference customPref = (Preference) findPreference("about_activity_pref");
+        customPref.setTitle(getString(R.string.about_title) + " " + BuildConfig.VERSION_NAME);
     }
 
     @Override
     public void onResume() {
         super.onResume();
-        getPreferenceManager().getSharedPreferences().registerOnSharedPreferenceChangeListener(this);
+        getPreferenceManager().getSharedPreferences().registerOnSharedPreferenceChangeListener
+                (this);
         mRingtonePreference.setOnPreferenceChangeListener(this);
     }
 
     @Override
     public void onPause() {
         super.onPause();
-        getPreferenceManager().getSharedPreferences().unregisterOnSharedPreferenceChangeListener(this);
+        getPreferenceManager().getSharedPreferences().unregisterOnSharedPreferenceChangeListener
+                (this);
     }
 
     @Override

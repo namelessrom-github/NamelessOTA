@@ -36,7 +36,8 @@ public class Changelog extends AsyncTask<Void, Void, String> {
     private String mChangelog;
     private boolean mRemote;
 
-    public Changelog(Activity activity, Context context, String dialogTitle, String changelog, boolean remote) {
+    public Changelog(Activity activity, Context context, String dialogTitle, String changelog,
+                     boolean remote) {
         mContext = context;
         mActivity = activity;
         mChangelog = changelog;

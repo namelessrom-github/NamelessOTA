@@ -159,7 +159,8 @@ public class AddonActivity extends Activity implements Constants {
         private void deleteConfirm(final File file, final Addon item) {
             Builder deleteConfirm = new Builder(mContext);
             deleteConfirm.setTitle(R.string.delete);
-            deleteConfirm.setMessage(mContext.getResources().getString(R.string.delete_confirm) + "\n\n" + file.getName());
+            deleteConfirm.setMessage(mContext.getResources().getString(R.string.delete_confirm) +
+                    "\n\n" + file.getName());
             deleteConfirm.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
 
                 @Override
@@ -178,7 +179,8 @@ public class AddonActivity extends Activity implements Constants {
         public View getView(int position, View convertView, ViewGroup parent) {
             final Addon item = getItem(position);
             if (convertView == null) {
-                convertView = LayoutInflater.from(getContext()).inflate(R.layout.card_addons_list_item, parent, false);
+                convertView = LayoutInflater.from(getContext()).inflate(R.layout
+                        .card_addons_list_item, parent, false);
             }
 
             TextView title = (TextView) convertView.findViewById(R.id.title);
@@ -241,12 +243,14 @@ public class AddonActivity extends Activity implements Constants {
                 @Override
                 public void onClick(View v) {
                     boolean isMobile = Utils.isMobileNetwork(mContext);
-                    boolean isSettingWiFiOnly = Preferences.getNetworkType(mContext).equals(WIFI_ONLY);
+                    boolean isSettingWiFiOnly = Preferences.getNetworkType(mContext).equals
+                            (WIFI_ONLY);
 
                     if (isMobile && isSettingWiFiOnly) {
                         showNetworkDialog();
                     } else {
-                        mDownloadAddon.startDownload(mContext, item.getDownloadLink(), item.getTitle(), item.getId());
+                        mDownloadAddon.startDownload(mContext, item.getDownloadLink(), item
+                                .getTitle(), item.getId());
                         download.setVisibility(View.GONE);
                         cancel.setVisibility(View.VISIBLE);
                     }

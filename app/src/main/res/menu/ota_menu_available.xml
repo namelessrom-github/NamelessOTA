@@ -20,32 +20,32 @@
         android:enabled="false"
         android:orderInCategory="99"
         android:showAsAction="always"
-        android:title="@string/available_check_md5" />
+        android:title="@string/available_check_md5"/>
     <item
         android:id="@+id/menu_available_delete"
         android:enabled="false"
         android:orderInCategory="99"
         android:showAsAction="always"
-        android:title="@string/delete" />
+        android:title="@string/delete"/>
 
     <item
         android:id="@+id/menu_available_download"
         android:orderInCategory="100"
         android:showAsAction="always"
-        android:title="@string/download" />
+        android:title="@string/download"/>
 
     <item
         android:id="@+id/menu_available_cancel"
         android:orderInCategory="100"
         android:showAsAction="always"
         android:title="@string/cancel"
-        android:visible="false" />
+        android:visible="false"/>
 
     <item
         android:id="@+id/menu_available_install"
         android:orderInCategory="100"
         android:showAsAction="always"
         android:title="@string/install"
-        android:visible="false" />
+        android:visible="false"/>
 
 </menu>

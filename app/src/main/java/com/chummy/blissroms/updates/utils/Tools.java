@@ -59,7 +59,8 @@ public class Tools implements Constants {
 
     private static void rebootPhone(Context context, String type) {
         try {
-            PowerManager powerManager = (PowerManager) context.getSystemService(Context.POWER_SERVICE);
+            PowerManager powerManager = (PowerManager) context.getSystemService(Context
+                    .POWER_SERVICE);
             powerManager.reboot("recovery");
         } catch (Exception e) {
             Log.e("Tools", "reboot '" + type + "' error: " + e.getMessage());
@@ -95,8 +96,10 @@ public class Tools implements Constants {
         try {
             Process process = Runtime.getRuntime().exec(shell);
             DataOutputStream STDIN = new DataOutputStream(process.getOutputStream());
-            BufferedReader STDOUT = new BufferedReader(new InputStreamReader(process.getInputStream()));
-            BufferedReader STDERR = new BufferedReader(new InputStreamReader(process.getErrorStream()));
+            BufferedReader STDOUT = new BufferedReader(new InputStreamReader(process
+                    .getInputStream()));
+            BufferedReader STDERR = new BufferedReader(new InputStreamReader(process
+                    .getErrorStream()));
             if (BuildConfig.DEBUG) Log.i(shell, command);
             STDIN.writeBytes(command + "\n");
             STDIN.flush();

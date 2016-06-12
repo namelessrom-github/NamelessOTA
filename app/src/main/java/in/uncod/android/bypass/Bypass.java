@@ -41,7 +41,8 @@ public class Bypass {
 
     // Keeps track of the ordered list number for each LIST element.
     // We need to track multiple ordered lists at once because of nesting.
-    private final Map<Element, Integer> mOrderedListNumber = new ConcurrentHashMap<Element, Integer>();
+    private final Map<Element, Integer> mOrderedListNumber = new ConcurrentHashMap<Element,
+            Integer>();
 
     /**
      * @deprecated Use {@link #Bypass(android.content.Context)} instead.
@@ -146,7 +147,8 @@ public class Bypass {
         // Retrieve the image now so we know whether we're going to have something to display later
         // If we don't, then show the alt text instead (if available).
         Drawable imageDrawable = null;
-        if (type == Type.IMAGE && imageGetter != null && !TextUtils.isEmpty(element.getAttribute("link"))) {
+        if (type == Type.IMAGE && imageGetter != null && !TextUtils.isEmpty(element.getAttribute
+                ("link"))) {
             imageDrawable = imageGetter.getDrawable(element.getAttribute("link"));
         }
 
@@ -207,7 +209,8 @@ public class Bypass {
         } else if (element.isBlockElement() && type != Type.BLOCK_QUOTE) {
             if (type == Type.LIST) {
                 // If this is a nested list, don't include newlines
-                if (element.getParent() == null || element.getParent().getType() != Type.LIST_ITEM) {
+                if (element.getParent() == null || element.getParent().getType() != Type
+                        .LIST_ITEM) {
                     builder.append("\n");
                 }
             } else if (element.getParent() != null
@@ -265,7 +268,8 @@ public class Bypass {
                 setSpan(builder, new StrikethroughSpan());
                 break;
             case HRULE:
-                setSpan(builder, new HorizontalLineSpan(mOptions.mHruleColor, mHruleSize, mHruleTopBottomPadding));
+                setSpan(builder, new HorizontalLineSpan(mOptions.mHruleColor, mHruleSize,
+                        mHruleTopBottomPadding));
                 break;
             case IMAGE:
                 if (imageDrawable != null) {
@@ -340,7 +344,8 @@ public class Bypass {
             if (headerSizes == null) {
                 throw new IllegalArgumentException("headerSizes must not be null");
             } else if (headerSizes.length != 6) {
-                throw new IllegalArgumentException("headerSizes must have 6 elements (h1 through h6)");
+                throw new IllegalArgumentException("headerSizes must have 6 elements (h1 through " +
+                        "h6)");
             }
 
             mHeaderSizes = headerSizes;

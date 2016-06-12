@@ -1,7 +1,7 @@
 /*
  * Copyright (C) 2015 Matt Booth (Kryten2k35).
  *
- * Licensed under the Attribution-NonCommercial-ShareAlike 4.0 International 
+ * Licensed under the Attribution-NonCommercial-ShareAlike 4.0 International
  * (the "License") you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
@@ -18,12 +18,10 @@ package com.chummy.blissroms.updates.utils;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.os.Build;
 import android.util.Log;
 
+import com.chummy.blissroms.updates.BuildConfig;
 import com.chummy.blissroms.updates.R;
-
-import java.io.File;
 
 public class Preferences implements Constants {
 
@@ -36,10 +34,6 @@ public class Preferences implements Constants {
 
     private static SharedPreferences getPrefs(Context context) {
         return context.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
-    }
-
-    public static String getUpdateLastChecked(Context context, String time) {
-        return getPrefs(context).getString(LAST_CHECKED, time);
     }
 
     public static boolean getDownloadFinished(Context context) {
@@ -93,7 +87,8 @@ public class Preferences implements Constants {
 
     public static boolean getBackgroundService(Context context) {
         if (DEBUGGING)
-            Log.d(TAG, "Background Service set to " + getPrefs(context).getBoolean(UPDATER_BACK_SERVICE, true));
+            Log.d(TAG, "Background Service set to " + getPrefs(context).getBoolean
+                    (UPDATER_BACK_SERVICE, true));
         return getPrefs(context).getBoolean(UPDATER_BACK_SERVICE, true);
     }
 
@@ -102,7 +97,8 @@ public class Preferences implements Constants {
     }
 
     public static boolean getORSEnabled(Context context) {
-        Log.d(TAG, "ORS Enabled Preference " + getPrefs(context).getBoolean(UPDATER_ENABLE_ORS, false));
+        Log.d(TAG, "ORS Enabled Preference " + getPrefs(context).getBoolean(UPDATER_ENABLE_ORS,
+                false));
         return getPrefs(context).getBoolean(UPDATER_ENABLE_ORS, false);
     }
 
@@ -148,17 +144,8 @@ public class Preferences implements Constants {
         return getPrefs(context).getString(IGNORE_RELEASE_VERSION, "0");
     }
 
-    public static Boolean getAdsEnabled(Context context) {
-        File file = new File("/system/priv-app/OTAUpdates/OTAUpdates.apk");
-        if (file.exists() && Build.VERSION.SDK_INT >= 22) {
-            return false;
-        } else {
-            return getPrefs(context).getBoolean(ADS_ENABLED, true);
-        }
-    }
-
     public static String getOldChangelog(Context context) {
-        return getPrefs(context).getString(OLD_CHANGELOG, context.getResources().getString(R.string.app_version));
+        return getPrefs(context).getString(OLD_CHANGELOG, BuildConfig.VERSION_NAME);
     }
 
     public static Boolean getFirstRun(Context context) {
@@ -231,21 +218,9 @@ public class Preferences implements Constants {
         editor.commit();
     }
 
-    public static void setBackgroundFrequency(Context context, String value) {
-        SharedPreferences.Editor editor = getPrefs(context).edit();
-        editor.putString(UPDATER_BACK_FREQ, value);
-        editor.commit();
-    }
-
     public static void setIgnoredRelease(Context context, String value) {
         SharedPreferences.Editor editor = getPrefs(context).edit();
         editor.putString(IGNORE_RELEASE_VERSION, value);
-        editor.commit();
-    }
-
-    public static void setOldChangelog(Context context, String value) {
-        SharedPreferences.Editor editor = getPrefs(context).edit();
-        editor.putString(OLD_CHANGELOG, value);
         editor.commit();
     }
 

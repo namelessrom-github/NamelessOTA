@@ -33,21 +33,25 @@ public class DownloadAddon implements Constants {
         fileName = fileName + ".zip";
         request.setDestinationInExternalPublicDir(INSTALL_AFTER_FLASH_DIR_ADDON, fileName);
 
-        DownloadManager downloadManager = (DownloadManager) context.getSystemService(Context.DOWNLOAD_SERVICE);
+        DownloadManager downloadManager = (DownloadManager) context.getSystemService(Context
+                .DOWNLOAD_SERVICE);
         long mDownloadID = downloadManager.enqueue(request);
         OtaUpdates.putAddonDownload(id, mDownloadID);
         new DownloadAddonProgress(context, downloadManager, id).execute(mDownloadID);
         if (DEBUGGING) {
-            Log.d(TAG, "Starting download with manager ID " + mDownloadID + " and item id of " + id);
+            Log.d(TAG, "Starting download with manager ID " + mDownloadID + " and item id of " +
+                    id);
         }
     }
 
     public void cancelDownload(Context context, int id) {
         long mDownloadID = OtaUpdates.getAddonDownload(id);
         if (DEBUGGING) {
-            Log.d(TAG, "Stopping download with manager ID " + mDownloadID + " and item id of " + id);
+            Log.d(TAG, "Stopping download with manager ID " + mDownloadID + " and item id of " +
+                    id);
         }
-        DownloadManager downloadManager = (DownloadManager) context.getSystemService(Context.DOWNLOAD_SERVICE);
+        DownloadManager downloadManager = (DownloadManager) context.getSystemService(Context
+                .DOWNLOAD_SERVICE);
         downloadManager.remove(mDownloadID);
     }
 }

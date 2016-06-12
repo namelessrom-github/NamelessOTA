@@ -48,6 +48,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toolbar;
 
+import com.chummy.blissroms.updates.BuildConfig;
 import com.chummy.blissroms.updates.R;
 import com.chummy.blissroms.updates.RomUpdate;
 import com.chummy.blissroms.updates.tasks.Changelog;
@@ -116,7 +117,8 @@ public class MainActivity extends Activity implements Constants,
                     LayoutParams.WRAP_CONTENT,
                     Gravity.END |
                             Gravity.CENTER_VERTICAL);
-            View actionbarView = LayoutInflater.from(this).inflate(R.layout.ota_main_actionbar_top, null);
+            View actionbarView = LayoutInflater.from(this).inflate(R.layout
+                    .ota_main_actionbar_top, null);
             actionBar.setCustomView(actionbarView, layoutParams);
             actionBar.setDisplayShowCustomEnabled(true);
         }
@@ -128,7 +130,7 @@ public class MainActivity extends Activity implements Constants,
         }
 
         String oldChangelog = Preferences.getOldChangelog(mContext);
-        String currentChangelog = getResources().getString(R.string.app_version);
+        String currentChangelog = BuildConfig.VERSION_NAME;
         if (!oldChangelog.equals(currentChangelog)) {
             showWhatsNew();
         }
@@ -239,7 +241,9 @@ public class MainActivity extends Activity implements Constants,
         if (isLollipop)
             switch (item.getItemId()) {
                 case R.id.menu_changelog:
-                    openChangelog(null);
+                    Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R
+                            .string.changelog_url)));
+                    startActivity(browserIntent);
                     return true;
                 case R.id.menu_settings:
                     openSettings(null);
@@ -267,12 +271,14 @@ public class MainActivity extends Activity implements Constants,
         String[] donateItems = {"PayPal", "BitCoin"};
         mDonateDialog.setTitle(getResources().getString(R.string.donate))
                 .setSingleChoiceItems(donateItems, 0, null)
-                .setPositiveButton(getResources().getString(R.string.ok), new DialogInterface.OnClickListener() {
+                .setPositiveButton(getResources().getString(R.string.ok), new DialogInterface
+                        .OnClickListener() {
 
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         String url = "";
-                        int selectedPosition = ((AlertDialog) dialog).getListView().getCheckedItemPosition();
+                        int selectedPosition = ((AlertDialog) dialog).getListView()
+                                .getCheckedItemPosition();
                         if (selectedPosition == 0) {
                             url = RomUpdate.getDonateLink(mContext);
                         } else {
@@ -291,7 +297,8 @@ public class MainActivity extends Activity implements Constants,
                         }
                     }
                 })
-                .setNegativeButton(getResources().getString(R.string.cancel), new DialogInterface.OnClickListener() {
+                .setNegativeButton(getResources().getString(R.string.cancel), new DialogInterface
+                        .OnClickListener() {
 
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
@@ -313,13 +320,14 @@ public class MainActivity extends Activity implements Constants,
                 startActivity(intent);
             }
         });
-        mPlayStoreDialog.setNegativeButton(getResources().getString(R.string.cancel), new DialogInterface.OnClickListener() {
+        mPlayStoreDialog.setNegativeButton(getResources().getString(R.string.cancel), new
+                DialogInterface.OnClickListener() {
 
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                dialog.cancel();
-            }
-        });
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                    }
+                });
     }
 
     private void updateRomUpdateLayouts() {
@@ -330,8 +338,10 @@ public class MainActivity extends Activity implements Constants,
         updateAvailable.setVisibility(View.GONE);
         updateNotAvailable.setVisibility(View.GONE);
 
-        TextView updateAvailableSummary = (TextView) findViewById(R.id.main_tv_update_available_summary);
-        TextView updateNotAvailableSummary = (TextView) findViewById(R.id.main_tv_no_update_available_summary);
+        TextView updateAvailableSummary = (TextView) findViewById(R.id
+                .main_tv_update_available_summary);
+        TextView updateNotAvailableSummary = (TextView) findViewById(R.id
+                .main_tv_no_update_available_summary);
 
         mProgressBar = (ProgressBar) findViewById(R.id.bar_main_progress_bar);
         mProgressBar.setVisibility(View.GONE);
@@ -340,10 +350,12 @@ public class MainActivity extends Activity implements Constants,
         if (RomUpdate.getUpdateAvailability(mContext) ||
                 (!RomUpdate.getUpdateAvailability(mContext)) && Utils.isUpdateIgnored(mContext)) {
             updateAvailable.setVisibility(View.VISIBLE);
-            TextView updateAvailableTitle = (TextView) findViewById(R.id.main_tv_update_available_title);
+            TextView updateAvailableTitle = (TextView) findViewById(R.id
+                    .main_tv_update_available_title);
 
             if (Preferences.getDownloadFinished(mContext)) { //  Update already finished?
-                updateAvailableTitle.setText(getResources().getString(R.string.main_update_finished));
+                updateAvailableTitle.setText(getResources().getString(R.string
+                        .main_update_finished));
                 String htmlColorOpen = "";
                 if (isLollipop) {
                     if (Preferences.getCurrentTheme(mContext) == 0) { // Light
@@ -362,7 +374,8 @@ public class MainActivity extends Activity implements Constants,
                         + htmlColorClose;
                 updateAvailableSummary.setText(Html.fromHtml(updateSummary));
             } else if (Preferences.getIsDownloadOnGoing(mContext)) {
-                updateAvailableTitle.setText(getResources().getString(R.string.main_update_progress));
+                updateAvailableTitle.setText(getResources().getString(R.string
+                        .main_update_progress));
                 mProgressBar.setVisibility(View.VISIBLE);
                 String htmlColorOpen = "";
                 if (isLollipop) {
@@ -380,7 +393,8 @@ public class MainActivity extends Activity implements Constants,
                         + htmlColorClose;
                 updateAvailableSummary.setText(Html.fromHtml(updateSummary));
             } else {
-                updateAvailableTitle.setText(getResources().getString(R.string.main_update_available));
+                updateAvailableTitle.setText(getResources().getString(R.string
+                        .main_update_available));
                 String htmlColorOpen = "";
                 if (isLollipop) {
                     if (Preferences.getCurrentTheme(mContext) == 0) { // Light
@@ -467,39 +481,52 @@ public class MainActivity extends Activity implements Constants,
 
         //ROM name
         TextView romName = (TextView) findViewById(R.id.tv_main_rom_name);
-        String romNameTitle = getApplicationContext().getResources().getString(R.string.main_rom_name) + " ";
+        String romNameTitle = getApplicationContext().getResources().getString(R.string
+                .main_rom_name) + " ";
         String romNameActual = Utils.getProp(getResources().getString(R.string.prop_name));
         String romNameDevice = Utils.getProp(getResources().getString(R.string.prop_system_model));
         String romNameVersion = Utils.getProp(getResources().getString(R.string.prop_rom_version));
-        romName.setText(Html.fromHtml(romNameTitle + htmlColorOpen + romNameActual + space + romNameVersion + separator_open + romNameDevice + separator_close + htmlColorClose));
+        romName.setText(Html.fromHtml(romNameTitle + htmlColorOpen + romNameActual + space +
+                romNameVersion + separator_open + romNameDevice + separator_close +
+                htmlColorClose));
 
         //ROM version
         TextView romVersion = (TextView) findViewById(R.id.tv_main_rom_version);
-        String romVersionTitle = getApplicationContext().getResources().getString(R.string.main_rom_version) + " ";
+        String romVersionTitle = getApplicationContext().getResources().getString(R.string
+                .main_rom_version) + " ";
         String romVersionActual = Utils.getProp(getResources().getString(R.string.prop_version));
-        romVersion.setText(Html.fromHtml(romVersionTitle + htmlColorOpen + romVersionActual + htmlColorClose));
+        romVersion.setText(Html.fromHtml(romVersionTitle + htmlColorOpen + romVersionActual +
+                htmlColorClose));
 
         //ROM date
         TextView romDate = (TextView) findViewById(R.id.tv_main_rom_date);
-        String romDateTitle = getApplicationContext().getResources().getString(R.string.main_rom_build_date) + " ";
+        String romDateTitle = getApplicationContext().getResources().getString(R.string
+                .main_rom_build_date) + " ";
         String romDateActual = Utils.getProp(getResources().getString(R.string.prop_date));
-        romDate.setText(Html.fromHtml(romDateTitle + htmlColorOpen + romDateActual + htmlColorClose));
+        romDate.setText(Html.fromHtml(romDateTitle + htmlColorOpen + romDateActual +
+                htmlColorClose));
 
         //ROM android version
         TextView romAndroid = (TextView) findViewById(R.id.tv_main_android_version);
-        String romAndroidTitle = getApplicationContext().getResources().getString(R.string.main_android_version) + " ";
+        String romAndroidTitle = getApplicationContext().getResources().getString(R.string
+                .main_android_version) + " ";
         String romAndroidActual = Utils.getProp(getResources().getString(R.string.prop_release));
-        String romAndroidBuildID = Utils.getProp(getResources().getString(R.string.prop_release_build_id));
-        romAndroid.setText(Html.fromHtml(romAndroidTitle + htmlColorOpen + romAndroidActual + separator_open + romAndroidBuildID + separator_close + htmlColorClose));
+        String romAndroidBuildID = Utils.getProp(getResources().getString(R.string
+                .prop_release_build_id));
+        romAndroid.setText(Html.fromHtml(romAndroidTitle + htmlColorOpen + romAndroidActual +
+                separator_open + romAndroidBuildID + separator_close + htmlColorClose));
 
         //ROM developer
         TextView romDeveloper = (TextView) findViewById(R.id.tv_main_rom_developer);
         boolean showDevName = !RomUpdate.getDeveloper(this).equals("null");
         //romDeveloper.setVisibility(showDevName? View.VISIBLE : View.GONE);
 
-        String romDeveloperTitle = getApplicationContext().getResources().getString(R.string.main_rom_developer) + " ";
-        String romDeveloperActual = showDevName ? RomUpdate.getDeveloper(this) : Utils.getProp(getResources().getString(R.string.prop_developer));
-        romDeveloper.setText(Html.fromHtml(romDeveloperTitle + htmlColorOpen + romDeveloperActual + htmlColorClose));
+        String romDeveloperTitle = getApplicationContext().getResources().getString(R.string
+                .main_rom_developer) + " ";
+        String romDeveloperActual = showDevName ? RomUpdate.getDeveloper(this) : Utils.getProp
+                (getResources().getString(R.string.prop_developer));
+        romDeveloper.setText(Html.fromHtml(romDeveloperTitle + htmlColorOpen + romDeveloperActual
+                + htmlColorClose));
 
     }
 

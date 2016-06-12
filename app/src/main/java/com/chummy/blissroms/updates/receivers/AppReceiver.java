@@ -72,7 +72,8 @@ public class AppReceiver extends BroadcastReceiver implements Constants {
             }
 
             if (isAddonDownload) {
-                DownloadManager downloadManager = (DownloadManager) context.getSystemService(Context.DOWNLOAD_SERVICE);
+                DownloadManager downloadManager = (DownloadManager) context.getSystemService
+                        (Context.DOWNLOAD_SERVICE);
                 DownloadManager.Query query = new DownloadManager.Query();
                 query.setFilterById(id);
                 Cursor cursor = downloadManager.query(query);
@@ -111,7 +112,8 @@ public class AppReceiver extends BroadcastReceiver implements Constants {
                     return;
                 }
 
-                DownloadManager downloadManager = (DownloadManager) context.getSystemService(Context.DOWNLOAD_SERVICE);
+                DownloadManager downloadManager = (DownloadManager) context.getSystemService
+                        (Context.DOWNLOAD_SERVICE);
                 DownloadManager.Query query = new DownloadManager.Query();
                 query.setFilterById(id);
                 Cursor cursor = downloadManager.query(query);
@@ -201,7 +203,8 @@ public class AppReceiver extends BroadcastReceiver implements Constants {
             if (DEBUGGING) {
                 Log.d(TAG, "Ignore release");
             }
-            Preferences.setIgnoredRelease(context, Integer.toString(RomUpdate.getVersionNumber(context)));
+            Preferences.setIgnoredRelease(context, Integer.toString(RomUpdate.getVersionNumber
+                    (context)));
             final NotificationManager mNotifyManager =
                     (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
             Builder mBuilder = new NotificationCompat.Builder(context);

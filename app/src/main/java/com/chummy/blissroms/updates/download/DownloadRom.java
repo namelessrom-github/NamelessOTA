@@ -61,7 +61,8 @@ public class DownloadRom implements Constants {
         Utils.deleteFile(file);
 
         // Enqueue the download
-        DownloadManager downloadManager = (DownloadManager) context.getSystemService(Context.DOWNLOAD_SERVICE);
+        DownloadManager downloadManager = (DownloadManager) context.getSystemService(Context
+                .DOWNLOAD_SERVICE);
         long mDownloadID = downloadManager.enqueue(request);
 
         // Store the download ID
@@ -83,7 +84,8 @@ public class DownloadRom implements Constants {
         long mDownloadID = Preferences.getDownloadID(context);
 
         // Remove the download
-        DownloadManager downloadManager = (DownloadManager) context.getSystemService(Context.DOWNLOAD_SERVICE);
+        DownloadManager downloadManager = (DownloadManager) context.getSystemService(Context
+                .DOWNLOAD_SERVICE);
         downloadManager.remove(mDownloadID);
 
         // Indicate that the download is no longer running

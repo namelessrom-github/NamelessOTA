@@ -14,21 +14,21 @@
 	limitations under the License.
 -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:orientation="vertical">
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:orientation="vertical">
 
     <Toolbar
         android:id="@+id/toolbar_about"
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:background="?attr/colorPrimary"
-        android:theme="@style/Theme.Dark" />
+        android:theme="@style/Theme.Dark"/>
 
     <View
         android:layout_width="match_parent"
         android:layout_height="10dp"
-        android:background="@drawable/toolbar_dropshadow" />
+        android:background="@drawable/toolbar_dropshadow"/>
 
     <ScrollView
         android:layout_width="fill_parent"
@@ -40,11 +40,11 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <include layout="@layout/card_credits" />
+            <include layout="@layout/card_credits"/>
 
-            <include layout="@layout/card_app_donate_cdt" />
+            <include layout="@layout/card_app_donate_cdt"/>
 
-            <include layout="@layout/card_app_donate_matt" />
+            <include layout="@layout/card_app_donate_matt"/>
 
         </LinearLayout>
     </ScrollView>

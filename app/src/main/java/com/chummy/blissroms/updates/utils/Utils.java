@@ -84,7 +84,8 @@ public class Utils implements Constants {
         Process p = null;
         String result = "";
         try {
-            p = new ProcessBuilder("/system/bin/getprop", propName).redirectErrorStream(true).start();
+            p = new ProcessBuilder("/system/bin/getprop", propName).redirectErrorStream(true)
+                    .start();
             BufferedReader br = new BufferedReader(new InputStreamReader(p.getInputStream()));
             String line = "";
             while ((line = br.readLine()) != null) {
@@ -272,8 +273,10 @@ public class Utils implements Constants {
         Intent skipIntent = new Intent(context, AppReceiver.class);
         skipIntent.setAction(IGNORE_RELEASE);
         Intent downloadIntent = new Intent(context, AvailableActivity.class);
-        PendingIntent skipPendingIntent = PendingIntent.getBroadcast(context, 0, skipIntent, PendingIntent.FLAG_UPDATE_CURRENT);
-        PendingIntent downloadPendingIntent = PendingIntent.getActivity(context, 0, downloadIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+        PendingIntent skipPendingIntent = PendingIntent.getBroadcast(context, 0, skipIntent,
+                PendingIntent.FLAG_UPDATE_CURRENT);
+        PendingIntent downloadPendingIntent = PendingIntent.getActivity(context, 0,
+                downloadIntent, PendingIntent.FLAG_UPDATE_CURRENT);
 
         mBuilder.setContentTitle(context.getString(R.string.update_available))
                 .setContentText(filename)
@@ -284,8 +287,10 @@ public class Utils implements Constants {
                 .setDefaults(NotificationCompat.DEFAULT_LIGHTS)
                 .setVisibility(NotificationCompat.VISIBILITY_PUBLIC)
                 .setSound(Uri.parse(Preferences.getNotificationSound(context)))
-                .addAction(R.drawable.ic_action_download, context.getString(R.string.download), downloadPendingIntent)
-                .addAction(R.drawable.ic_action_close, context.getString(R.string.ignore), skipPendingIntent);
+                .addAction(R.drawable.ic_action_download, context.getString(R.string.download),
+                        downloadPendingIntent)
+                .addAction(R.drawable.ic_action_close, context.getString(R.string.ignore),
+                        skipPendingIntent);
 
         if (Preferences.getNotificationVibrate(context)) {
             mBuilder.setDefaults(NotificationCompat.DEFAULT_VIBRATE);

@@ -24,7 +24,8 @@ public interface Constants {
     public static final boolean DEBUG_NOTIFICATIONS = false;
 
     // Storage
-    public static final String SD_CARD = Environment.getExternalStorageDirectory().getAbsolutePath();
+    public static final String SD_CARD = Environment.getExternalStorageDirectory()
+            .getAbsolutePath();
     public static final String OTA_DOWNLOAD_DIR = "Updates";
     public static final String INSTALL_AFTER_FLASH_DIR = "InstallAfterFlash";
     public static final String INSTALL_AFTER_FLASH_DIR_ADDON = "/Updates/InstallAfterFlash";

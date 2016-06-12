@@ -15,7 +15,7 @@
 
 -->
 <resources>
-    <string name="about_about_title">About BlissOTA 6.0.0</string>
+    <string name="about_title">About BlissOTA</string>
     <string name="about_preferences_summary">More information about the app, credits and donations.</string>
     <string name="about_credits_title">Credits</string>
     <string name="about_credits_summary">Credits Summary</string>

@@ -10,9 +10,12 @@ import android.text.SpannableStringBuilder;
  * in some corner cases regarding leading spans.
  * <p/>
  * Example:
- * Suppose we have a BLOCK_QUOTE with a LIST inside of it. Both of them have leading spans, but the LIST
- * span is set first. As a result, the QuoteSpan for the BLOCK_QUOTE is actually indented by the LIST's span!
- * If the order is reversed, then the LIST's margin span is properly indented (and the BlockQuote remains on
+ * Suppose we have a BLOCK_QUOTE with a LIST inside of it. Both of them have leading spans, but
+ * the LIST
+ * span is set first. As a result, the QuoteSpan for the BLOCK_QUOTE is actually indented by the
+ * LIST's span!
+ * If the order is reversed, then the LIST's margin span is properly indented (and the BlockQuote
+ * remains on
  * the side).
  */
 public class ReverseSpannableStringBuilder extends SpannableStringBuilder {

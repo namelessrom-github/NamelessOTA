@@ -37,9 +37,11 @@ public class HorizontalLineSpan extends ReplacementSpan {
 
     @Override
     public void draw(
-            Canvas canvas, CharSequence text, int start, int end, float x, int top, int y, int bottom, Paint paint) {
+            Canvas canvas, CharSequence text, int start, int end, float x, int top, int y, int
+            bottom, Paint paint) {
         int middle = (top + bottom) / 2;
         int halfLineHeight = mLineHeight / 2;
-        canvas.drawRect(x, middle - halfLineHeight, Integer.MAX_VALUE, middle + halfLineHeight, mPaint);
+        canvas.drawRect(x, middle - halfLineHeight, Integer.MAX_VALUE, middle + halfLineHeight,
+                mPaint);
     }
 }

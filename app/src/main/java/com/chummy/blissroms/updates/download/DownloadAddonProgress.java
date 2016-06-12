@@ -38,8 +38,10 @@ public class DownloadAddonProgress extends AsyncTask<Long, Integer, Void> implem
             Cursor cursor = mDownloadManager.query(q);
             cursor.moveToFirst();
             try {
-                if (cursor.getInt(cursor.getColumnIndex(DownloadManager.COLUMN_STATUS)) == DownloadManager.STATUS_SUCCESSFUL ||
-                        cursor.getInt(cursor.getColumnIndex(DownloadManager.COLUMN_STATUS)) == DownloadManager.STATUS_FAILED) {
+                if (cursor.getInt(cursor.getColumnIndex(DownloadManager.COLUMN_STATUS)) ==
+                        DownloadManager.STATUS_SUCCESSFUL ||
+                        cursor.getInt(cursor.getColumnIndex(DownloadManager.COLUMN_STATUS)) ==
+                                DownloadManager.STATUS_FAILED) {
                     mIsRunning = false;
                 }
 

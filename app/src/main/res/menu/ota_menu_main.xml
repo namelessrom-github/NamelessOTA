@@ -20,13 +20,13 @@
         android:icon="?attr/changelogIcon"
         android:orderInCategory="98"
         android:showAsAction="ifRoom"
-        android:title="@string/menu_info" />
+        android:title="@string/menu_info"/>
 
     <item
         android:id="@+id/menu_settings"
         android:icon="?attr/settingsIcon"
         android:orderInCategory="100"
         android:showAsAction="ifRoom"
-        android:title="@string/menu_settings" />
+        android:title="@string/menu_settings"/>
 
 </menu>

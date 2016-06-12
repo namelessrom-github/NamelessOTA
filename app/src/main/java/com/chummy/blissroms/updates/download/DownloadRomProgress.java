@@ -57,7 +57,8 @@ public class DownloadRomProgress extends AsyncTask<Long, Integer, Void> implemen
                 final int bytesInTotal = cursor.getInt(cursor
                         .getColumnIndex(DownloadManager.COLUMN_TOTAL_SIZE_BYTES));
 
-                if (cursor.getInt(cursor.getColumnIndex(DownloadManager.COLUMN_STATUS)) == DownloadManager.STATUS_SUCCESSFUL) {
+                if (cursor.getInt(cursor.getColumnIndex(DownloadManager.COLUMN_STATUS)) ==
+                        DownloadManager.STATUS_SUCCESSFUL) {
                     Preferences.setIsDownloadRunning(mContext, false);
                 }
 
