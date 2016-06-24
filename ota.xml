@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ROM>
+  <RomName>Nameless Rom</RomName>
+  <VersionName>Version 4</VersionName>
+  <VersionNumber type="integer">20160623</VersionNumber>
+    <!-- <DirectUrl><![CDATA[XX]]></DirectUrl> -->
+    <!-- Use the above format if your URL has special characters in them, like an (&) ampersand -->
+    <!-- Enter <DirectUrl nil="true" /> or <HttpUrl nil="true" /> to indicate you won't be using a type of URL -->
+    <!-- Direct Link overrides HTTP link -->
+  <DirectUrl nil="true" />
+  <DirectUrl><![CDATA[https://drive.google.com/uc?export=download&id=0BwgmYsEzRdA8d2VxdnJNbEw3dFU]]></DirectUrl>
+  <Android>6.0.1</Android>
+  <CheckMD5>e745df6bc6505893bf5c5e0e0e9f9288</CheckMD5>
+  <FileSize type="integer">4431691</FileSize>
+  <Developer>ErAditya</Developer>
+  <WebsiteURL>http://forum.xda-developers.com/note-4/snapdragon-dev/rom-nameless-mm-lightfastdeodexed-t3363547</WebsiteURL>
+  <DonateURL nil="true" />
+  <!-- Again, surround special characters with the CDATA tags or your XML will NOT parse -->
+  <Changelog>
+###v1 Changes (OTA Update):
+##General Changes
+  - Initial Ota
+
+  </Changelog>
+</ROM>
