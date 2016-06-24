@@ -32,7 +32,7 @@
     <string name="prop_rom_version" translatable="false">ro.modversion</string>
     <string name="prop_developer" translatable="false">ro.build.user</string>
 
-    <string name="changelog_url" translatable="false">http://pastebin.com/raw/Lw7aktvb</string>
+    <string name="changelog_url" translatable="false">https://github.com/namelessrom-github/OTAUpdates/blob/stable/changelog.txt</string>
 
     <!-- Generic strings -->
     <string name="cancel">Cancel</string>
