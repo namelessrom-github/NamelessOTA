@@ -109,8 +109,7 @@
 
     <Preference
         android:key="about_activity_pref"
-        android:summary="@string/about_preferences_summary"
-        android:title="@string/about_title"/>
+        android:summary="@string/about_preferences_summary" />
 
 
 </PreferenceScreen>

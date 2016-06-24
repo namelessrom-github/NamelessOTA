@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 
-package com.chummy.blissroms.updates;
+package com.nammeless.ota.updates;
 
 
 import android.content.Context;
 import android.content.SharedPreferences;
 
-import com.chummy.blissroms.updates.utils.Constants;
+import com.nammeless.ota.updates.utils.Constants;
 
 import java.io.File;
 

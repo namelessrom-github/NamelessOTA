@@ -1,13 +1,13 @@
-package com.chummy.blissroms.updates.download;
+package com.nammeless.ota.updates.download;
 
 import android.app.DownloadManager;
 import android.content.Context;
 import android.net.Uri;
 import android.util.Log;
 
-import com.chummy.blissroms.updates.OtaUpdates;
-import com.chummy.blissroms.updates.utils.Constants;
-import com.chummy.blissroms.updates.utils.Preferences;
+import com.nammeless.ota.updates.OtaUpdates;
+import com.nammeless.ota.updates.utils.Constants;
+import com.nammeless.ota.updates.utils.Preferences;
 
 public class DownloadAddon implements Constants {
 

@@ -14,17 +14,17 @@
  * limitations under the License.
  */
 
-package com.chummy.blissroms.updates.download;
+package com.nammeless.ota.updates.download;
 
 import android.app.DownloadManager;
 import android.content.Context;
 import android.net.Uri;
 
-import com.chummy.blissroms.updates.R;
-import com.chummy.blissroms.updates.RomUpdate;
-import com.chummy.blissroms.updates.utils.Constants;
-import com.chummy.blissroms.updates.utils.Preferences;
-import com.chummy.blissroms.updates.utils.Utils;
+import com.nammeless.ota.updates.R;
+import com.nammeless.ota.updates.RomUpdate;
+import com.nammeless.ota.updates.utils.Constants;
+import com.nammeless.ota.updates.utils.Preferences;
+import com.nammeless.ota.updates.utils.Utils;
 
 import java.io.File;
 

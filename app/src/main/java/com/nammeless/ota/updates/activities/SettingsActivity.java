@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.chummy.blissroms.updates.activities;
+package com.nammeless.ota.updates.activities;
 
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
@@ -40,11 +40,11 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.util.SparseBooleanArray;
 
-import com.chummy.blissroms.updates.R;
-import com.chummy.blissroms.updates.utils.Constants;
-import com.chummy.blissroms.updates.utils.Preferences;
-import com.chummy.blissroms.updates.utils.Tools;
-import com.chummy.blissroms.updates.utils.Utils;
+import com.nammeless.ota.updates.R;
+import com.nammeless.ota.updates.utils.Constants;
+import com.nammeless.ota.updates.utils.Preferences;
+import com.nammeless.ota.updates.utils.Tools;
+import com.nammeless.ota.updates.utils.Utils;
 
 @SuppressLint("SdCardPath")
 @SuppressWarnings("deprecation")

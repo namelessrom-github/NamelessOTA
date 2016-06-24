@@ -1,10 +1,10 @@
-package com.chummy.blissroms.updates.tasks;
+package com.nammeless.ota.updates.tasks;
 
 import android.content.Context;
 import android.util.Log;
 
-import com.chummy.blissroms.updates.Addon;
-import com.chummy.blissroms.updates.utils.Constants;
+import com.nammeless.ota.updates.Addon;
+import com.nammeless.ota.updates.utils.Constants;
 
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;

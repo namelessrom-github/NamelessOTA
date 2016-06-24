@@ -1,4 +1,4 @@
-package com.chummy.blissroms.updates;
+package com.nammeless.ota.updates;
 
 public class Addon {
 

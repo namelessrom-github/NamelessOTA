@@ -5,7 +5,7 @@ android {
     buildToolsVersion "21.1.2"
 
     defaultConfig {
-        applicationId "com.chummy.blissroms.updates"
+        applicationId "com.nammeless.ota.updates"
         minSdkVersion 22
         targetSdkVersion 23
     }

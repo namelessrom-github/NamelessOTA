@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.chummy.blissroms.updates.download;
+package com.nammeless.ota.updates.download;
 
 import android.app.Activity;
 import android.app.DownloadManager;
@@ -24,10 +24,10 @@ import android.database.CursorIndexOutOfBoundsException;
 import android.os.AsyncTask;
 import android.util.Log;
 
-import com.chummy.blissroms.updates.activities.AvailableActivity;
-import com.chummy.blissroms.updates.activities.MainActivity;
-import com.chummy.blissroms.updates.utils.Constants;
-import com.chummy.blissroms.updates.utils.Preferences;
+import com.nammeless.ota.updates.activities.AvailableActivity;
+import com.nammeless.ota.updates.activities.MainActivity;
+import com.nammeless.ota.updates.utils.Constants;
+import com.nammeless.ota.updates.utils.Preferences;
 
 public class DownloadRomProgress extends AsyncTask<Long, Integer, Void> implements Constants {
 

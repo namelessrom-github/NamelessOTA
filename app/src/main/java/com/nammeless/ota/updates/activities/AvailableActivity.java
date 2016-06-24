@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.chummy.blissroms.updates.activities;
+package com.nammeless.ota.updates.activities;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -40,15 +40,15 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.Toolbar;
 
-import com.chummy.blissroms.updates.R;
-import com.chummy.blissroms.updates.RomUpdate;
-import com.chummy.blissroms.updates.download.DownloadRom;
-import com.chummy.blissroms.updates.download.DownloadRomProgress;
-import com.chummy.blissroms.updates.tasks.GenerateRecoveryScript;
-import com.chummy.blissroms.updates.utils.Constants;
-import com.chummy.blissroms.updates.utils.Preferences;
-import com.chummy.blissroms.updates.utils.Tools;
-import com.chummy.blissroms.updates.utils.Utils;
+import com.nammeless.ota.updates.R;
+import com.nammeless.ota.updates.RomUpdate;
+import com.nammeless.ota.updates.download.DownloadRom;
+import com.nammeless.ota.updates.download.DownloadRomProgress;
+import com.nammeless.ota.updates.tasks.GenerateRecoveryScript;
+import com.nammeless.ota.updates.utils.Constants;
+import com.nammeless.ota.updates.utils.Preferences;
+import com.nammeless.ota.updates.utils.Tools;
+import com.nammeless.ota.updates.utils.Utils;
 
 public class AvailableActivity extends Activity implements Constants, android.view.View
         .OnClickListener {

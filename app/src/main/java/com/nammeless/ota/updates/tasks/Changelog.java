@@ -1,4 +1,4 @@
-package com.chummy.blissroms.updates.tasks;
+package com.nammeless.ota.updates.tasks;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -10,7 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
-import com.chummy.blissroms.updates.R;
+import com.nammeless.ota.updates.R;
 
 import java.io.BufferedInputStream;
 import java.io.File;

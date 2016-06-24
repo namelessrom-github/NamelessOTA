@@ -14,14 +14,14 @@
  * limitations under the License.
  */
 
-package com.chummy.blissroms.updates.tasks;
+package com.nammeless.ota.updates.tasks;
 
 import android.content.Context;
 import android.util.Log;
 
-import com.chummy.blissroms.updates.RomUpdate;
-import com.chummy.blissroms.updates.utils.Constants;
-import com.chummy.blissroms.updates.utils.Utils;
+import com.nammeless.ota.updates.RomUpdate;
+import com.nammeless.ota.updates.utils.Constants;
+import com.nammeless.ota.updates.utils.Utils;
 
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;

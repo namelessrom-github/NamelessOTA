@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.chummy.blissroms.updates.utils;
+package com.nammeless.ota.updates.utils;
 
 import android.content.Context;
 import android.os.Bundle;

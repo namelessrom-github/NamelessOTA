@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.chummy.blissroms.updates.utils;
+package com.nammeless.ota.updates.utils;
 
 import android.app.AlarmManager;
 import android.app.NotificationManager;
@@ -30,11 +30,11 @@ import android.support.v4.app.NotificationCompat.Builder;
 import android.support.v4.app.TaskStackBuilder;
 import android.util.Log;
 
-import com.chummy.blissroms.updates.R;
-import com.chummy.blissroms.updates.RomUpdate;
-import com.chummy.blissroms.updates.activities.AvailableActivity;
-import com.chummy.blissroms.updates.activities.MainActivity;
-import com.chummy.blissroms.updates.receivers.AppReceiver;
+import com.nammeless.ota.updates.R;
+import com.nammeless.ota.updates.RomUpdate;
+import com.nammeless.ota.updates.activities.AvailableActivity;
+import com.nammeless.ota.updates.activities.MainActivity;
+import com.nammeless.ota.updates.receivers.AppReceiver;
 
 import java.io.BufferedReader;
 import java.io.File;

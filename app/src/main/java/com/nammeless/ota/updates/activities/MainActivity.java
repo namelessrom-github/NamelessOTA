@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.chummy.blissroms.updates.activities;
+package com.nammeless.ota.updates.activities;
 
 import android.app.ActionBar;
 import android.app.ActionBar.LayoutParams;
@@ -48,13 +48,13 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toolbar;
 
-import com.chummy.blissroms.updates.R;
-import com.chummy.blissroms.updates.RomUpdate;
-import com.chummy.blissroms.updates.tasks.Changelog;
-import com.chummy.blissroms.updates.tasks.LoadUpdateManifest;
-import com.chummy.blissroms.updates.utils.Constants;
-import com.chummy.blissroms.updates.utils.Preferences;
-import com.chummy.blissroms.updates.utils.Utils;
+import com.nammeless.ota.updates.R;
+import com.nammeless.ota.updates.RomUpdate;
+import com.nammeless.ota.updates.tasks.Changelog;
+import com.nammeless.ota.updates.tasks.LoadUpdateManifest;
+import com.nammeless.ota.updates.utils.Constants;
+import com.nammeless.ota.updates.utils.Preferences;
+import com.nammeless.ota.updates.utils.Utils;
 
 import java.io.File;
 import java.text.SimpleDateFormat;

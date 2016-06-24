@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.chummy.blissroms.updates.activities;
+package com.nammeless.ota.updates.activities;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -27,9 +27,9 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toolbar;
 
-import com.chummy.blissroms.updates.R;
-import com.chummy.blissroms.updates.utils.Preferences;
-import com.chummy.blissroms.updates.utils.Utils;
+import com.nammeless.ota.updates.R;
+import com.nammeless.ota.updates.utils.Preferences;
+import com.nammeless.ota.updates.utils.Utils;
 
 public class AboutActivity extends Activity {
 
@@ -50,9 +50,6 @@ public class AboutActivity extends Activity {
             toolbar.setTitle(getResources().getString(R.string.app_name));
         }
 
-        TextView creditsSummary = (TextView) findViewById(R.id.about_tv_credits_summary);
-
-
         String openHTML = "";
         if (Utils.isLollipop()) {
             if (Preferences.getCurrentTheme(this) == 0) { // Light
@@ -65,28 +62,17 @@ public class AboutActivity extends Activity {
         }
         String closeHTML = "</font>";
         String newLine = "<br />";
-        String creditsText =
-                openHTML + "Nicholas Chum (nicholaschum)" + closeHTML + " - BlissOTA Developer" +
-                        newLine +
-                        openHTML + "Matthew Booth (Kryten2k35)" + closeHTML + " - Original Source" +
-                        " Developer" + newLine + newLine +
-
-                        openHTML + "BlissOTA Translation Credits" + closeHTML + " - KeTuRr74, " +
-                        "razor84, Stone_88, wobbie, gbyx, taranbeer, rahulraimarine, " +
-                        "namanbhalla1998, goodedward19, qwiko";
-        creditsSummary.setText(Html.fromHtml(creditsText));
-
     }
 
     public void openAppDonate(View v) {
-        String url = "http://goo.gl/ZKSY4";
+        String url = "http://forum.xda-developers.com/donatetome.php?u=5750672";
         Intent intent = new Intent(Intent.ACTION_VIEW);
         intent.setData(Uri.parse(url));
         startActivity(intent);
     }
 
     public void openAppDonateCDT(View v) {
-        String url = "https://goo.gl/upDndJ";
+        String url = "http://forum.xda-developers.com/donatetome.php?u=5750672";
         Intent intent = new Intent(Intent.ACTION_VIEW);
         intent.setData(Uri.parse(url));
         startActivity(intent);
