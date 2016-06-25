@@ -13,15 +13,15 @@
     <!-- Enter <DirectUrl nil="true" /> or <HttpUrl nil="true" /> to indicate you won't be using a type of URL -->
     <!-- Direct Link overrides HTTP link -->
   <DirectUrl nil="true" />
-  <DirectUrl><![CDATA[https://drive.google.com/uc?export=download&id=0BwgmYsEzRdA8d2VxdnJNbEw3dFU]]></DirectUrl>
+  <DirectUrl><![CDATA[https://drive.google.com/uc?export=download&id=0BwgmYsEzRdA8MVY2RmZDejNrcG8]]></DirectUrl>
   <!-- What version are you issuing? -->
   <Android>6.0.1</Android>
   <!-- Providing File Checking for direct downloads. You SHOULD offer this for your users whether using HTTP or Direct -->
   <!-- OPTIONAL: Enter <CheckMD5 nil="true" /> offer MD5 checking -->
-  <CheckMD5>e745df6bc6505893bf5c5e0e0e9f9288</CheckMD5>
+  <CheckMD5>58a8d3e62af6b1d13379c557eb4e8995</CheckMD5>
   <!-- The filesize of your ROM -->
   <!-- Please enter this in BYTES only. Otherwise an incorrect value will be shown -->
-  <FileSize type="integer">4431691</FileSize>
+  <FileSize type="integer">891514144</FileSize>
   <!-- Developer or Team name. You can put anything here, even a couple of names -->
   <!-- OPTIONAL: Enter <Developer nil="true" /> to hide this -->
   <Developer>ErAditya</Developer>
