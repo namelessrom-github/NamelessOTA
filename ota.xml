@@ -13,7 +13,7 @@
     <!-- Enter <DirectUrl nil="true" /> or <HttpUrl nil="true" /> to indicate you won't be using a type of URL -->
     <!-- Direct Link overrides HTTP link -->
   <DirectUrl nil="true" />
-  <DirectUrl><![CDATA[http://gdurl.com/7_TZ]]></DirectUrl>
+  <DirectUrl><![CDATA[https://dl.dropboxusercontent.com/s/2imqde8um3ojmwz/Nameless_V4_Final_Project_25June.zip?dl=0]]></DirectUrl>
   <!-- What version are you issuing? -->
   <Android>6.0.1</Android>
   <!-- Providing File Checking for direct downloads. You SHOULD offer this for your users whether using HTTP or Direct -->
