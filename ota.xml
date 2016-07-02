@@ -6,7 +6,7 @@
   <!-- Your ROM version. MUST be incrementally larger than previous versions -->
   <!-- Do NOT use letters in your version number. Integers only -->
   <!-- Previous version will be read from the build.prop -->
-  <VersionNumber type="integer">20160702</VersionNumber>
+  <VersionNumber type="integer">20160626</VersionNumber>
   <!-- Linking to your files -->
     <!-- <DirectUrl><![CDATA[XX]]></DirectUrl> -->
     <!-- Use the above format if your URL has special characters in them, like an (&) ampersand -->
@@ -56,3 +56,7 @@
 * Added Hidden Home Button on center of statusbar
 * Fixed Safe Volume Warning</Changelog>
 </ROM>
+<AddonCount>2</AddonCount>
+<AddonsURL>
+https://raw.githubusercontent.com/namelessrom-github/NamelessOTA/m/addons.xml
+</AddonsURL>
