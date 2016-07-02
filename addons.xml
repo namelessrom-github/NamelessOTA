@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hash>
+    <addons>
+        <addon>
+            <id>1</id> <!-- Use integers only, make them unique -->
+            <name>V4 Fixes</name> <!-- The name, simples -->
+            <description>Ota Fix ,3 Minit Fix..</description> <!-- You can use markdown here if you want -->
+            <updated-at>2016-07-02</updated-at> <!-- Must be in yyyy-mm-dd format -->
+            <size>26834408</size> <!-- filesize in bytes -->
+            <download-link>
+            https://dl.dropboxusercontent.com/s/fb4468jwn34e97g/V4_Fixes.zip?dl=0
+            </download-link>
+        </addon>
+    </addons>
+</hash>
