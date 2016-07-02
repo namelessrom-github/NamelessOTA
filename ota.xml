@@ -55,8 +55,9 @@
 * Added Hidden Recent Button Left of statusbar
 * Added Hidden Home Button on center of statusbar
 * Fixed Safe Volume Warning</Changelog>
-</ROM>
-<AddonCount>2</AddonCount>
+
+<AddonCount>1</AddonCount>
 <AddonsURL>
 https://raw.githubusercontent.com/namelessrom-github/NamelessOTA/m/addons.xml
 </AddonsURL>
+</ROM>
