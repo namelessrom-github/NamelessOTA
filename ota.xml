@@ -54,10 +54,9 @@
 * Added Hidden Power Button when battery icon is pressed
 * Added Hidden Recent Button Left of statusbar
 * Added Hidden Home Button on center of statusbar
-* Fixed Safe Volume Warning</Changelog>
+* Fixed Safe Volume Warning
 
-<AddonCount>2</AddonCount>
-<AddonsURL>
-https://raw.githubusercontent.com/namelessrom-github/NamelessOTA/m/addons.xml
-</AddonsURL>
+</Changelog>
+<AddonCount>1</AddonCount>
+<AddonsURL>http://pastebin.com/raw/P0540MfW</AddonsURL>
 </ROM>
